@@ -1,0 +1,48 @@
+Problemas de segurança deixando tudo na mesma rede
+
+Roteador tem uma inteligência de segurança, tem a ideia de firewall
+mas dentro de uma rede não costuma ter tecnologia para isso
+nisso temos os ataques insider
+
+Uma opção é conectar a rede de wi-fi a uma outra porta do roteador
+Separar a área importante em uma outra rede
+Nisso melhoramos desempenho e temos segurança
+Porém nisso vai muito dinheiro para ter mais portas
+
+Como fazer isso sem usar novas portas?
+
+	Há uma forma de separar portas do Switch em áreas diferentes virtualmente
+	De forma que eles não se comunicam
+	Para eles trocarem informação eles vão até o roteador e voltam para a área adequada
+	E lá no roteador podemos configurar Firewall
+	
+	VLAN
+	
+	comandos (no switch):
+		enable
+		show vlan -> mostra vlans default que vieram de fábrica
+		configure terminal
+		vlan 2 -> cria vlan número 2
+		name servidor -> dá o nome "servidor" na vlan 2
+		interface gig0/1 -> escolhe a interface que você vai mover para a vlan 2
+		switchport access vlan 2 -> a interface escolhida terá acesso à vlan 2
+		
+		para configurar mais de uma interface:
+			interface range fa0/8-fa0/9
+			interface range fa0/1,fa0/2
+		
+	com isso surgem vlan isoladas, que não conseguem se comunicar
+	para elas voltarem a se comunicar é necessário uma interface tronco
+	nisso temos o trunk
+	que irá permitir acesso comum às vlans
+		
+		interface gig0/2 -> interface comum
+		switchport mode trunk -> transforma interface em tronco, aí a interface passa a ser acessível
+			mas ainda não acessa outras vlans
+		//agora é necessário configurar o roteador para permitir acessar as outras vlans
+		//além de configurar o dhcp novamente, configurar uma faixa de endereços etc.
+		
+		
+		
+		--allowed vlan all/vlan 1, vlan 2 -> transforma interface em tronco e libera acesso às vlans
+		
