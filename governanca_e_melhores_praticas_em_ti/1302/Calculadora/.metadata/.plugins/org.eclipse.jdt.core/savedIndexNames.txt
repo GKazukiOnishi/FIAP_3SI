@@ -1,0 +1,22 @@
+INDEX VERSION 1.127+C:\Users\logonrmlocal\Desktop\Calculadora\.metadata\.plugins\org.eclipse.jdt.core
+307626263.index
+4251544138.index
+842164517.index
+325831481.index
+1203504083.index
+370102247.index
+635810156.index
+2561182206.index
+4106226649.index
+1452159185.index
+724991392.index
+1201489110.index
+669468424.index
+1267786601.index
+3700132729.index
+2584997896.index
+742130293.index
+2732759897.index
+3247534001.index
+2421938998.index
+2317712906.index

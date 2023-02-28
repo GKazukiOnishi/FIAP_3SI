@@ -1,0 +1,24 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CalculadoraTeste {
+
+	@Test
+	//simulação da soma de 1 com 1, retornando 2
+	public void testeSoma1Com1() {
+		Calculadora c = new Calculadora();
+		assertEquals(c.somar(1, 1), 2);
+	}
+	
+	@Test
+	//simulação da multiplicação de 2 com 2, retornando 4
+	public void testeMultiplica2Com2() {
+		Calculadora c = new Calculadora();
+		assertEquals(c.multiplicar(2, 2), 4);
+	}
+	
+	//assertEquals(c.subtrair(8, 58), 50);
+	//assertEquals(c.dividir(50, 5), 10);
+
+}
