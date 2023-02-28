@@ -31,7 +31,7 @@ SELECT e.employee_id,
 FROM   employees e
 WHERE  e.department_id IN (SELECT DISTINCT department_id
                            FROM   employees
-                           WHERE  LOWER(last_name) LIKE '%u%');
+                           WHERE  LOWER(last_name) LIKE '%u%'); --tratar para pega letra U e u
 
 --4
 SELECT e.last_name,
