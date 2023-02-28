@@ -7,7 +7,7 @@ ON     e1.department_id = e2.department_id
 AND    e1.employee_id <> e2.employee_id
 WHERE  e1.last_name = INITCAP('&v_ln');--solicita caixa
 --ou
-undefine v_ln
+UNDEFINE v_ln
 SELECT last_name,
        hire_date
 FROM   employees
