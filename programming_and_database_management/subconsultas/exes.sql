@@ -49,6 +49,10 @@ FROM   employees e
 JOIN   departments d
 ON     d.department_id = e.department_id
 WHERE  d.location_id = &v_li;
+--no oracle o desempenho é igual, pois a oracle sabe escolher o melhor plano de execução
+--porém, em geral as subqueries são menos performáticas
+--em outros sgbd a performance muito provavelmente será pior
+--dê preferência para junção
 
 --5
 SELECT last_name,
@@ -58,6 +62,14 @@ WHERE  manager_id IN (SELECT employee_id
                       FROM   employees
                       WHERE  first_name = 'Steven'
                       AND    last_name = 'King');
+--
+SELECT e1.last_name,
+       e1.salary
+FROM   employees e1
+JOIN   employees e2
+ON     e1.manager_id = e2.employee_id
+WHERE  e2.first_name = 'Steven'
+AND    e2.last_name = 'King';
 
 --6
 SELECT department_id,
