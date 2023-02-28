@@ -41,6 +41,14 @@ FROM   employees e
 WHERE  e.department_id IN (SELECT department_id
                            FROM   departments
                            WHERE  location_id = &v_li);
+--ou
+SELECT e.last_name,
+       e.department_id,
+       e.job_id
+FROM   employees e
+JOIN   departments d
+ON     d.department_id = e.department_id
+WHERE  d.location_id = &v_li;
 
 --5
 SELECT last_name,
