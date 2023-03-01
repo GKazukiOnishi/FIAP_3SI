@@ -1,0 +1,38 @@
+Motivos para não usar a mesma LAN para tudo:
+	DHCP e outros protocolos mandando broadcast para tudo toda hora, se torna um veneno
+	Segurança: Tem como qualquer um acessar qualquer coisa, inclusive servidores importantes
+	
+	Para quebrar em redes LAN separadas:
+		Ou usar portas diferentes do roteador -> muito caro
+		Ou usar VLANs -> quase todos swiches atuais tem, só alguns bem antigos
+	
+Gateway é dentro da rede
+Mesmo que separe duas redes, teríamos duas redes, ou seja, seria necessário um novo gateway de cada rede
+
+Para isso iremos virtualizar o gateway também:
+	gig0/0.1 192.168.1.1
+	gig0/0.2 192.168.2.1
+	
+	Os pacotes enviamos na VLAN 2 só podem ser lidos para quem está na VLAN 2
+	
+	Para o roteador conseguir ler dados de duas VLANs, é necessário um protocolo 802.11.1Q
+	
+	interface gig0/0.1
+	encapsulation dot1q 1 -> associar na vlan 1
+	ip address 192.168.1.1 255.255.255.0
+	
+Com isso, pacotes que vão para a outra VLAN ou internet precisam passar pelo roteador antes
+
+Problema: E o DHCP?
+	Ele só funciona na sua rede local
+	
+	Precisamos configurar um outro DHCP paa cada VLAN
+	
+	Podemos configurar no servidor, roteador, switch
+	
+	conf ter
+	ip dhcp pool vlan2vermelha
+	network 192.168.2.0 255.255.255.0
+	default-route 192.168.2.1
+
+Com isso agora podemos configurar Firewall no roteador, definindo regras para cada rede e melhorando a segurança

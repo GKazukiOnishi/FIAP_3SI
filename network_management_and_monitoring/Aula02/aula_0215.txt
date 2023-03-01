@@ -42,7 +42,9 @@ Como fazer isso sem usar novas portas?
 		//agora é necessário configurar o roteador para permitir acessar as outras vlans
 		//além de configurar o dhcp novamente, configurar uma faixa de endereços etc.
 		
+		//configura o acesso ao tronco
+		switchport trunk allowed vlan all/vlan 1, vlan 2 -> transforma interface em tronco e libera acesso às vlans
 		
+		ctrl z -> volta para o enable
 		
-		--allowed vlan all/vlan 1, vlan 2 -> transforma interface em tronco e libera acesso às vlans
-		
+		show interface trunk -> exibe a configuração do tronco
