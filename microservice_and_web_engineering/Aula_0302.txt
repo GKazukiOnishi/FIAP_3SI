@@ -1,0 +1,22 @@
+Job:
+	Usados para tarefas pesadas
+	Aplicação separada para processamentos separados
+	
+	Programados para rodar em horários/dias/etc. específicos
+	Ex: 00:00 para empresas finalizando folha de pagamento
+	
+	Para evitar sobrecarregar uso de banco/memória temos estratégias: Paginação/Lote
+		Top 10, 100 etc.
+		
+	Pode ser usado uma tabela para armazenar os registros já processados em lotes anteriores ou em processo
+	Permitindo que mais de um Job trabalhe ao mesmo tempo, e que o processo possa saber quem foi processado ou não
+	
+	O Job pode disponibilizar uma API holerite para retornar os processamentos
+	Obs: É interessante flags que indiquem aquilo que pode ser retornado ou não
+	
+	Bancos de dados -> para escrever dados no disco é uma operação lenta
+	Para facilitar a comunicação com o banco a API poderia se comunicar com um cache primeiro: Cache Redis
+	Cache Redis trabalha na memória, retornando mais rápido
+	Em caso de não estar no cache ele busca no banco e salva no cache antes
+	
+	
