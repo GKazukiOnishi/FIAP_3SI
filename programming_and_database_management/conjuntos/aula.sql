@@ -33,6 +33,8 @@ Conjuntos:
         SELECT employee_id, job_id, '---'
         FROM   job_history;
     
+    obs: em operações de conjuntos não precisa se preocupar com distinct em alguns casos, porque no conjunto é o mesmo elemento
+    
 */
 
 --Exercícios
