@@ -1,0 +1,13 @@
+Vantagens das VLANs
+	Desempenho -> evita poluição da rede, dhcp etc.
+	Baixo custo -> sem precisar comprar vários equipamentos, portas novas etc.
+	Segurança -> possibilita melhor segurança se configurar firewall, precisa para melhorar, mas só ela não melhora
+	
+Mas porque alguém compraria portas de roteador se é caro?
+	A quantidade de VLANs começa a causar problemas porque os switches precisam de processamento a mais para isso, sendo uma porta nova já resolve sem isso
+	
+Para cancelar uma VLAN
+	no vlan 6
+	no -> comando que cancela
+
+Passo a passo de configuração de caso real na aula 5 -> estudo para prova

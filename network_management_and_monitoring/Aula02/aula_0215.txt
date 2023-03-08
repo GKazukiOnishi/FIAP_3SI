@@ -30,6 +30,7 @@ Como fazer isso sem usar novas portas?
 		para configurar mais de uma interface:
 			interface range fa0/8-fa0/9
 			interface range fa0/1,fa0/2
+			interface range fa0/8-9
 		
 	com isso surgem vlan isoladas, que não conseguem se comunicar
 	para elas voltarem a se comunicar é necessário uma interface tronco

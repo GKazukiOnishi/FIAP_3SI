@@ -8,6 +8,7 @@ Motivos para não usar a mesma LAN para tudo:
 	
 Gateway é dentro da rede
 Mesmo que separe duas redes, teríamos duas redes, ou seja, seria necessário um novo gateway de cada rede
+é o protocolo IP que permite que duas redes diferentes se comuniquem
 
 Para isso iremos virtualizar o gateway também:
 	gig0/0.1 192.168.1.1
@@ -20,6 +21,8 @@ Para isso iremos virtualizar o gateway também:
 	interface gig0/0.1
 	encapsulation dot1q 1 -> associar na vlan 1
 	ip address 192.168.1.1 255.255.255.0
+	
+	passando o mouse no roteador conseguimos visualizar o resultado da configuração
 	
 Com isso, pacotes que vão para a outra VLAN ou internet precisam passar pelo roteador antes
 
