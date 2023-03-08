@@ -89,3 +89,6 @@ enum Transporte {
   skate,
   moto
 }
+
+//comando flutter doctor -> mostra se ambiente está ok
+//comando flutter create nomeProjeto -> cria projeto
