@@ -1,0 +1,113 @@
+Governança em projetos:
+	depois do projeto entregue não acaba:
+		helpdesk
+		manutenção
+		correções
+		novas entregas
+		etc.
+		
+	Governança Corporativa:
+		organização são dirigidas, monitoradas e incentivadas
+		práticas e relacionamentos, proprietários, conselhos, controladores
+	
+	Objetivo de Meta -> dar uma passo além, precisa ser alcançável
+	Auditoria -> equipe que verifica o regulamento da empresa com todos, basicamente ele "deda"
+	Empresas com governança tem Auditoria -> empresário desconfia que todos contam a verdade
+	
+	Acionista -> investe, coloca dinheiro na empresa
+	Executivo, Agente -> quem está na empresa, quem gere
+	
+	Investidor: Olha afinidade, tem um ideal para onde coloca dinheiro
+	Empresário abre empresas para realizar um sonho, resolver um problema, tem uma identidade
+	
+	Já o presidente da empresa pensa diferente:
+		está lá, se alguém oferecer mais provavelmente ele vai para lá
+		ele não é dono, está querendo dinheiro a curto praso
+	Acionista quer dinheiro a longo prazo, não vai sair
+	
+	"Conflito de agência" é isso
+		agente especializado (administrador) com poder de decisão sobre a empresa
+		proprietário (acionista) delega a um agente especializado
+		isso gera divergências
+		
+		é comum as pessoas mentirem para ganhar mais
+		empresas quebram por conta disso
+	
+	Governança estabelece práticas para evitar isso, evitar mentiras, encobrimento de falhas nas metas, golpes
+	Governança tem ouvidoria e auditoria
+		ouvidoria porque os funcionários não tem como falar abertamente
+		auditoria para investigar, descobrir, se vc que fez besteira vão achar e vc vai ser demitido por justa causa
+	
+	COBIT
+		Como ajudar os acionistas?
+		
+			Infra
+				- Inventário { $, Físico }
+				- Log de operações
+				- gestão de acesso
+				- SLA de suporte
+				- métricas de disponibilidade e performance dos equipamentos
+				- Backup
+			Desen. Software
+				- Controle de versão
+				- Processo ágil de produção
+				- Planejamento e Controle de projeto
+				- Gerenciamento do portfólio / Arquitetura (como se comunicam)
+		
+		ações de TI para garantir interesse dos acionistas
+		
+		para enganar geralmente depende da TI 
+		
+		COBIT - Feito para TI
+			Control Objectives for Information Technology
+			* Requisitos de negócios: saiba oque o negócio quer. como cumprir esses requisitos
+				Efetividade -> se resolveu o problema ou não -> se não atender ninguém usa, nem faz sentido
+				Eficiência -> ser rápido no que vc faz, usou pouca coisa
+				Conformidade -> eficácia -> cumprir o que ele quer, se fez ou não
+				Confidencialidade -> controle de acesso etc.
+				Integridade -> sistema não quebrado, dados precisam bater, precisa ser crível
+				Disponibilidade -> não cai toda hora, disponível para uso
+				Confiabilidade -> repetição de um comportamento previsível, mesmo input mesmo output
+				
+				isso tudo para ter qualidade e alcançar a governança
+			* Processos de TI: para alcançar esses requisitos. quais processos vc vai aplicar e implantar
+				Tudo que falamos antes
+				Controle de versão
+				Planejamento e Controle de Projeto
+				...
+			* Recursos de TI: O que precisa, recursos para cumprir
+				Gente
+				Software
+				Máquina
+		
+		Como aplicar o COBIT:
+			* Relacione os objetivos e metas de negócio
+			* Relacione os objetivos e metas de TI alinhadas com as de negócio (técnico)
+			* Planeje as ações
+			* Capacite ou adquira recursos
+			* Crie processos de trabalho padronizados, organize os recursos a serem empregados em cada processo 
+			* Crie métricas que permitam avaliar a qualidade da execução dos processos, complience com regras e objetivos corporativos e de TI
+			
+			* Aumentar vendas em 5% ano
+			* Aumentar a disponibilidade do sistema de vendas / Desenvolver o sistema de cartão fidelidade
+			* Monitorar proativamente a infra do sistema de vendas, criar processos de trouble shooting, gerenciar o projeto de cartão de forma ágil
+			* Equipe Scrum, Azure com ambiente Agile, IBM Tivoli para monitoração da Infra
+			* Treinar pessoas para aplicarem Scrum e ITIL ferramentes e técnicas
+			* Meta de alerta de BD com mais de 80% de ocupação, com ação de limpeza imediata de logs de banco nesse caso
+				meta de entrega da funcção de parcelamento de compras no cartão fidelidade até maio de 2021
+			
+		Slide de Associação de Domínios e Processos do COBIT
+		
+		COBIT ajuda a saber o que pensar quando sentar na cadeira de gestor
+		ele pede coisas, não explica como
+		
+		Como?
+			TOGAF -> práticas de desenho de soluções TI para os negócios
+			SCRUM PMBOK -> Práticas de gestão de projetos, programs e portfólio
+			ITIL
+			CMMI SPICE
+			
+		A partir de agora começa a conectar coisas com a governança
+		
+		
+			
