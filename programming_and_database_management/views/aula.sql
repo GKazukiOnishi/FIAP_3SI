@@ -27,6 +27,9 @@ Views
     
     Se você mexer no dado da tabela base a view também percebe a mudança
     
+    CREATE OR REPLACE -> mantém as permissões
+    DROP
+    CREATE -> não mantém as permissões
 */
 
 -- CREATE TABLE SIS3(salary*12 int); não funciona
@@ -48,3 +51,5 @@ SELECT * FROM DEPT50;
 UPDATE DEPT50
 SET    deptno = 80
 WHERE  employee = 'Matos';
+
+--SELECT * FROM pf0645.dept50;
