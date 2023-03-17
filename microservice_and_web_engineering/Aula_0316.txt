@@ -1,0 +1,53 @@
+Apache Tomcat, o que é?
+	Server: Representa Catalina Servlet Engine, elemento nível mais alto para uma instância do Tomcat
+	Service: Contém uma coleção de um ou mais Connectors, aplicações, que compartilham a mesma Engine
+	Connector: Trabalham entre as conexões e as Engines
+	Engine: Gerencia todas as requisições recebidas pelos connectors
+	Host: Define hosts virtuais
+	Context: Cada um representa uma aplicação web individual dentro de um Host
+	
+	É recomendável usar como caminho de instalação um lugar padrão, um lugar feito para isso, para facilitar scripts etc.
+	dentro da pasta conf temos xml de configurações, como o tomcat-users.xml, que define os admins
+	
+	Para iniciar rodamos dentro de bin\ o startup.bat
+	
+	(Porta -> número arbitrário que redireciona requisição para um processo)
+	
+		Portas de entrada:
+			cada porta tem um processo ouvindo
+			o SO pega as requisições TCP/UDP e mandam para o lugar certo
+			pesquisar list of tcp and udp port numbers
+			
+			só um processo se conecta em uma porta por vez
+			qualquer processo pode ouvir qualquer porta, mas temos um padrão para facilitar a conexão entre as coisas
+			
+	Tomcat por padrão usa a porta 80
+	acessar localhost:8080 -> acesso à aplicação administrativa
+	
+	Ele tem um monitor de status
+	Para monitorar um recurso podemos usar o Zabbix, permite monitorar servidores
+		CPU, Disco, Memória, Rede (mínimo)
+		Nele podemos configurar gatilhos para receber notificações em determinadas ocasiões
+		Permite monitorar aplicação
+	
+	Tem um manager -> permite gerenciar aplicações
+		acessar path, startar, parar, tirar deploy etc.
+		fazer deploy -> mandar um .war
+	
+	SRE -> (sysadmin), Site Reability Engineer
+		analisa se as coisas estão funcionando, estão se conectando, comunicando
+	se der um problema, onde que procura? logs
+	precisa criar adm, conf/tomcat-users.xml
+	bin -> arquivos de funcionamento
+	webapps -> arquivos fonte de aplicação
+	
+	https://start.spring.io/
+	
+	cada repositório uma aplicação
+	pr -> pull requests
+	análise stática -> Big O, boas práticas, reutilização etc.
+	
+	Backstage -> aplicação para codificar o que vc precisa, consegue gerenciar várias aplicações, sabe as dependências, pull requests etc.
+	https://backstage.io/
+	
+	Spring Boot DevTools -> consegue restartar a aplicação ao alterar código rapidamente
