@@ -36,6 +36,18 @@ Views
 
 --Exercícios
 
+--1
+CREATE OR REPLACE VIEW EMPLOYEE_VU AS
+    SELECT employee_id,
+           last_name employee,
+           department_id
+    FROM   employees;
+--2
+SELECT * FROM EMPLOYEE_VU;
+--3
+SELECT employee,
+       department_id
+FROM   employee_vu;
 --4
 CREATE OR REPLACE VIEW DEPT50 AS
     SELECT employee_id EMPNO,
