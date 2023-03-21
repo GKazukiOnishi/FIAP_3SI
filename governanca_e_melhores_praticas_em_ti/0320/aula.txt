@@ -1,0 +1,52 @@
+Versionamento e controle de códigos fonte/documentos
+	Arquiteturas Git
+	
+	1) GitHub.com "Serviço Git"
+		Repositório Git do Hub
+		Mexendo direto no repo do Github, todos mexem
+		Se fizer besteira todo mundo percebe
+	
+	2) GitHub.com "Serviço Git"
+		Repositório no Hub + no PC (Git Cliente)
+			Para sincronizar
+				pull
+				push
+		Aqui vc pode fazer o que quiser local
+	
+	3) GitHub.com "Serviço Git"
+		Repositório no Hub
+		
+		Temos o github se comunicando via pull e push com um Servidor Replica "On Premise" com outro Repo e seu Cliente Git
+		Os PCs estão sincronizados com o Servidor Replica e é esse Replica que manda para o Hub
+		
+		O Replica garante o fonte, não depende só da Nuvem
+		
+	4) GitHub.com "Serviço Git"
+		Server Git Enterprise com seu Repo se comunicando com um Pc Cliente com seu Repo
+	
+	No 3) e 4) Temos Servidores seu
+	Git Client traz mais segurança
+	
+	Sem o Client é como se fosse um PC "burro"
+	
+	
+	Branch Main/Master -> Código Pronto, Definitivo -> A partir dele temos os deploys
+		Para evitar estragar o código principal, costumamos ter um
+			Branch Develop -> Vamos desenvolver nele, quando ficar pronto criamos Release e a Master é atualizada com isso
+	Aula no Git Desktop
+	
+	Nada impede a gente de mexer no Main
+	
+	Git Flow -> consegue criar esquemas para impedir isso
+		Criar features
+			branch nova
+			Terminamos
+			Mandamos pro Develop
+			Destruímos ela
+		Flow faz isso sozinho
+		
+	Temos as branches Bug Fix, em que fazemos nela e depois devolvemos na Develop
+	Temos os Hot Fix, que são correções emergenciais na Main
+	Temos Branch Support para testar, brincar, zoar, até achar a causa do problema
+	
+	
