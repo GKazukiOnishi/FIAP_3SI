@@ -1,0 +1,25 @@
+flutter doctor
+
+flutter create --org com.kndeveloper my_first_project_flutter
+
+--org -> para especificar o nome da sua organização, "domínio do site"
+    google play precisa desse --org
+
+    no caso com.kndeveloper
+
+No Projeto:
+    Na pasta Android temos as configurações do projeto Android, como se tivesse todo o projeto lá
+
+    Na pasta web tem as config para Web
+
+    ...
+
+flutter run -> roda o projeto
+
+estando rodando "r" -> restarta o projeto
+
+pubdev -> site com packages de flutter
+    pegando um qualquer e acessando em installing as dependências tem como adicionar no
+    pubspec.yaml
+
+Comando "flutter pub get" -> baixa as dependências
