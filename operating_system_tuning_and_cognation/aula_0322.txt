@@ -1,0 +1,17 @@
+Aplicações em geral tem as pastas:
+	/lib
+	/bin
+	
+Criar pasta C:/temp/FIAPdev
+						/bin
+						/lib
+						FIAPdev.ini
+
+Linguagem C/C++ são usadas nas chamadas de sistema
+Na maioria dos casos não temos muitas possibilidades na criação de arquivo, mas usando as chamadas temos várias maneiras
+A doc da microsoft tem isso -> olhar no main.cpp
+
+PCB -> Estrutura de dados criada para cada processo
+	é nela que os processos armazenam os erros
+	GetLastError(); -> retorna o dado para aquele processo
+	Se não fosse assim poderia conflitar com as milhares de outras chamadas que rodam ao mesmo tempo
