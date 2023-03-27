@@ -1,0 +1,170 @@
+Twelve Factors
+	Ajudam a projetar web-apps, software as a service
+	
+	1. Base de Codigo
+		Empresas pequenas -> Código pode estar em pendrive etc., nem tem gestão
+		Vai crescendo e vai profissionalizando
+			Git -> versionador de código
+				Github, SourceTree, GitKraken -> não são versionadores, se baseiam nele
+		
+		Importância do versionador
+			* Em algum momento vamos querer voltar versão
+				seja para recuperar algo
+				voltar versão e testar algo
+				...
+			* Ter o código centralizado em um lugar, fácil
+				Não expõe o código
+				Tem muitos gratuítos
+		
+		Empresas médias: Costumam ter monolitos e monorepos
+		A boa prática é ter um repositório para cada aplicação, ao invés de separar em pastas dentro do mesmo
+		Isso evita ficar mexendo em algo que todos mexem
+		
+	2. Dependências
+		Usamos outras bibliotecas para fazer as coisas
+		Gerar nota fiscal
+		Converter nota fiscal em pdf
+		
+		É bom ficar em lugares separados
+		Se a conversão falhar, ainda vai gerar nota fiscal
+		
+		As dependências ficam isoladas
+		
+		Vantagem:
+			* Se um deles tiver problema, ele ainda roda as outras partes
+			* Vc tem possibilidade de rodar separadamente, roda o mais pesado uma vez, os mais leves várias vezes
+	
+	3. Configurações
+		Costumamos ter configurações diferentes no servidor de dev, homologação, produção etc.
+		
+		Ex: Se a string de conexão do banco estiver chumbada no código, como rodar no banco da produção e dev?
+		
+		Então salvar em constantes ou em arquivos internos da aplicação dá problema
+		
+		Por isso costumamos ter arquivos de configurações no ambiente
+		Ex: variáveis de ambiente
+		
+		Então se vc subir a aplicação em n ambientes, o código não muda e vai ler os dados do ambiente de cada servidor
+		
+		env vars / env
+		
+	4. Serviços de Apoio
+		Tudo que é externo da aplicação
+		Cada vez mais aplicações consomem outros serviços
+			Banco de dados, Cache, Armazenamento, Outros servidores, Email
+		
+		A ideia é tratar esses serviços como se estivessem conectados
+		
+		Ex: Salvar Arquivos
+			Usar Base64? -> mais pesado que a img, e ainda vai para o banco que vai indexar
+			Storage -> Servidor de arquivo para ir guardando
+				Criar pasta por usuário
+				Salvar lá dentro e ir mudando o nome do arquivo
+			
+				Aí em uma tabela do banco armazenamentos o caminho dos arquivos 
+				
+				10.20.30.10/D:/1522/olaf.png
+		
+		A aplicação já vem com as coisas conectadas e vai confiar que os serviços vão fazer o que precisam
+			é claro, tem como configurar caminhos redundantes, retry etc.
+		
+		Para saber se algo parou de funcionar
+			Health Check -> aplicação em pé e respondendo + análise de dependências
+				Não adianta só olhar a sua aplicação, porque os outros serviços podem estar fora de ar
+		
+	5. Construa, lance, execute
+		Ter ferramentas que quando detectam mudança analisam o código
+		Verificam os testes (TDD etc.)
+		
+		Ter o build separado do run
+		
+		Se der ruim, podemos usar um build anterior (desde que ela seja executável)
+		Melhor do que precisar alterar código
+		
+		Build + Config = Release
+	
+	6. Processos
+		Tratar aplicações como processos
+		
+		Aplicações Stateless
+		
+		Se para cada usuário for necessário uma aplicação com seu estado, vão ser necessários muitos muitos
+		Além disso, se ela guardar estado, um desvio que leve o usuário para outro servidor por lotação vai desiscronizar o estado
+		
+		Por conta disso as aplicações não devem guardar o dado do usuário entre as requisições
+		As informações dele vem da requisição e do banco
+		Na próxima requisição se precisar do dado busca de novo
+		Isso para ser possível trocar de servidor -> Por isso Stateless
+		
+		Por isso as aplicações precisam ser tratados como processos, de forma que não dependem de valores armazenados de outras aplicações
+		
+		Dessa forma, se for necessário mais poder de processamentos podemos ter vários processos rodando ao mesmo tempo
+		Várias máquinas cada uma tratando o que precisar
+		Se a sua requisição for para uma máquina ou outro não tem problema
+		
+	7. Vínculo de Portas
+		Muito comum ter centenas de milhares de serviços
+		
+		A ideia é exportar serviços via vínculo de portas
+		
+		Cada site em portas diferentes
+		Dentro do container uma espécie de DNS para ir para outros etc.
+	
+	8. Concorrência
+		Como a aplicação vai funcionar com 10000 usuários ao mesmo tempo
+		
+		Como fazer a aplicação usar o máximo de threads para entregar rápido?
+		Como escalar em mais servidores?
+		
+		Cada requisição = 1 Processo
+		
+		Temos um número limitado de threads
+		
+		Apache JMeter -> forma de prever como vai se comportar nesses casos
+		
+		A partir da análise podemos saber se o gargalo é memória, CPU, falta de servidores etc.
+		
+		Hoje em dia tem várias calculadoras de serviço para saber o preço de acordo com a computação esperada
+		
+		Obs: Azure Spot -> VMs em promoções por não estarem em uso e gastarem energia, mas se precisar tem 30s para finalizar oq estiver rodando
+			Mas pelo preço vale muito a pena
+			vc pode ejetar a máquina por capacidade (Se a nuvem precisar)
+				ou se o preço alcançar um valor máximo, já que o preço oscila
+			
+	9. Descartabilidade
+		Aplicação deve ter inicialização rápida e desligamento gracioso
+		
+		Se acontecer da máquina precisar desligar em 30s, ele precisa devolver para o usuário certinho
+		Se for subir, precisa subir rápido, cada segundo conta
+	
+	10. Paridade entre desenvolvimento e produção
+		Mantenha o desenvolvimento, homologação e produção o mais similar possível
+		
+		Se a produção rodar em ambiente diferente pode dar problemas que em dev não vai dar
+		
+	11. Logs
+		Trate logs como fluxos de eventos
+		
+		Precisa tomar cuidado para os logs não travarem a thread
+		Por conta disso mandamos o log na saída padrão -> rápido
+		A saída padrão é salva em um arquivo na máquina
+		
+		Nisso outro processo independente vai pegar esse arquivo e armazenar adequadamente em outro lugar
+		
+		Temos níveis de log
+			Basicamente 5:
+				Debug -> para depuração, mais detalhado
+				Informational -> informativo
+				Warning -> retornou algo inesperado
+				Error -> deu erro mas continua
+				Critical -> travou a aplicação
+	
+	12. Processos administrativos
+		Preocupação para não rodar processos com adm
+		adm pode fazer qualquer coisa
+		
+		Por isso temos usuários com o mínimo de poder para rodar as aplicações
+		
+		Se precisar de alguma manutenção acessa o usuário reservado, faz o que precisa e desloga
+		
+		Processos administrativos devem ser tratados a parte
