@@ -1,0 +1,20 @@
+Firewall
+	ACL -> bloquear destino
+	
+	ACL Extended -> a partir de 100
+	
+	#access-list 100 deny ip host 192.168.1.4 host 10.1.1.3
+									origem  e destino
+	#interface gig0/1
+	#ip access-group  100 IN
+		ou gig0/2 100 OUT
+	
+	Obs: O grupo que é atribuído na IN ou OUT é só 1 por vez, ou seja, só vai valer a 100 e a 1 não
+	
+	obs: Lembrando que aquilo que não é especificado explicitamente é bloqueado, por conta disso mesmo o ip 192.168.1.3 vai estar bloqueado
+	
+	#access-list 100 permit ip any any
+	
+	#do show run -> ver configurações atuais
+	
+	
