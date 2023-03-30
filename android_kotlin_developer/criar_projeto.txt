@@ -1,9 +1,0 @@
-criar_projeto
-
-	Empty Activity
-	Lollipop
-	Apagar devices criados
-	Criar device Nexus 6 - R API 30
-	Startar, modo float
-	
-	
