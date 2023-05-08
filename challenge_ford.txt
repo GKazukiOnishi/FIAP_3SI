@@ -1,0 +1,100 @@
+Kick-off - Ford
+	Nicolás Morales
+	Hudson Silvestre
+	
+	Ford no Brasil
+		Fábrica fechadas
+		Porém não saiu do país
+		Mudou forma de atuar, tem fábrica na Argentina e no Uruguai (nova)
+		Brasil tem escritório central da América do Sul (Vila Olimpia)
+		
+	Empresa presando pela Diversidade
+	
+	Programa de Estágio
+		* Todos trabalham juntos, time único de produto
+		* Trabalho com Agile
+		* Técnicas de desenvolvimento
+		* Product Mindset
+			Orientação para saber administrar o backlog
+		* Lean development, experiment, test, measure and improve
+			fazendo experimentos, testes, audiência
+			Colhendo resultados e alimentando o backlog
+	
+		Áreas:
+			Product Designer
+			Product Manager
+			Software Engineer
+	
+	Categorias do Desafio
+		Produtos que tem são veículos conectados
+			Uso pessoal/familiar
+			Uso comercial (transporte de carga/passageiros)
+		
+		Não tem desafios específicos ou fechados
+		Querem entender como trabalhamos para pensar no desafio
+		
+		Então temos categorias em que podemos encaixar o desafio:
+			Natureza do trabalho (sem fronteiras, inteligente e inclusivo)
+				Como modernizar a maneira como pessoas trabalham juntas
+				
+				Como criar um app com tecnologia que ajude essa modernização na forma como pessaos trabalham juntas
+			Mobilidade do Futuro (inteligente, justo, imparcial, centrado no ser humano)
+				Tornar movimentação nas cidades do futuro mais harmonioso com a vida das pessoas
+			Gestão de Produtos (Ética, confiável e responsável)
+				Como construir um futuro sustentável para toda humanidade
+				Usar tecnologia para isso
+		
+		Precisamos explicar como chegamos a um problema que se encaixe nisso
+		Quem é o cliente
+		Como entendemos que precisa ser resolvido
+		Como podemos resolver com tecnologia
+	
+		Querem projetos diversos, não coisas iguais
+		Querem avaliar o processo de termos chegado na solução
+	
+	Podem disponibilizar alguns dados para nos ajudar
+	Podem pensar nisso
+	
+	Aspectos técnicos do desafio:
+		Recomendações gerais, gostam de ver:
+			* Utilização de serviço de nuvem pública (não no IDE), querem ver funcionando
+			* Desenvolvimento
+				mobile
+				Web (dashboard, gestão)
+				Database (SQL / NonSQL/ Cloud)
+				API (Ford & Non-Ford) - aproveitar uma api
+			* Desejáveis:
+				Machine learning
+				DevOps (desejável)
+					Integração com Git/SCM
+					Automação de Deploy
+		
+		Perfis dentro do time
+			Não precisa ser papel por pessoa, mas alguém precisa assumir um papel
+			* Product Designer (jornada, como ajudar)
+			* Product Manager (gerenciar backlog, roadmap, entregáveis)
+			* Software Engineer (quem programa, desenvolvimento)
+			* Solution Arquitect (Arquitetura, estrutura)
+			
+	Contato com a Ford
+		Serão efetuados workshops e sessões de mentoria conforme calendário a ser estabelecido
+		
+		Adicionalmente terá um canal de Discord para tirar dúvidas, auxiliar os times no processo de desenvolvimento
+		
+		Evitar dúvidas na semana da entrega ou um dia antes
+			(tirar dúvidas cedo, gastar tempo)
+		
+	https://forms.gle/jpBQTSewYuCGHFVa9 -> equipe
+	
+	Primeira entrega - PowerPoint para empresa saber o que estsamos fazendo
+	07/06
+	
+	Obs: Trabalhar com pesquisar, entrevistas com pessoas - Entender a dor dos clientes
+		Entender bem o cliente
+		Olhar o portfólio do produto, entender onde vamos trabalhar
+		Entender a Ford
+		
+		Ford tem muita tecnologia embarcada, umas das que mais tem comparada às demais da área
+		
+		Como aproveitar isso para soluções inovadoras
+		
