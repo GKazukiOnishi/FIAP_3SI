@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">FoodFlow</string>
+    <string name="login_text_hint">Seu login</string>
+    <string name="login_password_hint">Sua senha</string>
+    <string name="login_button_text">Login</string>
+    <string name="login_error_input_text">Obrigatório</string>
+    <string name="home_app_name_text">FoodFlow</string>
+    <string name="home_welcome_text">Como posso te ajudar?</string>
+    <string name="home_card_images_menu_text">Imagens da plantação</string>
+    <string name="home_card_images_menu_description">Acessar imagens de fotos tiradas pelos drones</string>
+    <string name="home_card_analysis_menu_text">Resultados de análise</string>
+    <string name="home_card_analysis_menu_description">Ver resultados das análises obtidas</string>
+    <string name="plantation_list_text">Áreas das plantações</string>
+    <string name="plantation_area_codigo_label_text">Código:</string>
+    <string name="plantation_area_id_label_text">ID:</string>
+    <string name="plantation_area_localization_label_text">Localização:</string>
+    <string name="plantation_area_type_label_text">Tipo:</string>
+    <string name="plantation_area_humidity_label_text">Umidade:</string>
+    <string name="plantation_area_prague_label_text">Alerta de praga:</string>
+    <string name="plantation_area_disease_label_text">Alerta de doença:</string>
+    <string name="plantation_area_analysis_label_text">Análise da IA:</string>
+    <string name="plantation_area_caution_text">Cuidado</string>
+    <string name="plantation_area_no_problem_text">Sem indícios</string>
+    <string name="analysis_foodflow_ai_mocked_text">Olá,\n\n
+Agradeço por compartilhar suas preocupações sobre a qualidade do solo em sua plantação. Para melhorar o pH do solo, sugiro a adição de produtos de enxofre, que podem promover um ajuste adequado do pH para suas culturas.
+\n\n
+Além disso, para aumentar a fertilidade do solo e torná-lo mais saudável, recomendo vivamente o uso de compostos orgânicos ou esterco. Esses materiais ricos em nutrientes irão enriquecer o solo, melhorando sua estrutura e sua capacidade de retenção de água e nutrientes.
+\n\n
+Outra medida importante é a utilização de cobertura vegetal. Ela desempenha um papel fundamental na manutenção da umidade do solo, além de contribuir para a melhoria da qualidade geral. O uso de culturas de cobertura ou palhada ajudará a proteger o solo da erosão, promoverá a atividade benéfica de microrganismos e contribuirá para um ambiente propício ao crescimento saudável das plantas.
+\n\n
+Estou à disposição para fornecer orientações adicionais e auxiliá-lo no processo de melhoria da qualidade do solo. Juntos, podemos alcançar resultados significativos para suas culturas.
+\n\n
+Atenciosamente,\n
+FoodFlow AI
+    </string>
+    <string name="analysis_text_hint">Como posso te ajudar?</string>
+    <string name="analysis_next_step_text">FoodFlow IA</string>
+    <string name="analysis_title_text">Análises</string>
+    <string name="plantation_area_humidity_unity">" kPa"</string>
+</resources>

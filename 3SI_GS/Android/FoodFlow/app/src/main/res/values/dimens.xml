@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margens -->
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+
+    <!-- Alturas e larguras -->
+    <dimen name="home_card_height">200dp</dimen>
+    <dimen name="plantation_area_size">45dp</dimen>
+</resources>

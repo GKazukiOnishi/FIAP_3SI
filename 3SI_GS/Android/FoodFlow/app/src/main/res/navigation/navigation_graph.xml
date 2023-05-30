@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@+id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="br.com.fiap.foodflow.HomeFragment"
+        />
+
+    <fragment
+        android:id="@+id/PlantationListFragment"
+        android:name="br.com.fiap.foodflow.PlantationListFragment"
+        />
+
+    <fragment
+        android:id="@+id/PlantationAreaFragment"
+        android:name="br.com.fiap.foodflow.PlantationAreaFragment"
+        />
+
+    <fragment
+        android:id="@+id/AnalysisFragment"
+        android:name="br.com.fiap.foodflow.AnalysisFragment"
+        />
+
+    <action
+        android:id="@+id/action_to_PlantationListFragment"
+        app:destination="@id/PlantationListFragment"
+        />
+
+    <action
+        android:id="@+id/action_to_PlantationAreaFragment"
+        app:destination="@+id/PlantationAreaFragment"
+        />
+
+    <action
+        android:id="@+id/action_to_AnalysisFragment"
+        app:destination="@+id/AnalysisFragment"
+        />
+
+</navigation>
