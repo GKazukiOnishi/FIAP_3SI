@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -39,7 +40,7 @@ public class Drone {
     @Column(nullable = false)
     private LocalDate dataCompra;
 
-    @OneToMany(cascade = { CascadeType.REMOVE }, mappedBy = "drone")
+    @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "drone")
     private Set<Telemetria> telemetrias;
 
     public Integer getDroneId() {
@@ -87,7 +88,7 @@ public class Drone {
     }
 
     public void setHorasVoo(Integer horasVoo) {
-        this.horasVoo = horasVoo;
+        this.horasVoo = Objects.requireNonNullElse(horasVoo, 0);
     }
 
     public BigDecimal getCapacidadeCarga() {

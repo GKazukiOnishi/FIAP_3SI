@@ -24,11 +24,11 @@ public class DroneDTO implements Validavel {
     private Integer horasVoo;
     @NotNull(message = "Capacidade de carga obrigatória")
     @PositiveOrZero(message = "A capacidade de carga deve ser zero ou positivo")
-    @Digits(integer = 2, fraction = 2, message = "A capacidade de carga deve ser no máximo 99.99")
+    @Digits(integer = 2, fraction = 2, message = "A capacidade de carga deve ser um número com até 2 dígitos inteiros e 2 decimais")
     private BigDecimal capacidadeCarga;
     @NotNull(message = "Capacidade de bateria obrigatória")
     @PositiveOrZero(message = "A capacidade de carga deve ser zero ou positivo")
-    @Digits(integer = 2, fraction = 2, message = "A capacidade de bateria deve ser no máximo 99.99")
+    @Digits(integer = 2, fraction = 2, message = "A capacidade de bateria deve ser um número com até 2 dígitos inteiros e 2 decimais")
     private BigDecimal capacidadeBateria;
     @NotNull(message = "Data de compra obrigatória")
     private LocalDate dataCompra;
@@ -59,6 +59,10 @@ public class DroneDTO implements Validavel {
 
     public LicencaDroneDTO getLicenca() {
         return licenca;
+    }
+
+    public LicencaDroneDTO getLicencaNotNull() {
+        return licenca == null ? new LicencaDroneDTO() : licenca;
     }
 
     public void setLicenca(LicencaDroneDTO licenca) {

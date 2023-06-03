@@ -1,23 +1,19 @@
 package br.com.fiap.foodflow.controllers;
 
 import br.com.fiap.foodflow.dto.DroneDTO;
-import br.com.fiap.foodflow.dto.LicencaDroneDTO;
 import br.com.fiap.foodflow.dto.factory.DroneFactory;
 import br.com.fiap.foodflow.exception.MapErroBuilder;
 import br.com.fiap.foodflow.exception.ValidacaoException;
 import br.com.fiap.foodflow.model.Drone;
 import br.com.fiap.foodflow.repositories.DroneRepository;
 import jakarta.validation.Validator;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -33,20 +29,72 @@ public class DroneController {
     @Autowired
     private Validator validator;
 
+    @RequestMapping("tela/drone")
+    public ModelAndView telaDrone() {
+        ModelAndView modelView = new ModelAndView("drone/index");
+
+        List<Drone> drones = droneRepository.findAll();
+
+        modelView.addObject("drones", DroneFactory.getDTOsFromDrones(drones));
+
+        return modelView;
+    }
+
+    @RequestMapping("tela/drone/detalhe/" + PATH_ID)
+    public ModelAndView telaDroneDetalhe(@PathVariable Integer droneId) {
+        ModelAndView modelView = new ModelAndView("drone/detalhe");
+
+        configuraTelaComDroneExistente(droneId, modelView);
+
+        return modelView;
+    }
+
+    private void configuraTelaComDroneExistente(Integer droneId, ModelAndView modelView) {
+        Drone drone = buscaDroneExistente(droneId);
+
+        modelView.addObject("drone", DroneFactory.getDTOFromDrone(drone));
+    }
+
+    @RequestMapping("tela/drone/edicao/" + PATH_ID)
+    public ModelAndView telaDroneEdicao(@PathVariable Integer droneId) {
+        ModelAndView modelView = new ModelAndView("drone/edicao");
+
+        configuraTelaComDroneExistente(droneId, modelView);
+        modelView.addObject("novo", false);
+
+        return modelView;
+    }
+
+    @RequestMapping("tela/drone/novo")
+    public ModelAndView telaDroneNovo() {
+        ModelAndView modelView = new ModelAndView("drone/edicao");
+
+        modelView.addObject("novo", true);
+
+        return modelView;
+    }
+
     @GetMapping("/drone")
     public ResponseEntity<List<DroneDTO>> listar() {
         List<Drone> drones = droneRepository.findAll();
 
-        List<DroneDTO> dronesDTO = new ArrayList<>();
-
-        return new ResponseEntity<>(dronesDTO, HttpStatus.OK);
+        return new ResponseEntity<>(DroneFactory.getDTOsFromDrones(drones), HttpStatus.OK);
     }
 
     @GetMapping("/drone/" + PATH_ID)
-    public ResponseEntity<DroneDTO> buscar(@PathParam(PATH_PARAM) Integer droneId) {
+    public ResponseEntity<DroneDTO> buscar(@PathVariable Integer droneId) {
+        Drone drone = buscaDroneExistente(droneId);
+
+        return new ResponseEntity<>(DroneFactory.getDTOFromDrone(drone), HttpStatus.OK);
+    }
+
+    private Drone buscaDroneExistente(Integer droneId) {
         Optional<Drone> drone = droneRepository.findById(droneId);
 
-        return null;
+        if (drone.isPresent()) {
+            return drone.get();
+        }
+        throw new ValidacaoException("Drone não encontrado");
     }
 
     @PostMapping("/drone")
@@ -55,21 +103,37 @@ public class DroneController {
             throw new ValidacaoException("Drone a ser cadastrado deve ser informado");
         }
 
+        droneDTO.setDroneId(null);
+
+        Drone drone = validarDrone(droneDTO);
+
+        Drone droneNovo = droneRepository.save(drone);
+
+        return new ResponseEntity<>(DroneFactory.getDTOFromDrone(droneNovo), HttpStatus.CREATED);
+    }
+
+    private Drone validarDrone(DroneDTO droneDTO) {
         Map<String, String> erros = MapErroBuilder.newInstance(validator)
                 .validar(droneDTO)
-                .validar(Optional.ofNullable(droneDTO).map(d -> d.getLicenca()).orElse(new LicencaDroneDTO()), "licenca")
+                .validar(droneDTO.getLicencaNotNull(), "licenca")
                 .build();
         if (!erros.isEmpty()) {
             throw new ValidacaoException("Existem erros na validação do drone", erros);
         }
 
-        Drone drone = DroneFactory.getDroneFromDTO(droneDTO);
+        return DroneFactory.getDroneFromDTO(droneDTO);
+    }
 
-        Drone droneNovo = droneRepository.save(drone);
+    @PutMapping("/drone/" + PATH_ID)
+    public ResponseEntity<DroneDTO> atualizar(@PathVariable Integer droneId, @RequestBody DroneDTO droneDTO) {
+        Drone drone = buscaDroneExistente(droneId);
+        droneDTO.setDroneId(drone.getDroneId());
 
-        droneDTO.setDroneId(droneNovo.getDroneId());
+        Drone droneValidado = validarDrone(droneDTO);
 
-        return new ResponseEntity<>(droneDTO, HttpStatus.CREATED);
+        Drone droneAtualizado = droneRepository.save(droneValidado);
+
+        return new ResponseEntity<>(DroneFactory.getDTOFromDrone(droneAtualizado), HttpStatus.OK);
     }
 
 }

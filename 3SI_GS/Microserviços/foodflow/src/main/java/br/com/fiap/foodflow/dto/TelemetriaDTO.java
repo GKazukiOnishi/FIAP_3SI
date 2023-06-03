@@ -20,6 +20,8 @@ public class TelemetriaDTO implements Validavel {
     private Integer direcao;
     @NotNull(message = "O momento da telemetria deve ser registrada")
     private LocalDateTime tempo;
+    private Boolean decolando;
+    private Boolean estacionado;
 
     public Integer getIdTelemetria() {
         return idTelemetria;
@@ -77,4 +79,20 @@ public class TelemetriaDTO implements Validavel {
         this.tempo = tempo;
     }
 
+    public Boolean getDecolando() {
+        return decolando;
+    }
+
+    public void setDecolando(Boolean decolando) {
+        this.decolando = decolando;
+    }
+
+    public Boolean getEstacionado() {
+        return estacionado;
+    }
+
+    public void setEstacionado(Boolean estacionado) {
+        this.estacionado = estacionado;
+    }
+    
 }
