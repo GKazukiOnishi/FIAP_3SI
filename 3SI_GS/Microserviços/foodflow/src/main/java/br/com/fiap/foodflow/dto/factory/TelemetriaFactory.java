@@ -2,11 +2,9 @@ package br.com.fiap.foodflow.dto.factory;
 
 import br.com.fiap.foodflow.dto.CoordenadaDTO;
 import br.com.fiap.foodflow.dto.DroneDTO;
-import br.com.fiap.foodflow.dto.LicencaDroneDTO;
 import br.com.fiap.foodflow.dto.TelemetriaDTO;
 import br.com.fiap.foodflow.model.Coordenada;
 import br.com.fiap.foodflow.model.Drone;
-import br.com.fiap.foodflow.model.LicencaDrone;
 import br.com.fiap.foodflow.model.Telemetria;
 
 import java.util.List;
@@ -45,7 +43,7 @@ public class TelemetriaFactory {
         return droneDTO;
     }
 
-    public static Telemetria getTelemetriaDTO(TelemetriaDTO telemetriaDTO) {
+    public static Telemetria getTelemetriaFromDTO(TelemetriaDTO telemetriaDTO) {
         Telemetria telemetria = new Telemetria();
         telemetria.setIdTelemetria(telemetriaDTO.getIdTelemetria());
         telemetria.setDrone(getDroneFromDTO(telemetriaDTO.getDrone()));
@@ -58,7 +56,7 @@ public class TelemetriaFactory {
         return telemetria;
     }
 
-    private static Coordenada getCoordenadaFromDTO(CoordenadaDTO coordenadaDTO) {
+    public static Coordenada getCoordenadaFromDTO(CoordenadaDTO coordenadaDTO) {
         Coordenada coordenada = new Coordenada();
         coordenada.setLatitude(coordenadaDTO.getLatitude());
         coordenada.setLongitude(coordenadaDTO.getLongitude());

@@ -90,6 +90,38 @@
                 <p th:text="${drone.licenca.dataValidade}"></p>
             </div>
         </div>
+        <div class="col-12 my-2">
+            <h4 class="fw-bold">Históricos de Voo</h4>
+        </div>
+        <div class="col-12">
+            <table class="table table-hover" th:if="${#lists.isEmpty(drone.historicos)}">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Início</th>
+                    <th scope="col">Local Início</th>
+                    <th scope="col">Fim</th>
+                    <th scope="col">Local Fim</th>
+                    <th scope="col">Altitude média</th>
+                    <th scope="col">Velocidade média</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="align-middle" th:each="historico, index : ${drone.historicos}">
+                    <th scope="row" th:text="${index.count}">1</th>
+                    <td th:text="${historico.inicio}"></td>
+                    <td th:text="${historico.coordenadaInicio.latitude} + ' lat ' + ${historico.coordenadaInicio.longitude} + ' lon'"></td>
+                    <td th:text="${historico.fim}"></td>
+                    <td th:text="${historico.coordenadaFim.latitude} + ' lat ' + ${historico.coordenadaFim.longitude} + ' lon'"></td>
+                    <td th:text="${historico.altitudeMedia}"></td>
+                    <td th:text="${historico.velocidadeMedia}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <p th:unless="${#lists.isEmpty(drone.historicos)}">
+                Não existem históricos de voo cadastrados para o drone
+            </p>
+        </div>
     </div>
 </div>
 
