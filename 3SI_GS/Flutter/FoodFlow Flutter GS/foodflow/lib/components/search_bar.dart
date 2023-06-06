@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodflow/components/button.dart';
 import 'package:foodflow/components/search_input.dart';
-import 'package:foodflow/constants/spacings.dart';
 import 'package:foodflow/extensions/theme_data_extensions.dart';
 
 class CustomSearchBar extends StatelessWidget implements PreferredSizeWidget {
@@ -27,6 +26,7 @@ class CustomSearchBar extends StatelessWidget implements PreferredSizeWidget {
             child: CustomSearchInput(
               hint: 'Digite o ID desejado',
               onChanged: onChanged,
+              
             ),
           ),
           CustomButton(

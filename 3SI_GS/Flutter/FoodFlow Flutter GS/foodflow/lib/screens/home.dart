@@ -24,8 +24,10 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("FoodFlow",
-            style:
-                TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w800)),
+            style: TextStyle(
+                color: Color(0xFF0E4F24),
+                fontFamily: "Poppins",
+                fontWeight: FontWeight.w800)),
         backgroundColor: Theme.of(context).colorScheme.surfaceVariant,
         actions: const <Widget>[
           Padding(

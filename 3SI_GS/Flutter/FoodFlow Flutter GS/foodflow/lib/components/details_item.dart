@@ -44,27 +44,75 @@ class DetailsItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text('Nome: $itemName',
-                    style: const TextStyle(
-                        fontFamily: "Poppins", fontWeight: FontWeight.w500)),
-                Text('Status: $itemStatus',
-                    style: const TextStyle(
-                        fontFamily: "Poppins", fontWeight: FontWeight.w500)),
-                Text('Tipo de Cultivo: $itemTypeOfCultivation',
-                    style: const TextStyle(
-                        fontFamily: "Poppins", fontWeight: FontWeight.w500)),
-                Text('Pestes Detectadas: $itemPestsDetected',
-                    style: const TextStyle(
-                        fontFamily: "Poppins", fontWeight: FontWeight.w500)),
-                Text('Deficiência de Nutrientes: $itemNutrientDeficiency',
-                    style: const TextStyle(
-                        fontFamily: "Poppins", fontWeight: FontWeight.w500)),
-                Text('Irrigação Necessária : $itemIrrigationNeed',
-                    style: const TextStyle(
-                        fontFamily: "Poppins", fontWeight: FontWeight.w500)),
+                Row(
+                  children: [
+                    const Text("Nome: ",
+                        style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w700)),
+                    Text(itemName,
+                        style: const TextStyle(
+                            fontFamily: "Poppins", fontWeight: FontWeight.w500))
+                  ],
+                ),
+                Row(
+                  children: [
+                    const Text('Status: ',
+                        style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w700)),
+                    Text(itemStatus,
+                        style: const TextStyle(
+                            fontFamily: "Poppins", fontWeight: FontWeight.w500))
+                  ],
+                ),
+                Row(
+                  children: [
+                    const Text('Tipo de Cultivo: ',
+                        style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w700)),
+                    Text(itemTypeOfCultivation,
+                        style: const TextStyle(
+                            fontFamily: "Poppins", fontWeight: FontWeight.w500))
+                  ],
+                ),
+                Row(
+                  children: [
+                    const Text('Pestes Detectadas: ',
+                        style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w700)),
+                    Text(itemPestsDetected,
+                        style: const TextStyle(
+                            fontFamily: "Poppins", fontWeight: FontWeight.w500))
+                  ],
+                ),
+                Row(
+                  children: [
+                    const Text('Deficiência de Nutrientes: ',
+                        style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w700)),
+                    Text(itemNutrientDeficiency,
+                        style: const TextStyle(
+                            fontFamily: "Poppins", fontWeight: FontWeight.w500))
+                  ],
+                ),
+                Row(
+                  children: [
+                    const Text('Irrigação Necessária : ',
+                        style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w700)),
+                    Text(itemIrrigationNeed,
+                        style: const TextStyle(
+                            fontFamily: "Poppins", fontWeight: FontWeight.w500))
+                  ],
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text('Descrição: $itemDescription',
+                  child: Text(itemDescription,
                       style: const TextStyle(
                           fontFamily: "Poppins", fontWeight: FontWeight.w500)),
                 ),
