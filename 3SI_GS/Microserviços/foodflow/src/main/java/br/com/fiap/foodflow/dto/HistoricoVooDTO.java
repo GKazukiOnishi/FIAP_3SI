@@ -10,16 +10,10 @@ import java.time.LocalDateTime;
 public class HistoricoVooDTO implements Validavel {
 
     private Integer idHistorico;
-    @NotNull(message = "Um histórico de voo deve ter um drone associado")
-    private DroneDTO drone;
-    @NotNull(message = "A coordenada de início deve ser informada")
     private CoordenadaDTO coordenadaInicio;
     private CoordenadaDTO coordenadaFim;
-    @Digits(integer = 6, fraction = 2, message = "A velocidade média do drone deve possuir até 6 dígitos inteiros e 2 decimais")
     private BigDecimal altitudeMedia;
-    @Digits(integer = 6, fraction = 2, message = "A velocidade média do drone deve possuir até 6 dígitos inteiros e 2 decimais")
     private BigDecimal velocidadeMedia;
-    @NotNull(message = "O momento de início do voo deve ser informado")
     private LocalDateTime inicio;
     private LocalDateTime fim;
 
@@ -29,14 +23,6 @@ public class HistoricoVooDTO implements Validavel {
 
     public void setIdHistorico(Integer idHistorico) {
         this.idHistorico = idHistorico;
-    }
-
-    public DroneDTO getDrone() {
-        return drone;
-    }
-
-    public void setDrone(DroneDTO drone) {
-        this.drone = drone;
     }
 
     public CoordenadaDTO getCoordenadaInicio() {

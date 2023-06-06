@@ -1,5 +1,6 @@
 package br.com.fiap.foodflow.dto;
 
+import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -8,6 +9,7 @@ import java.time.LocalDate;
 public class LicencaDroneDTO implements Validavel {
 
     @NotNull(message = "Número de licença obrigatório")
+    @Digits(integer = 8, message = "O número de licença deve ter até 8 dígitos", fraction = 0)
     private Integer numLicenca;
     @NotNull(message = "Data de emissão obrigatória")
     private LocalDate dataEmissao;

@@ -1,11 +1,10 @@
 package br.com.fiap.foodflow.dto;
 
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 
 public class DroneDTO implements Validavel {
 
@@ -32,6 +31,7 @@ public class DroneDTO implements Validavel {
     private BigDecimal capacidadeBateria;
     @NotNull(message = "Data de compra obrigatória")
     private LocalDate dataCompra;
+    private List<HistoricoVooDTO> historicos;
 
     public Integer getDroneId() {
         return droneId;
@@ -61,7 +61,7 @@ public class DroneDTO implements Validavel {
         return licenca;
     }
 
-    public LicencaDroneDTO getLicencaNotNull() {
+    public LicencaDroneDTO licencaNotNull() {
         return licenca == null ? new LicencaDroneDTO() : licenca;
     }
 
@@ -99,6 +99,14 @@ public class DroneDTO implements Validavel {
 
     public void setDataCompra(LocalDate dataCompra) {
         this.dataCompra = dataCompra;
+    }
+
+    public List<HistoricoVooDTO> getHistoricos() {
+        return historicos;
+    }
+
+    public void setHistoricos(List<HistoricoVooDTO> historicos) {
+        this.historicos = historicos;
     }
 
 }

@@ -38,6 +38,28 @@ object PlantationAreaDataSourceMock {
             true,
             "Os resultados das análises indicam que é necessário iniciar os tratamentos para um possível caso de ervas daninhas. Prazo de 30 dias.",
             R.mipmap.ic_area_b1
+        ),
+        PlantationAreaModel(
+            "C1",
+            "425525445616",
+            "42º55’25’’ S e 44º56’16’’ W",
+            "Café",
+            70,
+            false,
+            false,
+            "Os resultados das análises indicam que a plantação está em ótimo estado.",
+            R.mipmap.ic_area_c1
+        ),
+        PlantationAreaModel(
+            "C2",
+            "425525435616",
+            "42º55’25’’ S e 43º56’16’’ W",
+            "Café",
+            68,
+            false,
+            false,
+            "Os resultados das análises indicam que a plantação está em ótimo estado.",
+            R.mipmap.ic_area_c2
         )
     )
 
