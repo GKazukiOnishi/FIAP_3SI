@@ -16,7 +16,10 @@ class VisualizationPage extends StatelessWidget {
             child: Text(
               "Visualização",
               textAlign: TextAlign.center,
-              style: TextStyle(fontFamily: "Poppins", fontSize: 20),
+              style: TextStyle(
+                  fontFamily: "Poppins",
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600),
             ),
           ),
           SliverList(

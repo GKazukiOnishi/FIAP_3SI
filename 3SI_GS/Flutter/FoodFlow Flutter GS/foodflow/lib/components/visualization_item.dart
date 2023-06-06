@@ -31,7 +31,7 @@ class VisualizationItem extends StatelessWidget {
                   Text(
                     'ID: $itemId',
                     style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w500),
+                        fontSize: 16, fontWeight: FontWeight.w900),
                   ),
                   Text(itemTypeOfCultivation),
                   const Text(''),

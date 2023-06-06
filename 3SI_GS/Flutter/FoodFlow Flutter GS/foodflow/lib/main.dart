@@ -15,7 +15,8 @@ class FoodFlow extends StatelessWidget {
     return MaterialApp(
       title: 'Food Flow',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorSchemeSeed: Colors.purple, useMaterial3: true),
+      theme: ThemeData(
+          colorSchemeSeed: Colors.lightGreenAccent[700], useMaterial3: true),
       darkTheme: themeDark,
       home: const Home(),
     );

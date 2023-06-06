@@ -36,7 +36,8 @@ class HighlightItem extends StatelessWidget {
               children: [
                 Text(
                   itemTypeOfCultivation,
-                  style: const TextStyle(fontSize: 16),
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.w900),
                 ),
                 Text('Status: $itemStatus'),
                 Padding(

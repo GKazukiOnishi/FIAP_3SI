@@ -17,7 +17,10 @@ class HighlightsHome extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 16.0),
               child: Text(
                 "Início",
-                style: TextStyle(fontFamily: "Poppins", fontSize: 20),
+                style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600),
                 textAlign: TextAlign.center,
               ),
             )),

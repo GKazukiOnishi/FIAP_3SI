@@ -17,15 +17,16 @@ class MainDrawer extends StatelessWidget {
                 title: Text(
               "FoodFlow",
               style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 21,
                   color: AppColors.drawerFontColor,
-                  fontWeight: FontWeight.w500),
+                  fontWeight: FontWeight.w900),
             )),
             ListTile(
               textColor: AppColors.drawerFontColor,
               title: const Text(
                 "Culturas",
-                style: TextStyle(fontWeight: FontWeight.w700),
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
               ),
             ),
             ListTile(
@@ -38,18 +39,24 @@ class MainDrawer extends StatelessWidget {
               title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const <Widget>[
-                    Icon(Icons.eco),
+                    Icon(
+                      Icons.eco,
+                      color: Color(0xFF0E4F24),
+                    ),
                     Expanded(
                         child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         "Café",
-                        style: TextStyle(fontWeight: FontWeight.w700),
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.w700),
                       ),
                     )),
                     Text(
                       "Novas Fotos 100+",
-                      style: TextStyle(fontWeight: FontWeight.w700),
+                      style: TextStyle(
+                          color: Color(0xFF0E4F24),
+                          fontWeight: FontWeight.w700),
                     )
                   ]),
             ),
@@ -60,13 +67,17 @@ class MainDrawer extends StatelessWidget {
               title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const <Widget>[
-                    Icon(Icons.forest),
+                    Icon(
+                      Icons.forest,
+                      color: Color(0xFF0E4F24),
+                    ),
                     Expanded(
                         child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         "Milho",
-                        style: TextStyle(fontWeight: FontWeight.w700),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700, color: Colors.black),
                       ),
                     )),
                     Text(

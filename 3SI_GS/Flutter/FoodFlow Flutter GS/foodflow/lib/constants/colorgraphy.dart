@@ -28,7 +28,7 @@ class Colorgraphy implements IColorgraphy {
   @override
   late Color kPrimaryColor = const Color(0xff0D161E);
   @override
-  late Color kAccentColor = const Color(0xffEA1D5D);
+  late Color kAccentColor = const Color(0xFF0E4F24);
   @override
   late Color kBackgroundColor = const Color(0xffFDFDFD);
   @override
@@ -36,5 +36,5 @@ class Colorgraphy implements IColorgraphy {
   @override
   late Color kTextPrimaryColor = const Color(0xff292929);
   @override
-  late Color kTextSecondaryColor = const Color(0xff3C3C3C);
+  late Color kTextSecondaryColor = const Color(0xFF0E4F24);
 }

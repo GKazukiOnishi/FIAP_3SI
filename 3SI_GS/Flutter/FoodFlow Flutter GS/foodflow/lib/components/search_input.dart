@@ -24,8 +24,8 @@ class CustomSearchInput extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: typography[TypographyType.caption]?.copyWith(
-          color: context.colors.kTextSecondaryColor,
-        ),
+            color: context.colors.kTextSecondaryColor,
+            fontWeight: FontWeight.w400),
         border: inputBorder(Colors.transparent),
         focusedBorder: inputBorder(context.colors.kAccentColor),
         focusColor: context.colors.kAccentColor,

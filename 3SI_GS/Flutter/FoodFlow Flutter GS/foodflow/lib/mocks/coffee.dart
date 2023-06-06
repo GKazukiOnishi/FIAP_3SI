@@ -13,7 +13,7 @@ const List<Object> cafes = [
         "Aqui, você encontrará recursos abrangentes para aprimorar seus conhecimentos e habilidades no cultivo de café."
   },
   {
-    "image": "$_imageInitialPath/coffee-beans.jpg",
+    "image": "$_imageInitialPath/plantacaoDeCafe0.jpg",
     "id": "195515435617",
     "status": "Need Check",
     "name": "Café Pelé",
@@ -25,7 +25,7 @@ const List<Object> cafes = [
         "Aqui, você encontrará recursos abrangentes para aprimorar seus conhecimentos e habilidades no cultivo de café."
   },
   {
-    "image": "$_imageInitialPath/coffee-beans.jpg",
+    "image": "$_imageInitialPath/plantacaoDeCafe1.jpg",
     "id": "195515435618",
     "status": "Ready for Planting",
     "name": "Café Nespresso",
@@ -37,7 +37,7 @@ const List<Object> cafes = [
         "Aqui, você encontrará recursos abrangentes para aprimorar seus conhecimentos e habilidades no cultivo de café."
   },
   {
-    "image": "$_imageInitialPath/coffee-beans.jpg",
+    "image": "$_imageInitialPath/plantacaoDeCafe2.jpg",
     "id": "195515435616",
     "status": "Ready for Harvest",
     "name": "Café Pilao",
@@ -49,7 +49,7 @@ const List<Object> cafes = [
         "Aqui, você encontrará recursos abrangentes para aprimorar seus conhecimentos e habilidades no cultivo de café."
   },
   {
-    "image": "$_imageInitialPath/coffee-beans.jpg",
+    "image": "$_imageInitialPath/plantacaoDeCafe3.jpg",
     "id": "195515435617",
     "status": "Need Check",
     "name": "Café Pelé",
@@ -61,7 +61,7 @@ const List<Object> cafes = [
         "Aqui, você encontrará recursos abrangentes para aprimorar seus conhecimentos e habilidades no cultivo de café."
   },
   {
-    "image": "$_imageInitialPath/coffee-beans.jpg",
+    "image": "$_imageInitialPath/plantacaoDeCafe4.jpg",
     "id": "195515435618",
     "status": "Ready for Planting",
     "name": "Café Nespresso",
