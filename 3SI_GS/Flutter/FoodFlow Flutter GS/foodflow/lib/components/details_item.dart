@@ -110,12 +110,17 @@ class DetailsItem extends StatelessWidget {
                             fontFamily: "Poppins", fontWeight: FontWeight.w500))
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(itemDescription,
-                      style: const TextStyle(
-                          fontFamily: "Poppins", fontWeight: FontWeight.w500)),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8.0),
+                  child: Text('Análise da IA : ',
+                      style: TextStyle(
+                          fontFamily: "Poppins",
+                          fontWeight: FontWeight.w700,
+                          fontSize: 15)),
                 ),
+                Text(itemDescription,
+                    style: const TextStyle(
+                        fontFamily: "Poppins", fontWeight: FontWeight.w500)),
                 Align(
                   alignment: Alignment.centerRight,
                   child: ElevatedButton(

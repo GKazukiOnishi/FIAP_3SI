@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodflow/components/historic_item.dart';
 import 'package:foodflow/components/search_bar.dart';
-import 'package:foodflow/constants/typography.dart';
 import 'package:foodflow/mocks/coffee.dart';
 
 class HistoricPage extends StatelessWidget {

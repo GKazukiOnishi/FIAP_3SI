@@ -10,6 +10,6 @@ const List<Object> details = [
     "nutrientDeficiency": "Sódio e Potássio",
     "irrigationNeed": "Sim",
     "description":
-        "Aqui, você encontrará recursos abrangentes para aprimorar seus conhecimentos e habilidades no cultivo de café."
+        "Os resultados das análises indicam que a plantação está em ótimo estado."
   },
 ];
