@@ -1,11 +1,16 @@
 package br.com.fiap.foodflow.dto.factory;
 
 import br.com.fiap.foodflow.dto.DroneDTO;
+import br.com.fiap.foodflow.dto.HistoricoVooDTO;
 import br.com.fiap.foodflow.dto.LicencaDroneDTO;
+import br.com.fiap.foodflow.model.Coordenada;
 import br.com.fiap.foodflow.model.Drone;
+import br.com.fiap.foodflow.model.HistoricoVoo;
 import br.com.fiap.foodflow.model.LicencaDrone;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 public class DroneFactory {
 
@@ -45,7 +50,24 @@ public class DroneFactory {
         droneDTO.setCapacidadeCarga(drone.getCapacidadeCarga());
         droneDTO.setCapacidadeBateria(drone.getCapacidadeBateria());
         droneDTO.setDataCompra(drone.getDataCompra());
+        droneDTO.setHistoricos(getDTOsFromHistoricos(drone.getHistoricos()));
         return droneDTO;
+    }
+
+    private static List<HistoricoVooDTO> getDTOsFromHistoricos(Set<HistoricoVoo> historicos) {
+        return historicos.stream().map(DroneFactory::getDTOFromHistoricoVoo).sorted(Comparator.comparing(HistoricoVooDTO::getIdHistorico)).toList();
+    }
+
+    private static HistoricoVooDTO getDTOFromHistoricoVoo(HistoricoVoo historicoVoo) {
+        HistoricoVooDTO historicoVooDTO = new HistoricoVooDTO();
+        historicoVooDTO.setIdHistorico(historicoVoo.getIdHistorico());
+        historicoVooDTO.setAltitudeMedia(historicoVoo.getAltitudeMedia());
+        historicoVooDTO.setFim(historicoVoo.getFim());
+        historicoVooDTO.setInicio(historicoVoo.getInicio());
+        historicoVooDTO.setCoordenadaFim(CoordenadaFactory.getDTOFromCoordenada(historicoVoo.getCoordenadaFim()));
+        historicoVooDTO.setCoordenadaInicio(CoordenadaFactory.getDTOFromCoordenada(historicoVoo.getCoordenadaInicio()));
+        historicoVooDTO.setVelocidadeMedia(historicoVoo.getVelocidadeMedia());
+        return historicoVooDTO;
     }
 
     private static LicencaDroneDTO getDTOFromLicenca(LicencaDrone licenca) {

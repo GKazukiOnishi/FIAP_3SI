@@ -51,13 +51,13 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Capacidade de Carga:</label>
+                    <label>Capacidade de Carga (kg):</label>
                     <input name="capacidadeCarga" type="number" class="form-control"
                            th:value="${not novo ? drone.capacidadeCarga : ''}">
                     <div class="invalid-feedback"></div>
                 </div>
                 <div class="form-group">
-                    <label>Capacidade da Bateria:</label>
+                    <label>Capacidade da Bateria (mAh):</label>
                     <input name="capacidadeBateria" type="number" class="form-control"
                            th:value="${not novo ? drone.capacidadeBateria : ''}">
                     <div class="invalid-feedback"></div>
@@ -75,13 +75,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Número da Licença:</label>
-                    <input name="numLicenca" type="number" class="form-control"
+                    <input name="licenca.numLicenca" type="number" class="form-control"
                            th:value="${not novo ? drone.licenca.numLicenca : ''}">
                     <div class="invalid-feedback"></div>
                 </div>
                 <div class="form-group">
                     <label>Titular:</label>
-                    <input name="titular" type="text" class="form-control"
+                    <input name="licenca.titular" type="text" class="form-control"
                            th:value="${not novo ? drone.licenca.titular : ''}">
                     <div class="invalid-feedback"></div>
                 </div>
@@ -89,13 +89,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Data Emissão:</label>
-                    <input name="dataEmissao" type="date" class="form-control"
+                    <input name="licenca.dataEmissao" type="date" class="form-control"
                            th:value="${not novo ? drone.licenca.dataEmissao : ''}">
                     <div class="invalid-feedback"></div>
                 </div>
                 <div class="form-group">
                     <label>Data Validade:</label>
-                    <input name="dataValidade" type="date" class="form-control"
+                    <input name="licenca.dataValidade" type="date" class="form-control"
                            th:value="${not novo ? drone.licenca.dataValidade : ''}">
                     <div class="invalid-feedback"></div>
                 </div>
@@ -119,14 +119,12 @@
 	    const formData = new FormData(form);
 	    const jsonObj = Object.fromEntries(formData.entries());
 
-        console.log(droneId);
-
         jsonObj.droneId = droneId;
 	    jsonObj.licenca = {
-            numLicenca: jsonObj.numLicenca,
-            titular: jsonObj.titular,
-            dataEmissao: jsonObj.dataEmissao,
-            dataValidade: jsonObj.dataValidade
+            numLicenca: jsonObj["licenca.numLicenca"],
+            titular: jsonObj["licenca.titular"],
+            dataEmissao: jsonObj["licenca.dataEmissao"],
+            dataValidade: jsonObj["licenca.dataValidade"]
 	    };
 
 	    const jsonBody = JSON.stringify(jsonObj);
@@ -150,6 +148,11 @@
         } else {
             response.json().then(data => {
                 const errosPorCampo = data.errosPorCampo;
+                const inputs = document.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.nextSibling.nextSibling.innerHTML = "";
+                    input.classList.remove('is-invalid');
+                });
                 Object.keys(errosPorCampo).forEach(campo => {
                     const inputs = document.querySelectorAll('input[name="' + campo + '"]');
                     inputs[0].nextSibling.nextSibling.innerHTML = errosPorCampo[campo];

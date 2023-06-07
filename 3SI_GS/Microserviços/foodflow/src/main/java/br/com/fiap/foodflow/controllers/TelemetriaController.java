@@ -1,6 +1,7 @@
 package br.com.fiap.foodflow.controllers;
 
 import br.com.fiap.foodflow.dto.TelemetriaDTO;
+import br.com.fiap.foodflow.dto.factory.CoordenadaFactory;
 import br.com.fiap.foodflow.dto.factory.TelemetriaFactory;
 import br.com.fiap.foodflow.exception.MapErroBuilder;
 import br.com.fiap.foodflow.exception.ValidacaoException;
@@ -13,6 +14,7 @@ import br.com.fiap.foodflow.repositories.HistoricoVooRepository;
 import br.com.fiap.foodflow.repositories.TelemetriaRepository;
 import jakarta.validation.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -45,7 +47,7 @@ public class TelemetriaController {
     public ModelAndView telaListaTelemetria() {
         ModelAndView modelView = new ModelAndView("telemetria/lista_telemetrias");
 
-        List<Telemetria> telemetrias = telemetriaRepository.findAll();
+        List<Telemetria> telemetrias = telemetriaRepository.findAll(Sort.by("idTelemetria"));
 
         modelView.addObject("telemetrias", TelemetriaFactory.getDTOsFromTelemetrias(telemetrias));
 
@@ -54,7 +56,7 @@ public class TelemetriaController {
 
     @GetMapping("/telemetria")
     public ResponseEntity<List<TelemetriaDTO>> listar() {
-        List<Telemetria> telemetrias = telemetriaRepository.findAll();
+        List<Telemetria> telemetrias = telemetriaRepository.findAll(Sort.by("idTelemetria"));
 
         return new ResponseEntity<>(TelemetriaFactory.getDTOsFromTelemetrias(telemetrias), HttpStatus.OK);
     }
@@ -122,7 +124,7 @@ public class TelemetriaController {
                 HistoricoVoo historicoEmAndamento = vooEmAndamento.stream().findFirst().get();
 
                 historicoEmAndamento.setFim(telemetriaDTO.getTempo());
-                historicoEmAndamento.setCoordenadaFim(TelemetriaFactory.getCoordenadaFromDTO(telemetriaDTO.getCoordenada()));
+                historicoEmAndamento.setCoordenadaFim(CoordenadaFactory.getCoordenadaFromDTO(telemetriaDTO.getCoordenada()));
 
                 calcularValoresMediosDoVoo(drone, historicoEmAndamento, telemetriaDTO);
 
@@ -132,7 +134,7 @@ public class TelemetriaController {
             HistoricoVoo vooNovo = new HistoricoVoo();
             vooNovo.setDrone(drone);
             vooNovo.setInicio(telemetriaDTO.getTempo());
-            vooNovo.setCoordenadaInicio(TelemetriaFactory.getCoordenadaFromDTO(telemetriaDTO.getCoordenada()));
+            vooNovo.setCoordenadaInicio(CoordenadaFactory.getCoordenadaFromDTO(telemetriaDTO.getCoordenada()));
 
             historicoVooRepository.save(vooNovo);
         }
@@ -149,8 +151,11 @@ public class TelemetriaController {
             velocidadeMedia = velocidadeMedia.add(telemetria.getVelocidade());
         }
 
-        altitudeMedia = altitudeMedia.divide(BigDecimal.valueOf(telemetriasDoVoo.size()), 2, RoundingMode.HALF_UP);
-        velocidadeMedia = velocidadeMedia.divide(BigDecimal.valueOf(telemetriasDoVoo.size()), 2, RoundingMode.HALF_UP);
+        altitudeMedia = altitudeMedia.add(BigDecimal.valueOf(telemetriaFinal.getAltitude()));
+        velocidadeMedia = velocidadeMedia.add(telemetriaFinal.getVelocidade());
+
+        altitudeMedia = altitudeMedia.divide(BigDecimal.valueOf(telemetriasDoVoo.size() + 1), 2, RoundingMode.HALF_UP);
+        velocidadeMedia = velocidadeMedia.divide(BigDecimal.valueOf(telemetriasDoVoo.size() + 1), 2, RoundingMode.HALF_UP);
 
         historicoEmAndamento.setAltitudeMedia(altitudeMedia);
         historicoEmAndamento.setVelocidadeMedia(velocidadeMedia);

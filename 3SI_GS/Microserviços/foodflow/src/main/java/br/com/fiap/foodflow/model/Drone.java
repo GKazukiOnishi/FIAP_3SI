@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -25,8 +26,8 @@ public class Drone {
     @OneToOne(cascade = CascadeType.ALL)
     private LicencaDrone licenca;
 
-    @OneToMany(cascade = { CascadeType.REMOVE }, mappedBy = "drone")
-    private Set<HistoricoVoo> historicos;
+    @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "drone")
+    private Set<HistoricoVoo> historicos = new HashSet<>();
 
     @Column(nullable = false, length = 3)
     private Integer horasVoo;

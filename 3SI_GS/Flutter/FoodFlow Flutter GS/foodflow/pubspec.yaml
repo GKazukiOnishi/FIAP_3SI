@@ -36,7 +36,6 @@ flutter:
     - assets/images/corn-seed-1920x2216.jpg
     - assets/images/corn-seed.jpg
     - assets/images/pamonha.png
-    - assets/icons/
     - assets/fonts/
 
   fonts:

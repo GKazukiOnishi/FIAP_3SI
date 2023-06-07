@@ -1,8 +1,6 @@
 package br.com.fiap.foodflow.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -12,13 +10,13 @@ public class LicencaDrone {
     @Id
     @Column(length = 8)
     private Integer numLicenca;
-    
+
     @Column(nullable = false)
     private LocalDate dataEmissao;
-    
+
     @Column(nullable = false)
     private LocalDate dataValidade;
-    
+
     @Column(nullable = false, length = 100)
     private String titular;
 

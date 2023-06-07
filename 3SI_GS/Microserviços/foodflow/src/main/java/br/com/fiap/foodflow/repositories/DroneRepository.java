@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DroneRepository extends JpaRepository<Drone, Integer> {
 
+    boolean existsBySerieAndDroneIdNot(String serie, Integer droneId);
+
 }
