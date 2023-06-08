@@ -142,7 +142,7 @@
     <element xsi:type="archimate:Path" name="fibra ótica" id="id-773b05c5cc4245f6bdb90fbc8d59e9d8"/>
     <element xsi:type="archimate:Path" name="fibra ótica" id="id-4341d17a92644bf8a42ae1c3f5fdf68f"/>
     <element xsi:type="archimate:Node" name="Application Server. SO Linux. 2x Processador Xeon 2.5 GHz. 64 de RAM ECC. SSD de 1 TB. Ehernet com suporte a fibra ótica.  Fonte de energia dual redundante. Balanceamento de carga.  SSL/TLS, autenticação e proteção contra ataques." id="id-ea7c2797bc2a44c7b988d16a686e04dd"/>
-    <element xsi:type="archimate:SystemSoftware" name="Oracle, Unix (copy)" id="id-f32c7aa8229e41a39f7986524a034efb"/>
+    <element xsi:type="archimate:SystemSoftware" name="Wildfly/Weblogic Unix" id="id-f32c7aa8229e41a39f7986524a034efb"/>
     <element xsi:type="archimate:Path" name="fibra ótica" id="id-d422329c569a4073b08f800d3cb3f190"/>
     <element xsi:type="archimate:Node" name="Web Server. SO Linux. Balanceamento de carga. SSL/TLS, autenticação e proteção contra ataques. 2x Processador Xeon 333 MHz. 32 GB de RAM protegida. 1 TB de HD interno controladora de array com RAID 1. Placa de rede com suporte para fibra ótica. Fonte de energia dual redundante." id="id-74685dbf1de44afb84d49665996f62f2"/>
     <element xsi:type="archimate:SystemSoftware" name="Tomcat/Wildfly/Weblogic. Unix" id="id-16945bb46fc3442aad8d82bc45d47923"/>
@@ -1182,7 +1182,7 @@
         <bounds x="893" y="3612" width="228" height="205"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-9b57045efeb4442b8b8b3c5fac6e4f21" source="id-d581c13e8d6e404dadaf8c282084ca96" target="id-c3f5c251308e40d3b0d7776035291be3" archimateRelationship="id-d65f85f26fcf427d83d1384e87dbe767"/>
         <child xsi:type="archimate:DiagramObject" id="id-c3f5c251308e40d3b0d7776035291be3" targetConnections="id-9b57045efeb4442b8b8b3c5fac6e4f21" archimateElement="id-f32c7aa8229e41a39f7986524a034efb">
-          <bounds x="48" y="168" width="120" height="55"/>
+          <bounds x="36" y="156" width="157" height="55"/>
         </child>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-314dcd15c7b14d379ee1121284ca5eb0" targetConnections="id-ec157a994fad4a4880356696c670080d" archimateElement="id-d422329c569a4073b08f800d3cb3f190">

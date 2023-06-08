@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface TelemetriaRepository extends JpaRepository<Telemetria, Integer> {
 
-    List<Telemetria> findByDroneAndTempoBetween(Drone drone, LocalDateTime inicio, LocalDateTime fim);
-
+    List<Telemetria> (Drone drone, LocalDateTime inicio, LocalDateTime fim);
+    findByDroneAndTempoBetween
 }

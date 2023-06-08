@@ -1,0 +1,38 @@
+Solução
+
+	slide
+
+	O Foodflow entra nesse contexto como uma solução que irá trazer mais eficiência e aproveitamento dos alimentos coletados, utilizando os dados obtidos para obter estatísticas e transparência na venda dos produtos aos clientes.
+	
+	Ele será um aplicativo que irá funcionar da seguinte maneira:
+		Ao localizar uma área de colheita, o usuário irá acessar o aplicativo para tirar uma foto.
+		Essa foto passará por uma validação de qualidade e então será armazenada no dispositivo para futuro processamento.
+		Ao registrar essas informações o sistema será capaz de mapear as áreas de colheita, calcular datas de previsão e de prever quantidades e qualidades dos produtos que virão utilizando uma IA Externa treinada para identificar padrões e obter análises acerca da colheita.
+		
+	O aplicativo contará com tratamentos de sincronização para possibilitar o funcionamento offline e sincronização com o sistema central ao se conectar à internet.
+	
+	A partir dos dados que serão processados o sistema será capaz de trazer transparência aos consumidores finais, que podem querer saber a origem do alimento, de forma que será possível conhecer a comunidade parceira, imagens e mais informações sobre a precedência do alimento.
+	
+	slide
+	
+	Nisso teremos uma cadeia de suprimentos digitalizada capaz de juntar transparência, integridade e sustentabilidade aos processos.
+	Sendo vantajoso para todas as partes, trazendo redução nos desperdícios de alimentos não coletados ou colhidos antes da hora, facilitando os contribuidores a seguirem as leis ambientais e garantindo transparência aos consumidores
+	
+	slide
+	
+	Facilmente será possível acessar informações de rastreabilidade dos produtos e alimentos.
+	
+	slide
+	
+	A solução contará com uma aplicativo a ser desenvolvida em Flutter para garantir o quesito de multiplataforma aos usuários.
+	Uma API de processamento com Spring Java, persistência de dados em Banco Oracle e um site Web React como portal de transparência dos alimentos e produtos.
+	Além da integração com a API da IA que irá realizar as análises.
+	
+	
+
+O Foodflow é um aplicativo que melhora o aproveitamento dos alimentos coletados, também fornecendo transparência na venda.
+Ao localizar uma área de colheita, os usuários tiram fotos e o sistema utiliza IA para prever quantidades, qualidades e datas de colheita.
+O aplicativo funcionará offline para possibilitar tirar fotos, e possui tratamentos para sincronizar com o sistema central ao se conectar à internet.
+E a partir dos dados que serão processados os consumidores finais têm acesso à origem dos alimentos, promovendo transparência.
+Ou seja, a solução digitaliza a cadeia de suprimentos, reduzindo desperdícios e facilitando o cumprimento das leis ambientais.
+O Foodflow será desenvolvido com Flutter, Spring Java e Oracle, e terá integração com uma API de IA.
