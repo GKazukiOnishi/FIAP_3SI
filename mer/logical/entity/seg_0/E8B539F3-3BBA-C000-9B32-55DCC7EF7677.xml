@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E8B539F3-3BBA-C000-9B32-55DCC7EF7677" name="Conversa">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 20:41:40 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cod_usuario" id="804BE51C-A728-3920-72E0-628D7FE2B3E0">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:30:39 UTC</createdTime>
+<generatorID>FF75C462-0D94-2E7E-5C82-8F79FFCA75D4</generatorID>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<referedAttribute>4160C497-AF57-13B7-D528-A57A4A728743</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_conversa" id="0AA8FBE5-B6E0-1800-099F-F9D9CCB62EF0">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:16:09 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descricao" id="D92FFBDA-8D47-14CB-EEAD-BC390FA44668">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:16:51 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70</dataTypeSize>
+<ownDataTypeParameters>70,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FA802492-3FC1-C8DD-7ACA-E66B92F1A2B8" name="Conversa PK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:16:48 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0AA8FBE5-B6E0-1800-099F-F9D9CCB62EF0</attributeRef>
+<attributeRef>804BE51C-A728-3920-72E0-628D7FE2B3E0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3BA314D0-8DF9-DD6B-8141-85A33CFC9505" name="Usuario">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 20:21:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cod_usuario" id="4160C497-AF57-13B7-D528-A57A4A728743">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:10:33 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome" id="611A95D6-E5FB-C1AE-A50F-252DAF6D4F73">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:11:18 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="02EE49CC-E687-92D0-EB32-907868FB4445">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:12:53 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="senha" id="E5BAED07-3F6C-0105-048D-375C5F761BB5">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:14:21 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E6C29BCA-BF79-50D9-8207-76431F2B7CDB" name="Usuario PK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:11:13 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4160C497-AF57-13B7-D528-A57A4A728743</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="A9AE736F-C43B-295E-7CCE-36D0FE0AC9A4" name="USUARIO_EMAIL_UK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:15:25 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<newElementsIDs>02EE49CC-E687-92D0-EB32-907868FB4445</newElementsIDs>
+<usedAttributes>
+<attributeRef>02EE49CC-E687-92D0-EB32-907868FB4445</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

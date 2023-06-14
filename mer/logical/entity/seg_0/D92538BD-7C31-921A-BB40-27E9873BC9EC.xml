@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D92538BD-7C31-921A-BB40-27E9873BC9EC" name="Mensagem">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 20:46:47 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cod_usuario" id="D72542DA-992B-B120-D9B5-41993A4AE8F6">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:34:13 UTC</createdTime>
+<generatorID>4459C0FB-877A-E599-DFD3-14D7003BFC49</generatorID>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<referedAttribute>804BE51C-A728-3920-72E0-628D7FE2B3E0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_conversa" id="944944E5-0CD7-A4BC-E91D-7FABBDCE2D05">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:34:13 UTC</createdTime>
+<generatorID>4459C0FB-877A-E599-DFD3-14D7003BFC49</generatorID>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<referedAttribute>0AA8FBE5-B6E0-1800-099F-F9D9CCB62EF0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cod_mensagem" id="D504B8CA-6CC5-02AC-E52D-70E7EDC8B960">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:17:58 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="texto" id="5A24993E-93FA-249D-EA19-51A53CEDB1D9">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:18:32 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data" id="9893C0B8-3D41-91B3-AFC1-E12BB83E4F48">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:21:37 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="EE65E1B2-9BC8-BAC7-0BAB-7BD1EF9414E1" name="Mensagem PK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-06-11 21:18:30 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<engineerTo>
+<item key="13A5AA24-D0A6-AFF3-E11A-8EFC46CB58CC" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D504B8CA-6CC5-02AC-E52D-70E7EDC8B960</attributeRef>
+<attributeRef>944944E5-0CD7-A4BC-E91D-7FABBDCE2D05</attributeRef>
+<attributeRef>D72542DA-992B-B120-D9B5-41993A4AE8F6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
