@@ -1,0 +1,15 @@
+Challenge Ford FIAP - 2023 - 3SIS
+
+Link do vídeo: https://www.youtube.com/watch?v=x8LDZRzNaiU
+Linktr: https://linktr.ee/futuretech_
+	A documentação, apresentação e apks estão disponíveis no link acima, dentro de "Material Completo"
+	A transcrição do que foi falado na apresentação está nas anotações dos slides da apresentação .pptx.
+	Obs: Para executar o apk em um dispositivo android, pode ser que alguns dos apks disponíveis não rodem por conta de incompatibilidade de versão, basta testar os outros.
+
+Grupo FutureTech
+Integrantes:
+Breno de Souza Silva - RM88332
+Davi Yamane Eugenio - RM87221
+Gabriel Kazuki Onishi - RM87182
+Gustavo Costa Pereira - RM87843
+Vitor Ramos Santos de Faria - RM88000

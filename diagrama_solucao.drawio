@@ -1,1 +1,64 @@
-<mxfile host="app.diagrams.net" modified="2023-06-10T20:19:27.983Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="S92ItAJcwPaCbT7ZD5Vg" version="20.8.23" type="device"><diagram name="Página-1" id="Zt2VKIQ7Yjb1njPvfvgh">7Vltc5s4EP41nmk/1API+OWj48Rp2rvWM8nctZ8ya1BAGUBUyG/59bcLwgbj+NI5uzS9esZYWklIep5HuwvusEm8vlaQhn9Kn0cdx/LXHXbZcRzbsmz8IcumsAxGvcIQKOGbTjvDrXji5UhjXQifZ7WOWspIi7Ru9GSScE/XbKCUXNW7PcioPmsKAW8Ybj2Imta/ha/Dwjp0Bjv7ey6CsJzZ7o+KlhjKzmYnWQi+XFVM7KrDJkpKXZTi9YRHBF6JSzFu+kzrdmGKJ/olA+Y3j08zh3nDj/4nfbf8AI+f/3pXwpzpTblj7iMApiqVDmUgE4iudtYLJReJz+m2FtZ2ff6QMkWjjcZHrvXGsAkLLdEU6jgyrcWcNNGzezGmTC6Ux49soG80ASrg+thGt4ijVLmMuVYbHKd4BFos6+sAo5lg228HKxYMst+Dcu//grLTJsxmlUuIFmam8ewGDW9uUyWSAEsfYAlvc28R0xElbyWxcDNu8FNHfxUKzW9TyEFaoac7hPSSK83Xx7FuQmMGMNdoxPhJ5rhFfbXzOnbpSsKKx+lb5xKt3QDldYm2DBf/Jtp+q66hqdk0Eh7NTMqchKDnGCFQxNNooTVXJN8v9PnpJGu7VsuSdRpgNkCCLC3ShAexJqwuUq4Ezs4V2nAKzCv4bGeqQgaRCBIse4hP3raN6IS3D1m4BT9D3NHj3OWiZ2gQcZ5nlL+XIkZ3NI3EHK/gkczufaFwZZJgmIYIyD3lFt1sGZyILYfV2XKabLkHyOq5ZyKL/SpkxSCSBwXIWCgzfULGmFUPCVaTMdZvMuae63iN2ggICJbafKlWvtLNum5ZvVybmxe1jamdMJAMX0MgGTaO0/Xsjh6guILEp1giqykP0MbxYDjWQotIPAF1aTmguIM9wduD7oEsiB3wUoNzeSnbbVX0FZ1/rbadX/S28xpUX66yIvsLSDxSuM/pgrrOKHv6rMCL+NvWNb6fNPVGbSdNvV8lDvugYQ4Zz04Ygu1+na3+C5Om0bn0PmjDHZ3Srbz0VUK7buXgqwRyJFOpfLzlJ5m8K4qEAgVTOdd5OMVcUKoYOhPWGQ/oeuFyGvhtQf5IKy4SUHkr2w/KLbumrds5Hn57PzT8NtOaV+qdzvWUMKqT5gxafkiwR78ZO87YcI+xYfOQ/VDGymP/m7FnPaP9s1HWfG3YoAxhTgvMCgwrlBAYwsMEAOY8mslMaCGJornUWsaVDmPDnSZGChbGpRJybvdlUSfKQ12A0li65qDubWe4xm83pXfx//1psb9PSu9AuOqxruUeYqb7/SELq7u/6/K2yp+e7Oof</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2023-10-02T02:32:10.483Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="-rQ2pgrytMLjh4gvWoLb" version="22.0.0" type="device">
+  <diagram name="Página-1" id="Zt2VKIQ7Yjb1njPvfvgh">
+    <mxGraphModel dx="1001" dy="784" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bIjzP23c8KdNtTvJajOV-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="bIjzP23c8KdNtTvJajOV-6" target="bIjzP23c8KdNtTvJajOV-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="bIjzP23c8KdNtTvJajOV-6" target="bIjzP23c8KdNtTvJajOV-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-6" value="API (Spring Java) com modelo IA" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="354" y="325" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="bIjzP23c8KdNtTvJajOV-1" target="bIjzP23c8KdNtTvJajOV-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-1" value="Aplicativo Chatbot (Flutter) Fixmate" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="354" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-2" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/home_page.svg;" parent="1" vertex="1">
+          <mxGeometry x="323" y="120" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-3" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/mainframe_host.svg;" parent="1" vertex="1">
+          <mxGeometry x="330" y="300" width="36" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="bIjzP23c8KdNtTvJajOV-8" target="bIjzP23c8KdNtTvJajOV-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-8" value="GPT provendo o modelo a ser utilizado" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="570" y="317.5" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="bIjzP23c8KdNtTvJajOV-12" target="bIjzP23c8KdNtTvJajOV-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-12" value="Banco de dados NoSQL Firestore" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="354" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-4" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/databases.svg;" parent="1" vertex="1">
+          <mxGeometry x="316" y="460" width="50" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="bIjzP23c8KdNtTvJajOV-16" target="bIjzP23c8KdNtTvJajOV-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-16" value="APIs Ford/Non-Ford para obter informações que treinarão o modelo" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="317.5" width="140" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-18" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/mainframe_host.svg;" parent="1" vertex="1">
+          <mxGeometry x="90" y="270" width="36" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-19" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/mainframe_host.svg;" parent="1" vertex="1">
+          <mxGeometry x="80" y="285" width="36" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-20" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/mainframe_host.svg;" parent="1" vertex="1">
+          <mxGeometry x="110" y="285" width="36" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bIjzP23c8KdNtTvJajOV-21" value="" style="shape=image;html=1;verticalLabelPosition=bottom;verticalAlign=top;imageAspect=1;aspect=fixed;image=img/clipart/Gear_128x128.png" parent="1" vertex="1">
+          <mxGeometry x="560" y="284.5" width="43.05" height="50.5" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
