@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HealthTie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="top_menu_mais">Mais</string>
+    <string name="top_menu_mais_desc">Botão de mais do menu superior</string>
+</resources>
