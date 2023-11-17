@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/reminder_form_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginTop="@dimen/small"
+        android:text="Novo Lembrete"
+        android:textStyle="bold"
+        style="@style/TextAppearance.AppCompat.Headline"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reminder_form_input_title"
+        app:layout_constraintTop_toBottomOf="@id/reminder_form_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginHorizontal="@dimen/medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título do lembrete">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reminder_form_input_desc"
+        app:layout_constraintTop_toBottomOf="@id/reminder_form_input_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginHorizontal="@dimen/medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descrição do lembrete">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reminder_form_input_location"
+        app:layout_constraintTop_toBottomOf="@id/reminder_form_input_desc"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginHorizontal="@dimen/medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Localização"
+        app:startIconDrawable="@drawable/location">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reminder_form_input_date"
+        app:layout_constraintTop_toBottomOf="@id/reminder_form_input_location"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginHorizontal="@dimen/medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data"
+        app:startIconDrawable="@drawable/calendario">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reminder_form_input_time"
+        app:layout_constraintTop_toBottomOf="@id/reminder_form_input_date"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginHorizontal="@dimen/medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hora"
+        app:startIconDrawable="@drawable/relogio_de_parede">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@+id/reminder_form_input_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/large"
+        android:id="@+id/reminder_form_cad_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmar"
+        app:icon="@drawable/marca_de_verificacao"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
