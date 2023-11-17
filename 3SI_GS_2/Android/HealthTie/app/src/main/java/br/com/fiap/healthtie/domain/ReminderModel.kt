@@ -7,6 +7,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 const val REMINDER_MODEL_TABLE_NOME = "reminderTable"
 
@@ -21,4 +23,9 @@ data class ReminderModel(
     @NonNull @ColumnInfo val location: String,
     @NonNull @ColumnInfo val inserted: Boolean,
 
-): Parcelable
+): Parcelable {
+     fun formatReminderDateTime(): String {
+        val formatter = DateTimeFormatter.ofPattern("dd/MM 'às' HH'h'mm", Locale.getDefault())
+        return reminderDateTime.format(formatter);
+    }
+}

@@ -9,13 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.fiap.healthtie.R
 import br.com.fiap.healthtie.data.AppDatabase
-import br.com.fiap.healthtie.databinding.FragmentRegisterReminderBinding
+import br.com.fiap.healthtie.databinding.FragmentReminderFormBinding
 import br.com.fiap.healthtie.domain.ReminderModel
 import br.com.fiap.healthtie.presentation.SnackBarUtil.showSnackBar
+import java.time.LocalDateTime
 
 class RegisterReminderFragment : Fragment() {
 
-    private lateinit var binding: FragmentRegisterReminderBinding
+    private lateinit var binding: FragmentReminderFormBinding
 
     private val reminderInfoArgument by lazy {
         arguments?.getParcelable(REMINDER_MODEL_BUNDLE_KEY) as? ReminderModel
@@ -32,7 +33,7 @@ class RegisterReminderFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentRegisterReminderBinding.inflate(inflater, container, false)
+        binding = FragmentReminderFormBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -42,11 +43,8 @@ class RegisterReminderFragment : Fragment() {
     }
 
     private fun setupViews(){
-        binding.buttonBackToReminders.setOnClickListener{
-            findNavController().navigateUp()
-        }
 
-        binding.registerUpdateReminderButton.run{
+        binding.reminderFormCadButton.run{
             text = if(reminderInfoArgument == null){
                getString(R.string.register_reminder_button_label)
             }else {
@@ -62,8 +60,8 @@ class RegisterReminderFragment : Fragment() {
             binding.run {
                 textInputEditTextReminderTitle.setText(reminderInfoArgument.title)
                 textInputEditTextReminderDescription.setText(reminderInfoArgument.description)
-                textInputEditTextReminderReminderDate.setText(reminderInfoArgument.reminderDateTime)
-                textInputEditTextReminderTitleLocation.setText(reminderInfoArgument.location)
+                //textInputEditTextReminderReminderDate.setText(reminderInfoArgument.reminderDateTime)
+                textInputEditTextReminderLocation.setText(reminderInfoArgument.location)
             }
         }
     }
@@ -73,8 +71,8 @@ class RegisterReminderFragment : Fragment() {
             val reminderModel = ReminderModel(
                 title = textInputEditTextReminderTitle.text.toString(),
                 description = textInputEditTextReminderDescription.text.toString(),
-                location = textInputEditTextReminderTitleLocation.text.toString(),
-                reminderDateTime = textInputEditTextReminderReminderDate.text.toString(),
+                location = textInputEditTextReminderLocation.text.toString(),
+                reminderDateTime = LocalDateTime.now(),
                 inserted = true
             )
 
@@ -85,13 +83,13 @@ class RegisterReminderFragment : Fragment() {
             if(reminderInfoArgument != null){
                 appDb?.reminderDAO()?.update(reminderModel)
                 showSnackBar(
-                    binding.registerUpdateReminderButton,
+                    binding.reminderFormCadButton,
                     getString(R.string.register_reminder_sucess_updated_message, reminderModel.title)
                 )
             }else{
                 appDb?.reminderDAO()?.insert(reminderModel)
                 showSnackBar(
-                    binding.registerUpdateReminderButton,
+                    binding.reminderFormCadButton,
                     getString(R.string.register_reminder_sucess_registered_message, reminderModel.title)
                 )
             }
@@ -103,13 +101,9 @@ class RegisterReminderFragment : Fragment() {
         binding.run {
             textInputEditTextReminderTitle.text?.clear()
             textInputEditTextReminderDescription.text?.clear()
-            textInputEditTextReminderReminderDate.text?.clear()
-            textInputEditTextReminderTitleLocation.text?.clear()
+            //textInputEditTextReminderReminderDate.text?.clear()
+            textInputEditTextReminderLocation.text?.clear()
         }
-    }
-
-    private fun showRegisterMessage(message: String){
-        showSnackBar(binding.buttonBackToReminder, message)
     }
 
     companion object{

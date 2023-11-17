@@ -8,13 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.fiap.healthtie.R
 import br.com.fiap.healthtie.data.AppDatabase
-import br.com.fiap.healthtie.databinding.FragmentReminderBinding
+import br.com.fiap.healthtie.databinding.FragmentReminderListBinding
 import br.com.fiap.healthtie.domain.ReminderModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ReminderFragment: Fragment() {
 
-    lateinit var binding: FragmentReminderBinding
+    lateinit var binding: FragmentReminderListBinding
 
     private val appDb : AppDatabase? by lazy {
         view?.context?.let {
@@ -34,7 +34,7 @@ class ReminderFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentReminderBinding.inflate(
+        binding = FragmentReminderListBinding.inflate(
             inflater,
             container,
             false
@@ -58,7 +58,7 @@ class ReminderFragment: Fragment() {
     private fun deleteReminder(reminderModel: ReminderModel){
         appDb?.reminderDAO()?.delete(reminderModel)
         SnackBarUtil.showSnackBar(
-            binding.recyclerViewReminder, //passar o id da minha recycler view de lembretes
+            binding.reminderListRecycler, //passar o id da minha recycler view de lembretes
             getString(
                 R.string.register_reminder_sucess_deleted_message,
                 reminderModel.title
@@ -76,15 +76,15 @@ class ReminderFragment: Fragment() {
 
     private fun setupViews(){
         //colocar o id do floatingActionButton que vai inserir novos lembretes
-        binding.buttonAddReminder.setOnClickListener{
+        binding.reminderListAddButton.setOnClickListener{
             findNavController().navigate(
                 R.id.action_toRegisterReminderFragment
             )
         }
 
         //id da RecyclerView que vai estar reproduzindo a view reminder item
-        binding.recyclerViewReminder.setHasFizedSize(true)
-        binding.recyclerViewReminder.adapter = reminderAdapter
+        binding.reminderListRecycler.setHasFixedSize(true)
+        binding.reminderListRecycler.adapter = reminderAdapter
 
         getDataFromDataBase()
     }

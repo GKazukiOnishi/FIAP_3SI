@@ -4,10 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import br.com.fiap.healthtie.domain.ReminderModel
 
 const val REMINDER_DATABASE_NAME = "REMINDER_DATABASE_NAME"
 @Database(entities = [ReminderModel::class], version = 1)
+@TypeConverters(LocalDateTimeConverter::class)
 abstract class AppDatabase : RoomDatabase(){
 
     abstract fun reminderDAO(): ReminderDAO
@@ -23,7 +25,7 @@ abstract class AppDatabase : RoomDatabase(){
                     context,
                     AppDatabase::class.java,
                     REMINDER_DATABASE_NAME
-                ).allowMainThreadQueries()
+                ).allowMainThreadQueries() //tirar
                     .build()
                 INSTANCE = instance
                 return instance

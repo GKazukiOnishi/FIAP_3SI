@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.fiap.healthtie.R
 import br.com.fiap.healthtie.databinding.ViewReminderItemBinding
 import br.com.fiap.healthtie.domain.ReminderModel
-import java.text.FieldPosition
 
 class ReminderAdapter(
     private val onDeleteListener: (ReminderModel) -> Unit = {},
@@ -47,19 +46,18 @@ class ReminderAdapter(
         fun bindView(reminderModel: ReminderModel, itemPosition: Int){
             view.reminderTitleValue.text = reminderModel.title
             view.reminderDescriptionValue.text = reminderModel.description
-            view.reminderReminderDateTimeValue.text = reminderModel.reminderDateTime
-            view.reminderLocationValue.text = reminderModel.location
+            view.reminderReminderDateTimeValue.text = reminderModel.formatReminderDateTime()
 
 
             //colocar o id do icone de dele de iconDelete
-            view.iconDelete.setOnClickListener{
-                onDeleteListener.invoke(reminderModel)
-            }
+//            view.iconDelete.setOnClickListener{
+//                onDeleteListener.invoke(reminderModel)
+//            }
 
             //colocar o id do icone de dele de iconUpdate
-            view.iconUpdate.setOnClickListener{
-                onUpdateListener.invoke(reminderModel)
-            }
+//            view.iconUpdate.setOnClickListener{
+//                onUpdateListener.invoke(reminderModel)
+//            }
         }
     }
 }
