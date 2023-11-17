@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/full_screen">
+
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/top_menu"
@@ -21,24 +24,48 @@
             android:minHeight="?attr/actionBarSize"
             app:layout_scrollFlags="scroll"
             app:menu="@menu/top_menu_bar"
-            app:title="Kazuki"
-            app:logo="@mipmap/ic_launcher_round"
+            android:src="@mipmap/ic_launcher"
             app:titleMarginStart="@dimen/large"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
-            />
+            >
+            <ImageView
+                android:layout_width="@dimen/image_small"
+                android:layout_height="@dimen/image_small"
+                android:src="@drawable/ic_action_person_white"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kazuki"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textAppearance="?attr/textAppearanceTitleLarge"
+                android:layout_marginLeft="@dimen/large"
+                />
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_container"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/navigation_graph"
-        android:name="androidx.navigation.fragment.NavHostFragment"
         app:layout_constraintTop_toBottomOf="@+id/top_menu"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout="@layout/fragment_home" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/navigation_graph"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            tools:layout="@layout/fragment_home"
+            />
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
