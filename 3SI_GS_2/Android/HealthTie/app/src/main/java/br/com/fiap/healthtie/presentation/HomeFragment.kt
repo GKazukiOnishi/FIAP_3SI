@@ -1,4 +1,4 @@
-package br.com.fiap.healthtie
+package br.com.fiap.healthtie.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater

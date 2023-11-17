@@ -4,4 +4,13 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="top_menu_mais">Mais</string>
     <string name="top_menu_mais_desc">Botão de mais do menu superior</string>
+    <string name="register_reminder_sucess_deleted_message">Lembrete %s deletado com sucesso!</string>
+    <string name="delete_dialog_title">Deletar Lembrete</string>
+    <string name="delete_dialog_message">Tem certeza que deseja deletar este lembrete %s ?</string>
+    <string name="delete_cancel_label">Cancelar</string>
+    <string name="delete_continue_label">Deletar</string>
+    <string name="register_reminder_button_label">Cadastrar</string>
+    <string name="update_reminder_button_label">Atualizar</string>
+    <string name="register_reminder_sucess_updated_message">Lembrete %s alterado com sucesso!</string>
+    <string name="register_reminder_sucess_registered_message">Lembrete %s cadastrado com sucesso!</string>
 </resources>

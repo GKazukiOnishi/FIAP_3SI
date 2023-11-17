@@ -6,7 +6,12 @@
 
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="br.com.fiap.healthtie.HomeFragment"
+        android:name="br.com.fiap.healthtie.presentation.HomeFragment"
         />
 
+
+    <action
+        android:id="@+id/action_toRegisterReminderFragment"
+        app:destination="@+id/action_toRegisterReminderFragment"
+        />
 </navigation>
