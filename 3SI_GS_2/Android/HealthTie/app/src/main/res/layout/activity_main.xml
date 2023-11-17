@@ -56,7 +56,7 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/navigation_graph"
             android:name="androidx.navigation.fragment.NavHostFragment"
-            tools:layout="@layout/fragment_home"
+            tools:layout="@layout/fragment_consult_detail"
             />
     </ScrollView>
 

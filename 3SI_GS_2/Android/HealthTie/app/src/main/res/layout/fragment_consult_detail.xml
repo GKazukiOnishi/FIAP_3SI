@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/consult_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="@dimen/medium"
+            android:layout_marginTop="@dimen/small"
+            android:text="Pronto Socorro - 13/11 às 11h23"
+            android:textStyle="bold"
+            style="@style/TextAppearance.AppCompat.Headline"
+            />
+
+        <ImageView
+            android:id="@+id/consult_detail_doctor_img"
+            app:layout_constraintTop_toTopOf="@+id/consult_detail_doctor"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="@dimen/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/medico"
+            />
+        <TextView
+            android:id="@+id/consult_detail_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/small"
+            app:layout_constraintTop_toBottomOf="@+id/consult_detail_title"
+            app:layout_constraintStart_toEndOf="@+id/consult_detail_doctor_img"
+            android:text="Dr. José Freitas"
+            android:textFontWeight="500"
+            style="@style/TextAppearance.AppCompat.Title"
+            />
+
+        <TextView
+            android:id="@+id/consult_detail_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/consult_detail_doctor"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/small"
+            android:layout_marginLeft="@dimen/medium"
+            android:text="Sintomas"
+            android:textFontWeight="500"
+            style="@style/TextAppearance.AppCompat.Medium"
+            />
+        <LinearLayout
+            android:id="@+id/consult_detail_symptoms_list"
+            app:layout_constraintTop_toBottomOf="@id/consult_detail_symptoms"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="@dimen/medium">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:layout_marginLeft="@dimen/medium"
+                android:text="- Febre"
+                style="@style/TextAppearance.AppCompat.Small"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:layout_marginLeft="@dimen/medium"
+                android:text="- Tontura"
+                style="@style/TextAppearance.AppCompat.Small"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:layout_marginLeft="@dimen/medium"
+                android:text="- Enjoo"
+                style="@style/TextAppearance.AppCompat.Small"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/consult_detail_prescriptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/consult_detail_symptoms_list"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/small"
+            android:layout_marginLeft="@dimen/medium"
+            android:text="Prescrições"
+            android:textFontWeight="500"
+            style="@style/TextAppearance.AppCompat.Medium"
+            />
+        <LinearLayout
+            android:id="@+id/consult_detail_prescriptions_list"
+            app:layout_constraintTop_toBottomOf="@id/consult_detail_prescriptions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="@dimen/medium">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:layout_marginLeft="@dimen/medium"
+                android:text="- Floratil 200 mg 1 CP/dia durante 5 dias"
+                style="@style/TextAppearance.AppCompat.Small"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:layout_marginLeft="@dimen/medium"
+                android:text="- Plasil 10 mg 1 CP 8/8 horas se enjoo"
+                style="@style/TextAppearance.AppCompat.Small"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small"
+                android:layout_marginLeft="@dimen/medium"
+                android:text="- Dipirona 100 mg 8/8 horas se febre"
+                style="@style/TextAppearance.AppCompat.Small"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/consult_detail_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/consult_detail_prescriptions_list"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/small"
+            android:layout_marginLeft="@dimen/medium"
+            android:text="Anotações"
+            android:textFontWeight="500"
+            style="@style/TextAppearance.AppCompat.Medium"
+            />
+        <TextView
+            android:id="@+id/consult_detail_notes_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/consult_detail_notes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/small"
+            android:paddingHorizontal="@dimen/medium"
+            android:text="Medicação na veia: Soro.\nObservar piora nos sintomas ou reações alérgicas, retornando para análise se necessário.\nRecomenda-se ingerir algum alimento antes da ingestão dos comprimidos"
+            android:textFontWeight="490"
+            style="@style/TextAppearance.AppCompat.Body1"
+            />
+
+        <Button
+            android:id="@+id/consult_detail_contact"
+            app:layout_constraintTop_toBottomOf="@+id/consult_detail_notes_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contatar"
+            app:icon="@drawable/consultando"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
