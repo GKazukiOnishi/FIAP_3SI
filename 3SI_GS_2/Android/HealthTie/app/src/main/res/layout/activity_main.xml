@@ -7,8 +7,6 @@
     tools:context=".MainActivity"
     android:id="@+id/full_screen">
 
-
-
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/top_menu"
         android:layout_width="match_parent"
@@ -16,7 +14,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
@@ -43,10 +40,7 @@
                 android:textAppearance="?attr/textAppearanceTitleLarge"
                 android:layout_marginLeft="@dimen/large"
                 />
-
-
         </com.google.android.material.appbar.MaterialToolbar>
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
@@ -55,7 +49,6 @@
         app:layout_constraintTop_toBottomOf="@+id/top_menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
@@ -63,9 +56,8 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/navigation_graph"
             android:name="androidx.navigation.fragment.NavHostFragment"
-            tools:layout="@layout/fragment_home"
+            tools:layout="@layout/fragment_consult_detail"
             />
-
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
