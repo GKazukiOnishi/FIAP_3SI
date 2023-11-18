@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CB71ACF2-F06A-06B2-21EA-8289B675513D" name="OBJETIVO">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 15:16:54 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cod_meta" id="026C29FE-5161-9DF8-C120-74BD845C7055">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 15:33:39 UTC</createdTime>
+<generatorID>251C1031-0B07-3746-9C8F-3DCC33A74B86</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<referedAttribute>C69FAFEE-54F8-8F18-72E1-13AD691E0E0C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="origem" id="4A3064CC-A859-A870-AB7E-3AB5DB5A49FE">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 15:18:00 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="objetivo" id="D5F54BD3-645B-D120-2CF3-4297CC73BFDB">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 15:27:05 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000</dataTypeSize>
+<ownDataTypeParameters>2000,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0FE939F4-42B9-E9DB-A8A0-E7EA6F762520" name="OBJETIVO PK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 15:17:58 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>4A3064CC-A859-A870-AB7E-3AB5DB5A49FE,251C1031-0B07-3746-9C8F-3DCC33A74B86</newElementsIDs>
+<usedAttributes>
+<attributeRef>4A3064CC-A859-A870-AB7E-3AB5DB5A49FE</attributeRef>
+<attributeRef>026C29FE-5161-9DF8-C120-74BD845C7055</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
