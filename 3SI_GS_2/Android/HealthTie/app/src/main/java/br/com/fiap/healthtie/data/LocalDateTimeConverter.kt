@@ -5,7 +5,6 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class LocalDateTimeConverter {
-
     @TypeConverter
     fun fromTimestamp(value: String?): LocalDateTime? {
         return value?.let {

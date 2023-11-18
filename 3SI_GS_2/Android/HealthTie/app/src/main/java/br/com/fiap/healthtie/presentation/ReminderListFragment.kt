@@ -12,7 +12,7 @@ import br.com.fiap.healthtie.databinding.FragmentReminderListBinding
 import br.com.fiap.healthtie.domain.ReminderModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-class ReminderFragment: Fragment() {
+class ReminderListFragment: Fragment() {
 
     lateinit var binding: FragmentReminderListBinding
 
@@ -52,7 +52,7 @@ class ReminderFragment: Fragment() {
     }
 
     private fun goToRegisterReminder(reminderModel: ReminderModel? = null){
-        findNavController().navigate(R.id.action_toRegisterReminderFragment, RegisterReminderFragment.buildBundle(reminderModel))
+        findNavController().navigate(R.id.action_to_home, ReminderFormFragment.buildBundle(reminderModel))
     }
 
     private fun deleteReminder(reminderModel: ReminderModel){
@@ -75,14 +75,12 @@ class ReminderFragment: Fragment() {
     }
 
     private fun setupViews(){
-        //colocar o id do floatingActionButton que vai inserir novos lembretes
         binding.reminderListAddButton.setOnClickListener{
             findNavController().navigate(
-                R.id.action_toRegisterReminderFragment
+                R.id.action_to_reminder_form
             )
         }
 
-        //id da RecyclerView que vai estar reproduzindo a view reminder item
         binding.reminderListRecycler.setHasFixedSize(true)
         binding.reminderListRecycler.adapter = reminderAdapter
 

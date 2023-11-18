@@ -12,6 +12,7 @@ import br.com.fiap.healthtie.domain.ReminderModel
 @Dao
 interface ReminderDAO {
     @Query("SELECT * FROM $REMINDER_MODEL_TABLE_NOME ORDER BY id")
+
     fun select(): List<ReminderModel>
     @Insert
     fun insert(reminderModel: ReminderModel)

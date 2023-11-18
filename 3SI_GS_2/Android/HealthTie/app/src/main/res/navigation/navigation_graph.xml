@@ -9,9 +9,38 @@
         android:name="br.com.fiap.healthtie.presentation.HomeFragment"
         />
 
+    <fragment
+        android:id="@+id/ConsultDetailFragment"
+        android:name="br.com.fiap.healthtie.presentation.ConsultDetailFragment"
+        />
+
+    <fragment
+        android:id="@+id/ReminderListFragment"
+        android:name="br.com.fiap.healthtie.presentation.ReminderListFragment"
+        />
+
+    <fragment
+        android:id="@+id/ReminderFormFragment"
+        android:name="br.com.fiap.healthtie.presentation.ReminderFormFragment"
+        />
 
     <action
-        android:id="@+id/action_toRegisterReminderFragment"
-        app:destination="@+id/action_toRegisterReminderFragment"
+        android:id="@+id/action_to_home"
+        app:destination="@+id/HomeFragment"
+        />
+
+    <action
+        android:id="@+id/action_to_consult_detail"
+        app:destination="@+id/ConsultDetailFragment"
+        />
+
+    <action
+        android:id="@+id/action_to_reminder_list"
+        app:destination="@+id/ReminderListFragment"
+        />
+
+    <action
+        android:id="@+id/action_to_reminder_form"
+        app:destination="@+id/ReminderFormFragment"
         />
 </navigation>

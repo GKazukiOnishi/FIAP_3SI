@@ -6,19 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import br.com.fiap.healthtie.R
+import br.com.fiap.healthtie.databinding.FragmentConsultDetailBinding
 import br.com.fiap.healthtie.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class ConsultDetailFragment : Fragment() {
 
-    lateinit var binding: FragmentHomeBinding
+    lateinit var binding: FragmentConsultDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentConsultDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,9 +28,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun configurarFragment() {
-        binding.homeLastAtendButton.setOnClickListener {
-            findNavController().navigate(R.id.action_to_consult_detail)
-        }
+
     }
 
 }

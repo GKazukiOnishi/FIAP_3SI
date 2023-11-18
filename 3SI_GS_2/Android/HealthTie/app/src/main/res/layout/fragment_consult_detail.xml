@@ -2,17 +2,32 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <Space
+            android:id="@+id/consult_detail_space_0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/spacing_xxl"
+            />
+        <Space
+            app:layout_constraintTop_toBottomOf="@id/consult_detail_space_0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/consult_detail_space_1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/spacing_md"
+            />
+
         <TextView
             android:id="@+id/consult_detail_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/consult_detail_space_1"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="@dimen/medium"
             android:layout_marginTop="@dimen/small"

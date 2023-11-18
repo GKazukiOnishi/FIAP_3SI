@@ -7,7 +7,8 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import br.com.fiap.healthtie.domain.ReminderModel
 
-const val REMINDER_DATABASE_NAME = "REMINDER_DATABASE_NAME"
+const val REMINDER_DATABASE_NAME = "REMINDER_DATABASE"
+
 @Database(entities = [ReminderModel::class], version = 1)
 @TypeConverters(LocalDateTimeConverter::class)
 abstract class AppDatabase : RoomDatabase(){

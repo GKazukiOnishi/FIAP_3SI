@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import br.com.fiap.healthtie.R
 import br.com.fiap.healthtie.data.AppDatabase
 import br.com.fiap.healthtie.databinding.FragmentReminderFormBinding
@@ -14,7 +13,7 @@ import br.com.fiap.healthtie.domain.ReminderModel
 import br.com.fiap.healthtie.presentation.SnackBarUtil.showSnackBar
 import java.time.LocalDateTime
 
-class RegisterReminderFragment : Fragment() {
+class ReminderFormFragment : Fragment() {
 
     private lateinit var binding: FragmentReminderFormBinding
 

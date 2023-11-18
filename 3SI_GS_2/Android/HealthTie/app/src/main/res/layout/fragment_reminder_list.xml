@@ -5,11 +5,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <Space
+        android:id="@+id/reminder_list_space_0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/spacing_xxl"
+        />
+    <Space
+        app:layout_constraintTop_toBottomOf="@id/reminder_list_space_0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/reminder_list_space_1"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/spacing_md"
+        />
+
     <TextView
         android:id="@+id/reminder_list_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reminder_list_space_1"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="@dimen/medium"
         android:layout_marginTop="@dimen/small"
@@ -34,6 +49,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/reminder_list_add_button"
+        android:layout_marginTop="@dimen/large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/medium"
@@ -41,6 +57,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:src="@drawable/botao_adicionar"
+        />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

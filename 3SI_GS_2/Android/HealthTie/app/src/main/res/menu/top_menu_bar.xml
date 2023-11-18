@@ -3,50 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menu_home"
+        android:title="Home"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_profile"
         android:title="Perfil"
-        android:contentDescription="@string/top_menu_mais_desc"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/menu_consulting"
-        android:title="Atendimentos"
-        android:contentDescription="@string/top_menu_mais_desc"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/menu_exam"
-        android:title="Exames"
-        android:contentDescription="@string/top_menu_mais_desc"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/menu_vaccine"
-        android:title="Vacinas"
-        android:contentDescription="@string/top_menu_mais_desc"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/menu_family"
-        android:title="Família"
-        android:contentDescription="@string/top_menu_mais_desc"
-        app:showAsAction="never" />
-
     <item
         android:id="@+id/menu_notificacion"
         android:title="Notificações"
-        android:contentDescription="@string/top_menu_mais_desc"
         app:showAsAction="never" />
-
     <item
         android:id="@+id/menu_reminders"
         android:title="Lembretes"
-        android:contentDescription="@string/top_menu_mais_desc"
         app:showAsAction="never" />
-
     <item
         android:id="@+id/menu_configuration"
         android:title="Configurações"
-        android:contentDescription="@string/top_menu_mais_desc"
         app:showAsAction="never" />
-
-
-
 
 </menu>
