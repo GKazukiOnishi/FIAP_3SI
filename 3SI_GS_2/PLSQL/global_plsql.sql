@@ -133,13 +133,27 @@ BEGIN
 END update_time_in_hospital;
 /
 
+-- Segunda forma
+CREATE OR REPLACE PROCEDURE update_time_in_hospital(p_last_change_date IN DATE,
+                                                    p_time_in_hospital IN NUMBER) IS
+BEGIN
+    UPDATE diabetes
+    SET    time_in_hospital = time_in_hospital + p_time_in_hospital
+    WHERE  TRUNC(last_change_date) = p_last_change_date -- Selected date
+    AND    time_in_hospital + p_time_in_hospital < 14;
+
+    dbms_output.put_line(sql%rowcount || ' rows updated');
+    COMMIT;
+END update_time_in_hospital;
+/
+
 -- Teste de tempo
 SET SERVEROUT ON
 DECLARE
     t0    NUMBER := dbms_utility.get_time;
     v_idx NUMBER := 1;
 BEGIN
-    UPDATE_TIME_IN_HOSPITAL(P_LAST_CHANGE_DATE => '14-NOV-2023',
+    UPDATE_TIME_IN_HOSPITAL(P_LAST_CHANGE_DATE => '10-NOV-2023',
                             P_TIME_IN_HOSPITAL => 1);
     DBMS_OUTPUT.PUT_LINE('Tempo: ' || ((DBMS_UTILITY.GET_TIME - T0) / 100) || ' segundos'); 
 END;

@@ -9,9 +9,9 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
-const val REMINDER_MODEL_TABLE_NOME = "reminderTable"
+const val REMINDER_MODEL_TABLE_NAME = "reminderTable"
 
-@Entity(tableName = REMINDER_MODEL_TABLE_NOME)
+@Entity(tableName = REMINDER_MODEL_TABLE_NAME)
 @Parcelize
 data class ReminderModel(
 

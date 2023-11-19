@@ -12,7 +12,6 @@ import br.com.fiap.healthtie.databinding.FragmentFamilyGroupListBinding
 import kotlinx.coroutines.launch
 
 class FamilyGroupListFragment : Fragment() {
-
     private lateinit var binding: FragmentFamilyGroupListBinding
     private val viewModel: FamilyGroupListViewModel by viewModels()
 

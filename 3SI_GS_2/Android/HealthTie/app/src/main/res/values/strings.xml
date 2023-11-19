@@ -60,6 +60,9 @@
     <string name="reminder_form_hint_input_date">Data</string>
     <string name="reminder_form_hint_input_hour">Hora</string>
     <string name="reminder_form_confirm_button">Confirmar</string>
+    <string name="reminder_form_successful_insert">Você inseriu um lembrete com sucesso</string>
+    <string name="reminder_form_successful_update">Você alterou um lembrete com sucesso</string>
+    <string name="reminder_form_successful_delete">Você deletou um lembrete com sucesso</string>
 
     <!--Referente ao Home Fragment-->
     <string name="first_header_title_home">Último Atendimento</string>

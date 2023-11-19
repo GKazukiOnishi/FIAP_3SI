@@ -3,18 +3,20 @@ package br.com.fiap.healthtie.presentation
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import br.com.fiap.healthtie.R
 import br.com.fiap.healthtie.data.AppDatabase
 import br.com.fiap.healthtie.domain.ReminderModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ReminderListViewModel(private val application: Application) : AndroidViewModel(application) {
+class ReminderViewModel(private val application: Application) : AndroidViewModel(application) {
 
     val reminders = MutableLiveData<List<ReminderModel>>()
     val remindersInserted = MutableLiveData<String>()
     val remindersDeleted = MutableLiveData<String>()
     val remindersUpdated = MutableLiveData<String>()
+
     suspend fun selectReminders() {
         withContext(Dispatchers.IO) {
             launch {
@@ -23,7 +25,6 @@ class ReminderListViewModel(private val application: Application) : AndroidViewM
                 withContext(Dispatchers.Main) {
                     reminders.value = result
                 }
-
             }
         }
     }
@@ -34,7 +35,7 @@ class ReminderListViewModel(private val application: Application) : AndroidViewM
                 AppDatabase.getDataBase(application.applicationContext).reminderDAO()
                     .insert(reminderModel)
                 withContext(Dispatchers.Main) {
-                    remindersInserted.value = "Você inseriu um lembrete com sucesso"
+                    remindersInserted.value = application.getString(R.string.reminder_form_successful_insert)
                 }
             }
         }
@@ -46,7 +47,7 @@ class ReminderListViewModel(private val application: Application) : AndroidViewM
                 AppDatabase.getDataBase(application.applicationContext).reminderDAO()
                     .update(reminderModel)
                 withContext(Dispatchers.Main) {
-                    remindersUpdated.value = "Você alterou um lembrete com sucesso"
+                    remindersUpdated.value = application.getString(R.string.reminder_form_successful_update)
                 }
             }
         }
@@ -58,7 +59,7 @@ class ReminderListViewModel(private val application: Application) : AndroidViewM
                 AppDatabase.getDataBase(application.applicationContext).reminderDAO()
                     .delete(reminderModel)
                 withContext(Dispatchers.Main) {
-                    remindersDeleted.value = "Você deletou um lembrete com sucesso"
+                    remindersDeleted.value = application.getString(R.string.reminder_form_successful_delete)
                 }
             }
         }

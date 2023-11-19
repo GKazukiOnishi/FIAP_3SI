@@ -32,11 +32,13 @@ class ReminderAdapter(
     override fun getItemCount(): Int {
         return reminderList.size
     }
+
     fun setData(list: List<ReminderModel>){
         reminderList.clear()
         reminderList.addAll(list)
         notifyDataSetChanged()
     }
+
     inner class ReminderItemViewHolder(
         private val view: ViewReminderItemBinding
     ): RecyclerView.ViewHolder(view.root){
@@ -46,13 +48,6 @@ class ReminderAdapter(
             view.reminderDescriptionValue.text = reminderModel.description
             view.reminderReminderDateTimeValue.text = reminderModel.formatReminderDateTime()
 
-
-           // colocar o id do icone de dele de iconDelete
-           // view.iconDelete.setOnClickListener{
-           //     onDeleteListener.invoke(reminderModel)
-           // }
-
-           // colocar o id do icone de dele de iconUpdate
             view.reminderItemEditButton.setOnClickListener{
                 onUpdateListener.invoke(reminderModel)
             }

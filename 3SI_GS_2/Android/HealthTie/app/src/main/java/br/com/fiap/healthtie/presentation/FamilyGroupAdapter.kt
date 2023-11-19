@@ -8,7 +8,6 @@ import br.com.fiap.healthtie.databinding.ViewFamilyGroupItemBinding
 import br.com.fiap.healthtie.domain.FamilyGroupModel
 
 class FamilyGroupAdapter : RecyclerView.Adapter<FamilyGroupAdapter.FamilyGroupItemViewHolder>(){
-
     private var familyGroupList: MutableList<FamilyGroupModel> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FamilyGroupItemViewHolder{
@@ -26,7 +25,6 @@ class FamilyGroupAdapter : RecyclerView.Adapter<FamilyGroupAdapter.FamilyGroupIt
         holder.bindView(familyGroupList[position])
     }
 
-
     override fun getItemCount(): Int {
         return familyGroupList.size
     }
@@ -36,6 +34,7 @@ class FamilyGroupAdapter : RecyclerView.Adapter<FamilyGroupAdapter.FamilyGroupIt
         familyGroupList.addAll(list)
         notifyDataSetChanged()
     }
+
     inner class FamilyGroupItemViewHolder(
         private val view: ViewFamilyGroupItemBinding
     ): RecyclerView.ViewHolder(view.root){
