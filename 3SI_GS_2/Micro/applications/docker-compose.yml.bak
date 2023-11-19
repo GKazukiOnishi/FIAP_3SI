@@ -6,7 +6,7 @@ networks:
 
 services:
   ods3db:
-    image: ods3-db:v0.0.6
+    image: ods3-db:vCompose
     container_name: ods3db
     ports:
       - "3306:3306"
@@ -19,7 +19,7 @@ services:
       - ods3_network
 
   ods3api:
-    image: ods3-api:v0.0.1
+    image: ods3-api:vvCompose
     container_name: ods3api
     ports:
       - "3000:3000"
