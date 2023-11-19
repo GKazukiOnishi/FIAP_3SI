@@ -4,23 +4,23 @@
 
     <item
         android:id="@+id/menu_home"
-        android:title="Home"
+        android:title="@string/menu_home_string"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_profile"
-        android:title="Perfil"
+        android:title="@string/menu_perfil_string"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_notificacion"
-        android:title="Notificações"
+        android:title="@string/menu_notificacoes_string"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_reminders"
-        android:title="Lembretes"
+        android:title="@string/menu_lembretes_string"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_configuration"
-        android:title="Configurações"
+        android:title="@string/menu_configuracoes_string"
         app:showAsAction="never" />
 
 </menu>

@@ -1,11 +1,10 @@
 package br.com.fiap.healthtie.domain
 
 import android.os.Parcelable
-import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 
 const val FAMILY_GROUP_MODEL_TABLE_NOME = "familyGroupTable"
@@ -15,8 +14,8 @@ const val FAMILY_GROUP_MODEL_TABLE_NOME = "familyGroupTable"
 data class FamilyGroupModel(
 
     @PrimaryKey(autoGenerate = true) var id: Int = 0,
-    @NonNull @ColumnInfo val namePerson: String,
-    @NonNull @ColumnInfo val note: String,
-    @NonNull @ColumnInfo val kinship: FamilyGroupKindship,
+    @ColumnInfo val namePerson: String,
+    @ColumnInfo val note: String,
+    @ColumnInfo val kinship: FamilyGroupKindship,
 
-): Parcelable{}
+) : Parcelable

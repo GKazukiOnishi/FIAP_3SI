@@ -1,13 +1,10 @@
 package br.com.fiap.healthtie.data
 
 import android.content.Context
-import androidx.annotation.NonNull
-import androidx.room.ColumnInfo
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import br.com.fiap.healthtie.domain.FAMILY_GROUP_MODEL_TABLE_NOME
 import br.com.fiap.healthtie.domain.FamilyGroupKindship
 import br.com.fiap.healthtie.domain.FamilyGroupModel
 import br.com.fiap.healthtie.domain.ReminderModel

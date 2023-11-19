@@ -25,9 +25,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/reminder_form_space_1"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="@dimen/medium"
+        android:layout_marginStart="@dimen/medium"
         android:layout_marginTop="@dimen/small"
-        android:text="Novo Lembrete"
+        android:text="@string/reminder_form_title"
         android:textStyle="bold"
         style="@style/TextAppearance.AppCompat.Headline"
         />
@@ -40,7 +40,7 @@
         android:layout_marginHorizontal="@dimen/medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título do lembrete">
+        android:hint="@string/reminder_form_hint_input_title">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextReminderTitle"
@@ -58,7 +58,7 @@
         android:layout_marginHorizontal="@dimen/medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descrição do lembrete">
+        android:hint="@string/reminder_form_hint_input_description">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextReminderDescription"
@@ -76,7 +76,7 @@
         android:layout_marginHorizontal="@dimen/medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Localização"
+        android:hint="@string/reminder_form_hint_input_location"
         app:startIconDrawable="@drawable/location">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -95,7 +95,7 @@
         android:layout_marginHorizontal="@dimen/medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Data"
+        android:hint="@string/reminder_form_hint_input_date"
         app:startIconDrawable="@drawable/calendario"
         >
 
@@ -119,7 +119,7 @@
         android:layout_marginHorizontal="@dimen/medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Hora"
+        android:hint="@string/reminder_form_hint_input_hour"
         app:startIconDrawable="@drawable/relogio_de_parede">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -142,7 +142,7 @@
         android:layout_marginTop="@dimen/large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirmar"
+        android:text="@string/reminder_form_confirm_button"
         app:icon="@drawable/marca_de_verificacao"
         />
 

@@ -80,14 +80,14 @@ class ReminderFormFragment : Fragment() {
             binding.run {
                 textInputEditTextReminderTitle.setText(reminderInfoArgument.title)
                 textInputEditTextReminderDescription.setText(reminderInfoArgument.description)
-                textInputEditTextReminderDate.setText(convertLocalDateTimetoDateString(reminderInfoArgument.reminderDateTime))
+                textInputEditTextReminderDate.setText(convertLocalDateTimeToDateString(reminderInfoArgument.reminderDateTime))
                 textInputEditTextReminderHour.setText(convertLocalDateTimeToTime(reminderInfoArgument.reminderDateTime))
                 textInputEditTextReminderLocation.setText(reminderInfoArgument.location)
             }
         }
     }
 
-    private fun convertLocalDateTimetoDateString(localDataDatabase: LocalDateTime): String{
+    private fun convertLocalDateTimeToDateString(localDataDatabase: LocalDateTime): String{
         val patternDate = DateTimeFormatter.ofPattern("dd/MM/yyyy")
         return localDataDatabase.format(patternDate)
     }
@@ -101,12 +101,12 @@ class ReminderFormFragment : Fragment() {
     private fun showHourPicker() {
         val cal = Calendar.getInstance()
         val timeSetListerner = TimePickerDialog.OnTimeSetListener{
-            timePicker, hour, minute ->
+            _, hour, minute ->
             cal.set(Calendar.HOUR_OF_DAY, hour)
             cal.set(Calendar.MINUTE, minute)
             cal.set(Calendar.HOUR_OF_DAY, hour)
 
-            binding.textInputEditTextReminderHour.setText(SimpleDateFormat("HH:mm").format(cal.time))
+            binding.textInputEditTextReminderHour.setText(SimpleDateFormat("HH:mm", Locale.getDefault()).format(cal.time))
         }
 
         TimePickerDialog(context, timeSetListerner, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
@@ -116,7 +116,7 @@ class ReminderFormFragment : Fragment() {
         val datePickerDialog = view?.let {
             DatePickerDialog(
                 requireContext(),
-                { DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int ->
+                { _, year: Int, monthOfYear: Int, dayOfMonth: Int ->
                     val selectedDate = Calendar.getInstance()
                     selectedDate.set(year, monthOfYear, dayOfMonth)
                     val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
@@ -135,9 +135,7 @@ class ReminderFormFragment : Fragment() {
             )
         }
 
-        if (datePickerDialog != null) {
-            datePickerDialog.show()
-        }
+        datePickerDialog?.show()
 
     }
 
@@ -170,10 +168,10 @@ class ReminderFormFragment : Fragment() {
         val dateString = binding.textInputEditTextReminderDate.text.toString()
         val hourString = binding.textInputEditTextReminderHour.text.toString()
 
-        val dateTimeString = "$dateString $hourString:00";
+        val dateTimeString = "$dateString $hourString:00"
         val customFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")
 
-        return LocalDateTime.parse(dateTimeString,customFormatter);
+        return LocalDateTime.parse(dateTimeString,customFormatter)
     }
     private fun insertUpdateData() {
 

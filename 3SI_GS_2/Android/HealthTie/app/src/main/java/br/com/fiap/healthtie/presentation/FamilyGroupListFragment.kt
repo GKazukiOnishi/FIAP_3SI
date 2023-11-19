@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class FamilyGroupListFragment : Fragment() {
 
-    lateinit var binding: FragmentFamilyGroupListBinding
+    private lateinit var binding: FragmentFamilyGroupListBinding
     private val viewModel: FamilyGroupListViewModel by viewModels()
 
     private val familyGroupAdapter by lazy {
