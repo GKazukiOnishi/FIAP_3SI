@@ -31,6 +31,10 @@ class HomeFragment : Fragment() {
         binding.homeLastAtendButton.setOnClickListener {
             findNavController().navigate(R.id.action_to_consult_detail)
         }
+
+        binding.familyGroupItemCard.setOnClickListener {
+            findNavController().navigate(R.id.action_to_family_group_list)
+        }
     }
 
 }

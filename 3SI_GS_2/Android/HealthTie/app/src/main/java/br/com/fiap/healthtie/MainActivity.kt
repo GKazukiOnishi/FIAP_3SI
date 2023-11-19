@@ -1,11 +1,12 @@
 package br.com.fiap.healthtie
 
-import androidx.appcompat.app.AppCompatActivity
+import android.database.sqlite.SQLiteStatement
 import android.os.Bundle
-import androidx.navigation.Navigation.findNavController
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import br.com.fiap.healthtie.databinding.ActivityMainBinding
-import br.com.fiap.healthtie.presentation.HomeFragment
+import br.com.fiap.healthtie.domain.REMINDER_MODEL_TABLE_NOME
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         configureMenuNavigation()
+
     }
 
     private fun configureMenuNavigation() {

@@ -12,14 +12,14 @@ import br.com.fiap.healthtie.domain.ReminderModel
 @Dao
 interface ReminderDAO {
     @Query("SELECT * FROM $REMINDER_MODEL_TABLE_NOME ORDER BY id")
+    suspend fun select(): List<ReminderModel>
 
-    fun select(): List<ReminderModel>
     @Insert
-    fun insert(reminderModel: ReminderModel)
+    suspend fun insert(reminderModel: ReminderModel)
 
     @Update
-    fun update(reminderModel: ReminderModel)
+    suspend fun update(reminderModel: ReminderModel)
 
     @Delete
-    fun delete(reminderModel: ReminderModel)
+    suspend fun delete(reminderModel: ReminderModel)
 }
