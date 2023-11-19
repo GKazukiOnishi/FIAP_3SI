@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import br.com.fiap.healthtie.databinding.ActivityMainBinding
 
-
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -17,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         configureMenuNavigation()
-
     }
 
     private fun configureMenuNavigation() {

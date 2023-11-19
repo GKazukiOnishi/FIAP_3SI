@@ -31,10 +31,8 @@ abstract class AppDatabase : RoomDatabase() {
                     context,
                     AppDatabase::class.java,
                     HEALTH_TIE_DATABASE_NAME,
-
                     ).build()
                 INSTANCE = instance
-
 
                 val familyGroupList = listOf(
                     FamilyGroupModel(
@@ -110,7 +108,6 @@ abstract class AppDatabase : RoomDatabase() {
                     )
                 )
 
-
                 if (INSTANCE?.familyGroupDAO()?.select()?.isEmpty() == true) {
                     familyGroupList.forEach {
                         INSTANCE?.familyGroupDAO()?.insert(it)
@@ -122,8 +119,6 @@ abstract class AppDatabase : RoomDatabase() {
                         INSTANCE?.reminderDAO()?.insert(it)
                     }
                 }
-
-
 
                 return instance
             }

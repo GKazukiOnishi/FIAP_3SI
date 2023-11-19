@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class FamilyGroupListViewModel(private val application: Application) : AndroidViewModel(application) {
-
     val groupFamily = MutableLiveData<List<FamilyGroupModel>>()
 
     suspend fun selectGroupFamily(){
@@ -23,6 +22,4 @@ class FamilyGroupListViewModel(private val application: Application) : AndroidVi
             }
         }
     }
-
-
 }

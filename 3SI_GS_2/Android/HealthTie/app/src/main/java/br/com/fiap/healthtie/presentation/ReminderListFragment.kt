@@ -10,17 +10,15 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import br.com.fiap.healthtie.R
-import br.com.fiap.healthtie.data.AppDatabase
 import br.com.fiap.healthtie.databinding.FragmentReminderListBinding
 import br.com.fiap.healthtie.domain.ReminderModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 
-class ReminderListFragment: Fragment() {
+class ReminderListFragment : Fragment() {
 
     lateinit var binding: FragmentReminderListBinding
-    private val viewModel: ReminderListViewModel by viewModels()
-
+    private val viewModel: ReminderViewModel by viewModels()
 
     private val reminderAdapter by lazy {
         ReminderAdapter(
@@ -58,56 +56,64 @@ class ReminderListFragment: Fragment() {
         )
     }
 
-    private fun updateReminder(reminderModel: ReminderModel){
+    private fun updateReminder(reminderModel: ReminderModel) {
         goToRegisterReminder(reminderModel)
     }
 
-    private fun goToRegisterReminder(reminderModel: ReminderModel? = null){
-        findNavController().navigate(R.id.action_to_reminder_form, ReminderFormFragment.buildBundle(reminderModel))
+    private fun goToRegisterReminder(reminderModel: ReminderModel? = null) {
+        findNavController().navigate(
+            R.id.action_to_reminder_form,
+            ReminderFormFragment.buildBundle(reminderModel)
+        )
     }
 
-    private fun deleteReminder(reminderModel: ReminderModel){
+    private fun deleteReminder(reminderModel: ReminderModel) {
         lifecycleScope.launch {
             viewModel.deleteReminder(reminderModel)
 
-        SnackBarUtil.showSnackBar(
-            binding.reminderListRecycler, //passar o id da minha recycler view de lembretes
-            getString(
-                R.string.register_reminder_sucess_deleted_message,
-                reminderModel.title
+            SnackBarUtil.showSnackBar(
+                binding.reminderListRecycler,
+                getString(
+                    R.string.register_reminder_sucess_deleted_message,
+                    reminderModel.title
+                )
             )
-        )
 
-        getDataFromDataBase()
-       }
+            getDataFromDataBase()
+        }
     }
 
-    private fun getDataFromDataBase(){
+    private fun getDataFromDataBase() {
         lifecycleScope.launch {
             viewModel.selectReminders()
         }
     }
 
-    private fun setupViews(){
+    private fun setupViews() {
         binding.reminderListRecycler.setHasFixedSize(true)
         binding.reminderListRecycler.adapter = reminderAdapter
 
-        binding.reminderListAddButton.setOnClickListener{
+        binding.reminderListAddButton.setOnClickListener {
             findNavController().navigate(
                 R.id.action_to_reminder_form
             )
         }
     }
 
-    private fun openConfirmationDeleteDialog(reminderModel: ReminderModel){
-        context?.let{
+    private fun openConfirmationDeleteDialog(reminderModel: ReminderModel) {
+        context?.let {
             MaterialAlertDialogBuilder(it)
                 .setTitle(resources.getString(R.string.delete_dialog_title))
-                .setMessage(resources.getString(R.string.delete_dialog_message, reminderModel.title))
-                .setNeutralButton(resources.getString(R.string.delete_cancel_label)){dialog, _ ->
+                .setMessage(
+                    resources.getString(
+                        R.string.delete_dialog_message,
+                        reminderModel.title
+                    )
+                )
+                .setNeutralButton(resources.getString(R.string.delete_cancel_label)) { dialog, _ ->
                     dialog.cancel()
                 }
-                .setPositiveButton(resources.getString(R.string.delete_continue_label)){dialog, _ ->
+                .setPositiveButton(resources.getString(R.string.delete_continue_label)) { dialog, _ ->
                     deleteReminder(reminderModel)
                     dialog.dismiss()
                 }

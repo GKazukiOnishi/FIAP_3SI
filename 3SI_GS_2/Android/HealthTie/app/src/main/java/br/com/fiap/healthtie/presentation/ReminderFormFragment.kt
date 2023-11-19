@@ -30,13 +30,12 @@ import java.util.Locale
 class ReminderFormFragment : Fragment() {
 
     private lateinit var binding: FragmentReminderFormBinding
-    private val viewModel: ReminderListViewModel by viewModels()
+    private val viewModel: ReminderViewModel by viewModels()
     private val calendar = Calendar.getInstance()
 
     private val reminderInfoArgument by lazy {
         arguments?.getParcelable(REMINDER_MODEL_BUNDLE_KEY) as? ReminderModel
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,7 +53,6 @@ class ReminderFormFragment : Fragment() {
     }
 
     private fun setupViews() {
-
         binding.textInputEditTextReminderDate.setOnClickListener {
             showDatePicker()
         }
@@ -62,7 +60,6 @@ class ReminderFormFragment : Fragment() {
         binding.textInputEditTextReminderHour.setOnClickListener {
             showHourPicker()
         }
-
 
         binding.reminderFormCadButton.run {
             text = if (reminderInfoArgument == null) {
@@ -97,10 +94,9 @@ class ReminderFormFragment : Fragment() {
         return localDateTime.format(patternHour)
     }
 
-
     private fun showHourPicker() {
         val cal = Calendar.getInstance()
-        val timeSetListerner = TimePickerDialog.OnTimeSetListener{
+        val timeSetListener = TimePickerDialog.OnTimeSetListener{
             _, hour, minute ->
             cal.set(Calendar.HOUR_OF_DAY, hour)
             cal.set(Calendar.MINUTE, minute)
@@ -109,7 +105,7 @@ class ReminderFormFragment : Fragment() {
             binding.textInputEditTextReminderHour.setText(SimpleDateFormat("HH:mm", Locale.getDefault()).format(cal.time))
         }
 
-        TimePickerDialog(context, timeSetListerner, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        TimePickerDialog(context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
     }
 
     private fun showDatePicker() {
@@ -122,12 +118,6 @@ class ReminderFormFragment : Fragment() {
                     val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
                     var formattedDate: String = dateFormat.format(selectedDate.time)
                     binding.textInputEditTextReminderDate.setText(formattedDate)
-
-//                    val date = LocalDate.of(year, monthOfYear+1, dayOfMonth)
-//                    val dateAux = Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant())
-//                    val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-//                    val formattedDate = dateFormat.format(dateAux)
-//                    binding.textInputEditTextReminderDate.setText(formattedDate)
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
@@ -136,7 +126,6 @@ class ReminderFormFragment : Fragment() {
         }
 
         datePickerDialog?.show()
-
     }
 
 
@@ -164,7 +153,6 @@ class ReminderFormFragment : Fragment() {
 
 
     private fun convertStringToLocalDateTime(): LocalDateTime{
-
         val dateString = binding.textInputEditTextReminderDate.text.toString()
         val hourString = binding.textInputEditTextReminderHour.text.toString()
 
@@ -173,11 +161,9 @@ class ReminderFormFragment : Fragment() {
 
         return LocalDateTime.parse(dateTimeString,customFormatter)
     }
+
     private fun insertUpdateData() {
-
         binding.run {
-
-
             val reminderModel = ReminderModel(
                 title = textInputEditTextReminderTitle.text.toString(),
                 description = textInputEditTextReminderDescription.text.toString(),
@@ -199,7 +185,6 @@ class ReminderFormFragment : Fragment() {
             }
         }
         clearForm()
-
     }
 
     private fun clearForm() {

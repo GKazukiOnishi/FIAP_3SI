@@ -40,12 +40,9 @@
             tools:itemCount="3"
             tools:listitem="@layout/view_family_group_item" />
 
-
         <Space
             android:layout_width="wrap_content"
             android:layout_height="@dimen/large" />
-
-
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -6,10 +6,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
+const val FAMILY_GROUP_MODEL_TABLE_NAME = "familyGroupTable"
 
-const val FAMILY_GROUP_MODEL_TABLE_NOME = "familyGroupTable"
-
-@Entity(tableName = FAMILY_GROUP_MODEL_TABLE_NOME)
+@Entity(tableName = FAMILY_GROUP_MODEL_TABLE_NAME)
 @Parcelize
 data class FamilyGroupModel(
 
