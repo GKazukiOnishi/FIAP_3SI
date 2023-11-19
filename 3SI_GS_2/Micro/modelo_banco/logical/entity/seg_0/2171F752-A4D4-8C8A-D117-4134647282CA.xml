@@ -28,7 +28,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cod_indicador" id="10029C71-E198-D0EB-5BFF-5D45A4AB2EE1">
 <createdBy>Onishi</createdBy>
@@ -56,6 +56,48 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>2000</dataTypeSize>
 <ownDataTypeParameters>2000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="observacao" id="322C8E19-5912-3F65-5098-CC7FC3834CA7">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 20:28:38 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_coluna_x" id="B3691F29-9161-0128-8152-0A1275898680">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 17:33:34 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_coluna_y" id="3D18223D-2E4F-72BF-3D1B-79DC7FAF9129">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 17:34:09 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

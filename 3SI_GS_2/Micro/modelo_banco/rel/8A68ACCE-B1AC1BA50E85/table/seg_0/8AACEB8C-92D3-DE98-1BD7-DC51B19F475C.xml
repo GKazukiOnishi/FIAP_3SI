@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8AACEB8C-92D3-DE98-1BD7-DC51B19F475C" name="OBJETIVO">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>CB71ACF2-F06A-06B2-21EA-8289B675513D</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cod_meta" id="7257B678-A3DB-E439-B0F4-AD4290C2FA67">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>026C29FE-5161-9DF8-C120-74BD845C7055</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="26E41215-95BF-7140-D8B6-C56C0A8B9F82" referredColumn="E43A17B8-0BD8-3AFB-CEDF-1D68F2CEABB3"/>
+</associations>
+</Column>
+<Column name="origem" id="E8210A05-7251-B0C5-7A9A-BE874441A876">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>4A3064CC-A859-A870-AB7E-3AB5DB5A49FE</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="objetivo" id="62D550CE-4401-8FDB-588D-1D51E529279B">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>D5F54BD3-645B-D120-2CF3-4297CC73BFDB</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000</dataTypeSize>
+<ownDataTypeParameters>2000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="51160689-006B-6499-406C-2D606436D013" name="OBJETIVO_PK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>0FE939F4-42B9-E9DB-A8A0-E7EA6F762520</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E8210A05-7251-B0C5-7A9A-BE874441A876"/>
+<colUsage columnID="7257B678-A3DB-E439-B0F4-AD4290C2FA67"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8701E1F5-C225-D9CB-D4B3-5E581AA6A595" name="META_OBJETIVO_FK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>251C1031-0B07-3746-9C8F-3DCC33A74B86</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7257B678-A3DB-E439-B0F4-AD4290C2FA67"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="752ACEAF-2F76-6025-31D6-0B6FF0DD7D12" name="META">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>D6B1ECF2-606C-9439-B404-5AF6A3396F21</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<ordsAlias>grupo_objetivo</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cod_meta" id="E43A17B8-0BD8-3AFB-CEDF-1D68F2CEABB3">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>C69FAFEE-54F8-8F18-72E1-13AD691E0E0C</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="244504E9-2B80-CBF1-AA5C-F7BC9F15ADF4" name="META_PK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>52103121-8F59-414D-CF45-F6A09826C714</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E43A17B8-0BD8-3AFB-CEDF-1D68F2CEABB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

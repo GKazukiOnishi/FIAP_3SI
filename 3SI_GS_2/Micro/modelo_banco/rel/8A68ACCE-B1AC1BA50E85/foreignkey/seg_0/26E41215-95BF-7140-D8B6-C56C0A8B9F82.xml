@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="26E41215-95BF-7140-D8B6-C56C0A8B9F82" containerWithKeyObject="8AACEB8C-92D3-DE98-1BD7-DC51B19F475C" localFKIndex="8701E1F5-C225-D9CB-D4B3-5E581AA6A595" name="META_OBJETIVO_FK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>251C1031-0B07-3746-9C8F-3DCC33A74B86</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<referredTableLongName>META</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>752ACEAF-2F76-6025-31D6-0B6FF0DD7D12</referredTableID>
+<keyObject>244504E9-2B80-CBF1-AA5C-F7BC9F15ADF4</keyObject>
+<referredKeyID>244504E9-2B80-CBF1-AA5C-F7BC9F15ADF4</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cod_meta</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

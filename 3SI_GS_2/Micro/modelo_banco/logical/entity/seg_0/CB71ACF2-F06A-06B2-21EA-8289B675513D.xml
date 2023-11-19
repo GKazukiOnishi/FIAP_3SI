@@ -28,7 +28,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="origem" id="4A3064CC-A859-A870-AB7E-3AB5DB5A49FE">
 <createdBy>Onishi</createdBy>

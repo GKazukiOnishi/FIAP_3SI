@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D6B1ECF2-606C-9439-B404-5AF6A3396F21" name="GRUPO_OBJETIVO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D6B1ECF2-606C-9439-B404-5AF6A3396F21" name="META">
 <createdBy>Onishi</createdBy>
 <createdTime>2023-11-18 15:02:15 UTC</createdTime>
 <ownerDesignName>modelo_banco</ownerDesignName>
@@ -30,7 +30,7 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="52103121-8F59-414D-CF45-F6A09826C714" name="GRUPO_OBJETIVO PK">
+<identifier id="52103121-8F59-414D-CF45-F6A09826C714" name="META PK">
 <createdBy>Onishi</createdBy>
 <createdTime>2023-11-18 15:14:15 UTC</createdTime>
 <ownerDesignName>modelo_banco</ownerDesignName>
@@ -38,6 +38,7 @@
 <item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>C69FAFEE-54F8-8F18-72E1-13AD691E0E0C</newElementsIDs>
 <usedAttributes>
 <attributeRef>C69FAFEE-54F8-8F18-72E1-13AD691E0E0C</attributeRef>
 </usedAttributes>

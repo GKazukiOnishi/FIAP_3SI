@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C184D169-312E-E667-249D-796FDCBBC1E7" name="INDICADOR">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>2171F752-A4D4-8C8A-D117-4134647282CA</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cod_meta" id="E428232A-CA7D-041D-8798-5952F66D4D9A">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>D7991003-59BB-AB0B-62CC-DBF6F95EE382</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="80DBB2AD-3145-A5EF-87FA-6D5A29F35DCE" referredColumn="E43A17B8-0BD8-3AFB-CEDF-1D68F2CEABB3"/>
+</associations>
+</Column>
+<Column name="cod_indicador" id="F7F41B3C-13E1-9736-9557-D6675934EF17">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>10029C71-E198-D0EB-5BFF-5D45A4AB2EE1</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descricao" id="F04B2514-1ACE-D97C-5959-E392A0F91504">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>EEF3F3FC-95EA-1D26-B22D-6F04EE9B638F</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2000</dataTypeSize>
+<ownDataTypeParameters>2000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="observacao" id="13CA960E-1FFA-F736-E1C5-C092CFC05E91">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 20:33:14 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_coluna_x" id="A47F00A7-A9F0-D7BF-4E0D-1E94D81739FC">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>B3691F29-9161-0128-8152-0A1275898680</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_coluna_y" id="F60240FA-94A9-61F2-82A7-CDD767025B80">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>3D18223D-2E4F-72BF-3D1B-79DC7FAF9129</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3934094F-FB33-EBAB-1319-DA19EA95A582" name="INDICADOR_PK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>86536017-B8CB-42D3-F873-449D155B8C9D</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F7F41B3C-13E1-9736-9557-D6675934EF17"/>
+<colUsage columnID="E428232A-CA7D-041D-8798-5952F66D4D9A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4D050D7E-5655-A360-687B-9C34A267C7A3" name="INDICADOR_COD_INDICADOR_UN">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>D2643DCA-C9B8-8C5F-849E-C860D448F2EE</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F7F41B3C-13E1-9736-9557-D6675934EF17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8DC1928F-7DF5-1269-5190-10412120E5BC" name="META_INDICADOR_FK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>9A357EB5-288D-A9F0-9F94-CE01BEA1DA14</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E428232A-CA7D-041D-8798-5952F66D4D9A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
