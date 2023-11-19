@@ -24,6 +24,11 @@
         android:name="br.com.fiap.healthtie.presentation.ReminderFormFragment"
         />
 
+    <fragment
+        android:id="@+id/FamilyGroupListFragment"
+        android:name="br.com.fiap.healthtie.presentation.FamilyGroupListFragment"
+        />
+
     <action
         android:id="@+id/action_to_home"
         app:destination="@+id/HomeFragment"
@@ -42,5 +47,10 @@
     <action
         android:id="@+id/action_to_reminder_form"
         app:destination="@+id/ReminderFormFragment"
+        />
+
+    <action
+        android:id="@+id/action_to_family_group_list"
+        app:destination="@+id/FamilyGroupListFragment"
         />
 </navigation>

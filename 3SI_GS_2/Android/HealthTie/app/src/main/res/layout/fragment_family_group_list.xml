@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <Space
-            android:id="@+id/reminder_list_space_0"
+            android:id="@+id/family_group_list_space_0"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/spacing_xxl" />
 
         <Space
-            android:id="@+id/reminder_list_space_1"
+            android:id="@+id/family_group_list_space_1"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/spacing_md" />
 
         <TextView
-            android:id="@+id/reminder_list_title"
+            android:id="@+id/family_group_list_title"
             style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/medium"
             android:layout_marginTop="@dimen/small"
-            android:text="Lembretes Preventivos"
+            android:text="Grupo Familiar"
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/reminder_list_recycler"
+            android:id="@+id/family_group_list_recycler"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginHorizontal="@dimen/medium"
             android:layout_marginTop="@dimen/small"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="3"
-            tools:listitem="@layout/view_reminder_item" />
+            tools:listitem="@layout/view_family_group_item" />
+
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="@dimen/large" />
 
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/reminder_list_add_button"
+        android:id="@+id/family_group_list_add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
+
         android:layout_marginBottom="@dimen/spacing_xxl"
         android:layout_marginRight="@dimen/spacing_md"
         android:src="@drawable/botao_adicionar" />

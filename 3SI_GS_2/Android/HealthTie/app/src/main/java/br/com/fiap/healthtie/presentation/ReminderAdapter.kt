@@ -10,11 +10,11 @@ import br.com.fiap.healthtie.domain.ReminderModel
 class ReminderAdapter(
     private val onDeleteListener: (ReminderModel) -> Unit = {},
     private val onUpdateListener: (ReminderModel) -> Unit = {},
-) : RecyclerView.Adapter<ReminderAdapter.CharacterItemViewHolder>(){
+) : RecyclerView.Adapter<ReminderAdapter.ReminderItemViewHolder>(){
 
     private var reminderList : MutableList<ReminderModel> = mutableListOf()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReminderItemViewHolder {
        val binding = ViewReminderItemBinding.bind(
            LayoutInflater.from(parent.context).inflate(
                R.layout.view_reminder_item,
@@ -22,10 +22,10 @@ class ReminderAdapter(
                false
            )
        )
-        return CharacterItemViewHolder(binding)
+        return ReminderItemViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: CharacterItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ReminderItemViewHolder, position: Int) {
         holder.bindView(reminderList[position], position)
     }
 
@@ -33,13 +33,11 @@ class ReminderAdapter(
         return reminderList.size
     }
     fun setData(list: List<ReminderModel>){
-        with(reminderList){
-            clear()
-            addAll(list)
-        }
+        reminderList.clear()
+        reminderList.addAll(list)
         notifyDataSetChanged()
     }
-    inner class CharacterItemViewHolder(
+    inner class ReminderItemViewHolder(
         private val view: ViewReminderItemBinding
     ): RecyclerView.ViewHolder(view.root){
 
@@ -49,15 +47,16 @@ class ReminderAdapter(
             view.reminderReminderDateTimeValue.text = reminderModel.formatReminderDateTime()
 
 
-            //colocar o id do icone de dele de iconDelete
-//            view.iconDelete.setOnClickListener{
-//                onDeleteListener.invoke(reminderModel)
-//            }
+           // colocar o id do icone de dele de iconDelete
+           // view.iconDelete.setOnClickListener{
+           //     onDeleteListener.invoke(reminderModel)
+           // }
 
-            //colocar o id do icone de dele de iconUpdate
-//            view.iconUpdate.setOnClickListener{
-//                onUpdateListener.invoke(reminderModel)
-//            }
+           // colocar o id do icone de dele de iconUpdate
+            view.reminderItemEditButton.setOnClickListener{
+                onUpdateListener.invoke(reminderModel)
+            }
         }
     }
+
 }
