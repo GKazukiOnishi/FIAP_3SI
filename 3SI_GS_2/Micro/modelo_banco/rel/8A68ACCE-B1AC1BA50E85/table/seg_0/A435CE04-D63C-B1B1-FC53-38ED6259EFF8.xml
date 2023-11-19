@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A435CE04-D63C-B1B1-FC53-38ED6259EFF8" name="CATEGORIA">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>8D56C086-9B49-B1FA-5974-9F3901AA0D05</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="num_categoria" id="5142471D-A1C5-2021-10A1-D9682DA76431">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>254049D3-09F2-32E8-9A5A-AA0ECEDF794E</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nm_categoria" id="115E74CD-DC6D-0A11-FBC8-D8523334F010">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>5C59B857-C8C6-E81F-82BC-1C50B5758B52</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nivel" id="4F6C04AE-F589-92B5-D30E-5CDF18D1E9A4">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>7B4A40EA-E59A-4341-8782-E1EC663D5190</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A15FFE7B-A550-B5D9-67A5-7703272E6544" name="CATEGORIA_PK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>528A4AEE-4286-AF1C-BD62-0C0699E7665B</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5142471D-A1C5-2021-10A1-D9682DA76431"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CATEGORIA_NIVEL_CK" directorySegmentName="seg_0" id="DDA4077F-B5FE-2204-212B-CABC064A8952">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:32:13 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<rule><![CDATA[NIVEL IN ('PA', 'GR', 'UF', 'RE')]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

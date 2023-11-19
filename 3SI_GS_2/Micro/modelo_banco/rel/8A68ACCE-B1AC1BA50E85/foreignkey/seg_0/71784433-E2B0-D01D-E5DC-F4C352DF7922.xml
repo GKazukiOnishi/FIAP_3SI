@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="71784433-E2B0-D01D-E5DC-F4C352DF7922" containerWithKeyObject="1B94E2BE-06B1-01A3-D3FB-532AA31CCC63" localFKIndex="567586DA-3167-E531-1A78-733756C0A27E" name="DADO_INDICADOR_CATEGORIA_FK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 18:01:38 UTC</createdTime>
+<generatorID>F318B5F5-D5A1-5CE9-E646-6EDE5DBC3DC4</generatorID>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<referredTableLongName>CATEGORIA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A435CE04-D63C-B1B1-FC53-38ED6259EFF8</referredTableID>
+<keyObject>A15FFE7B-A550-B5D9-67A5-7703272E6544</keyObject>
+<referredKeyID>A15FFE7B-A550-B5D9-67A5-7703272E6544</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>num_categoria</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

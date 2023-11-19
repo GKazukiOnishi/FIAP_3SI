@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8D56C086-9B49-B1FA-5974-9F3901AA0D05" name="CATEGORIA">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 17:35:36 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="num_categoria" id="254049D3-09F2-32E8-9A5A-AA0ECEDF794E">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 17:36:06 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_categoria" id="5C59B857-C8C6-E81F-82BC-1C50B5758B52">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 17:37:09 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nivel" id="7B4A40EA-E59A-4341-8782-E1EC663D5190">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 17:39:34 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="528A4AEE-4286-AF1C-BD62-0C0699E7665B" name="CATEGORIA PK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 17:37:07 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>254049D3-09F2-32E8-9A5A-AA0ECEDF794E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

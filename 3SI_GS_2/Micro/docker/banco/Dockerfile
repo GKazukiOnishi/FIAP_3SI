@@ -1,0 +1,3 @@
+FROM mysql:8.0-debian
+
+COPY ./db/ /docker-entrypoint-initdb.d/

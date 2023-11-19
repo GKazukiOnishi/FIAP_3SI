@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D6B1ECF2-606C-9439-B404-5AF6A3396F21" name="META">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 15:02:15 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cod_meta" id="C69FAFEE-54F8-8F18-72E1-13AD691E0E0C">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 15:14:17 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="52103121-8F59-414D-CF45-F6A09826C714" name="META PK">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 15:14:15 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>C69FAFEE-54F8-8F18-72E1-13AD691E0E0C</newElementsIDs>
+<usedAttributes>
+<attributeRef>C69FAFEE-54F8-8F18-72E1-13AD691E0E0C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

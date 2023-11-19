@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="IND_DADO_IND" directorySegmentName="seg_0" id="C4D00313-579C-F97F-5A78-CB733F5A8F66">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 17:55:54 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<sourcePk>86536017-B8CB-42D3-F873-449D155B8C9D</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>2171F752-A4D4-8C8A-D117-4134647282CA</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A67D0099-310D-8A8A-9703-F09B05EADD2E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

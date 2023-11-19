@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="META_OBJ" directorySegmentName="seg_0" id="251C1031-0B07-3746-9C8F-3DCC33A74B86">
+<createdBy>Onishi</createdBy>
+<createdTime>2023-11-18 15:33:39 UTC</createdTime>
+<ownerDesignName>modelo_banco</ownerDesignName>
+<engineerTo>
+<item key="8A68ACCE-B059-6D51-D711-B1AC1BA50E85" value="true"/>
+</engineerTo>
+<sourcePk>52103121-8F59-414D-CF45-F6A09826C714</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D6B1ECF2-606C-9439-B404-5AF6A3396F21</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>CB71ACF2-F06A-06B2-21EA-8289B675513D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
