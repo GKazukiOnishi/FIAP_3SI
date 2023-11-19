@@ -1,0 +1,27 @@
+version: '3'
+
+networks:
+  ods3_network:
+    driver: bridge
+
+services:
+  ods3db:
+    image: ods3-db:v0.0.6
+    container_name: ods3db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+      MYSQL_DATABASE: "ODS3"
+      MYSQL_USER: "main"
+      MYSQL_PASSWORD: "1234"
+    networks:
+      - ods3_network
+
+  ods3api:
+    image: ods3-api:v0.0.2
+    container_name: ods3api
+    ports:
+      - "3000:3000"
+    networks:
+      - ods3_network
