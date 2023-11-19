@@ -1,13 +1,97 @@
 <resources>
     <string name="app_name">HealthTie</string>
 
+    <!--Referente ao menu-->
+    <string name="menu_home_string">Home</string>
+    <string name="menu_configuracoes_string">Configurações</string>
+    <string name="menu_notificacoes_string">Notificações</string>
+    <string name="menu_perfil_string">Perfil</string>
+    <string name="menu_lembretes_string">Lembretes</string>
+
+    <!--Referente aos botoes-->
+    <string name="register_reminder_button_label">Cadastrar</string>
+    <string name="update_reminder_button_label">Atualizar</string>
+
+    <!--Referente as mensagens de alerta-->
     <string name="register_reminder_sucess_deleted_message">Lembrete %s deletado com sucesso!</string>
     <string name="delete_dialog_title">Deletar Lembrete</string>
     <string name="delete_dialog_message">Tem certeza que deseja deletar este lembrete %s ?</string>
     <string name="delete_cancel_label">Cancelar</string>
     <string name="delete_continue_label">Deletar</string>
-    <string name="register_reminder_button_label">Cadastrar</string>
-    <string name="update_reminder_button_label">Atualizar</string>
     <string name="register_reminder_sucess_updated_message">Lembrete %s alterado com sucesso!</string>
     <string name="register_reminder_sucess_registered_message">Lembrete %s cadastrado com sucesso!</string>
+
+    <!--Referente a acessibilidade-->
+    <string name="acessibility_reminder_edit_button_string">Botão de Edição do Card</string>
+    <string name="acessibility_family_group_edit_button_string">Botão de Edição do Card</string>
+    <string name="acessibility_reminder_insert_button_string">Botão de Inserir novo Card</string>
+    <string name="acessibility_family_group_insert_button_string">Botão de Inserir novo Card</string>
+    <string name="acessibility_home_details_button_string">Botão de Detalhes do Card</string>
+    <string name="acessibility_home_family_group_image">Botão do card de Grupo Familiar</string>
+    <string name="acessibility_home_exams_image">Botão do card de Exam</string>
+    <string name="acessibility_home_medicines_image">Botão do card de Medicamentos</string>
+    <string name="acessibility_home_consultation_image">Botão do card de Consultas Médicas</string>
+    <string name="acessibility_home_vaccines_image">Botão do card de Vacinas</string>
+    <string name="acessibility_home_prescription_image">Botão do card de Receitas</string>
+    <string name="acessibility_consult_detail_doctor_icon">Ícone ilustrativo de Doutor</string>
+    <string name="acessibility_home_user_icon">Ícone ilustrativo de Usuário</string>
+
+    <!--Referente ao card da Home-->
+    <string name="description_consultanting_reminder_card">Consulta preventiva periódica</string>
+    <string name="description_date_hour_reminder_card">20/11 às 14h00</string>
+    <string name="description_title_reminder_card">Oftalmologista - Dr. Alfredo</string>
+
+    <!--Referente a MainActivity-->
+    <string name="home_user_name_text">Kazuki</string>
+
+    <!--Referente ao card do Grupo Familiar-->
+    <string name="title_name_family_group_card">Breno de Souza Silva</string>
+    <string name="note_family_group_card">Exame de Urina</string>
+    <string name="kinship_family_group_card">Irmão</string>
+
+    <!--Referente ao Reminder List-->
+    <string name="title_reminder_list">Lembretes Preventivos</string>
+
+    <!--Referente ao Reminder Form-->
+    <string name="reminder_form_title">Novo Lembrete</string>
+    <string name="reminder_form_hint_input_title">Título do lembrete</string>
+    <string name="reminder_form_hint_input_description">Descrição do lembrete</string>
+    <string name="reminder_form_hint_input_location">Localização</string>
+    <string name="reminder_form_hint_input_date">Data</string>
+    <string name="reminder_form_hint_input_hour">Hora</string>
+    <string name="reminder_form_confirm_button">Confirmar</string>
+
+    <!--Referente ao Home Fragment-->
+    <string name="first_header_title_home">Último Atendimento</string>
+    <string name="card_home_title_text">Pronto Socorro</string>
+    <string name="card_home_date_hour_text">13/11 às 11h36</string>
+    <string name="card_home_doctor_name_text">Dr. José Freitas da Silva</string>
+    <string name="cardbox_home_consulting_text">Agendamentos</string>
+    <string name="cardbox_home_vaccines_text">Vacinas</string>
+    <string name="cardbox_home_medicines_text">Medicamentos</string>
+    <string name="home_health_text">Minha Saúde</string>
+    <string name="cardbox_home_family_group_text">Grupo Familiar</string>
+    <string name="cardbox_home_exams_text">Exames</string>
+    <string name="cardbox_home_prescription_text">Receitas</string>
+    <string name="family_group_list_title_text">Grupo Familiar</string>
+
+    <!--Referente ao Consultant Detail Fragment-->
+    <string name="consult_detail_title_text">Pronto Socorro - 13/11 às 11h23</string>
+    <string name="consult_detail_doctor_text">Dr. José Freitas</string>
+    <string name="consult_detail_symptoms_text">Sintomas</string>
+    <string name="consult_detail_symptoms_list_item_1_text">- Febre</string>
+    <string name="consult_detail_symptoms_list_item_2_text">- Tontura</string>
+    <string name="consult_detail_symptoms_list_item_3_text">- Enjoo</string>
+    <string name="consult_detail_prescriptions_text">Prescrições</string>
+    <string name="consult_detail_prescriptions_list_item_1_text">- Floratil 200 mg 1 CP/dia durante 5 dias</string>
+    <string name="consult_detail_prescriptions_list_item_2_text">- Plasil 10 mg 1 CP 8/8 horas se enjoo</string>
+    <string name="consult_detail_prescriptions_list_item_3">- Dipirona 100 mg 8/8 horas se febre</string>
+    <string name="consult_detail_notes_text">Anotações</string>
+    <string name="consult_detail_notes_description_text">Medicação na veia: Soro.\nObservar piora nos sintomas ou reações alérgicas, retornando para análise se necessário.\nRecomenda-se ingerir algum alimento antes da ingestão dos comprimidos</string>
+    <string name="consult_detail_contact_button_text">Contatar</string>
+
+
+
+
+
 </resources>

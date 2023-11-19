@@ -38,19 +38,21 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             >
             <ImageView
+                android:id="@+id/home_user_icon"
                 android:layout_width="@dimen/image_small"
                 android:layout_height="@dimen/image_small"
                 android:src="@drawable/ic_action_person_white"
-                />
+                android:contentDescription="@string/acessibility_home_user_icon" />
 
             <TextView
+                android:id="@+id/home_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kazuki"
+                android:text="@string/home_user_name_text"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textAppearance="?attr/textAppearanceTitleLarge"
-                android:layout_marginLeft="@dimen/large"
+                android:layout_marginStart="@dimen/large"
                 />
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>

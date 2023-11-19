@@ -25,9 +25,9 @@
             style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/medium"
+            android:layout_marginStart="@dimen/medium"
             android:layout_marginTop="@dimen/small"
-            android:text="Grupo Familiar"
+            android:text="@string/family_group_list_title_text"
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -55,9 +55,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-
         android:layout_marginBottom="@dimen/spacing_xxl"
-        android:layout_marginRight="@dimen/spacing_md"
-        android:src="@drawable/botao_adicionar" />
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:src="@drawable/botao_adicionar"
+        android:contentDescription="@string/acessibility_family_group_insert_button_string" />
 
 </RelativeLayout>

@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    >
+    android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <Space
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/spacing_xxl"
-            />
+            android:layout_height="@dimen/spacing_xxl" />
+
         <Space
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/spacing_md"
-            />
+            android:layout_height="@dimen/spacing_md" />
 
         <TextView
             android:id="@+id/home_last_atend"
+            style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/medium"
+            android:layout_marginStart="@dimen/medium"
             android:layout_marginTop="@dimen/small"
-            android:text="Último Atendimento"
-            android:textStyle="bold"
-            style="@style/TextAppearance.AppCompat.Headline"
-            />
+            android:text="@string/first_header_title_home"
+            android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/home_last_atend_card"
@@ -36,78 +34,76 @@
             android:layout_margin="@dimen/small"
             android:clickable="true"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            >
+            app:cardElevation="8dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/medium">
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/medium">
 
-                        >
-                        <LinearLayout
-                            android:id="@+id/home_last_atend_doctor"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/home_last_atend_doctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/card_home_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            >
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Pronto Socorro"
-                                android:textStyle="bold"
-                                android:textAppearance="?attr/textAppearanceHeadline6"
-                                />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/small"
-                                android:text="13/11 às 11h36"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary"
-                                />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/small"
-                                android:text="Dr. José Freitas da Silva"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary"
-                                />
-                        </LinearLayout>
-                        <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/home_last_atend_button"
-                            app:layout_constraintBottom_toBottomOf="@+id/home_last_atend_doctor"
-                            app:layout_constraintEnd_toEndOf="parent"
+                            android:text="@string/card_home_title_text"
+                            android:textAppearance="?attr/textAppearanceHeadline6"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/card_home_date_hour"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|right"
-                            android:src="@drawable/land_search"
-                            />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </LinearLayout>
+                            android:layout_marginTop="@dimen/small"
+                            android:text="@string/card_home_date_hour_text"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary" />
+
+                        <TextView
+                            android:id="@+id/card_home_doctor_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small"
+                            android:text="@string/card_home_doctor_name_text"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </LinearLayout>
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/home_last_atend_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|end"
+                        android:src="@drawable/land_search"
+                        app:layout_constraintBottom_toBottomOf="@+id/home_last_atend_doctor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:contentDescription="@string/acessibility_home_details_button_string" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/home_health"
+            style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/medium"
+            android:layout_marginStart="@dimen/medium"
             android:layout_marginTop="@dimen/small"
-            android:text="Minha Saúde"
-            android:textStyle="bold"
-            style="@style/TextAppearance.AppCompat.Headline"
-            />
+            android:text="@string/home_health_text"
+            android:textStyle="bold" />
 
         <GridLayout
             android:layout_width="match_parent"
@@ -120,32 +116,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="0"
-                android:layout_column="0"
-                android:layout_gravity="fill"
                 android:layout_rowWeight="1"
+                android:layout_column="0"
                 android:layout_columnWeight="1"
+                android:layout_gravity="fill"
                 android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
                 android:clickable="true"
-                >
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_gravity="center|center_horizontal"
                     android:gravity="center"
-                    android:layout_gravity="center|center_horizontal">
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="@dimen/image_large"
                         android:layout_height="@dimen/image_large"
-                        android:src="@drawable/family_care"/>
+                        android:src="@drawable/family_care"
+                        android:contentDescription="@string/acessibility_home_family_group_image" />
+
                     <TextView
+                        android:id="@+id/cardbox_home_family_group"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Grupo Familiar"
-                        android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:text="@string/cardbox_home_family_group_text"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -156,26 +155,30 @@
                 android:layout_column="1"
                 android:layout_gravity="fill"
                 android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
                 android:clickable="true"
-                >
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_gravity="center|center_horizontal"
                     android:gravity="center"
-                    android:layout_gravity="center|center_horizontal">
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="@dimen/image_large"
                         android:layout_height="@dimen/image_large"
-                        android:src="@drawable/exam"/>
+                        android:src="@drawable/exam"
+                        android:contentDescription="@string/acessibility_home_exams_image" />
+
                     <TextView
+                        android:id="@+id/cardbox_home_exams"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Exames"
-                        android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:text="@string/cardbox_home_exams_text"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -183,31 +186,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="1"
-                android:layout_column="0"
-                android:layout_gravity="fill"
                 android:layout_rowWeight="1"
+                android:layout_column="0"
                 android:layout_columnWeight="1"
+                android:layout_gravity="fill"
                 android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
                 android:clickable="true"
-                >
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_gravity="center|center_horizontal"
                     android:gravity="center"
-                    android:layout_gravity="center|center_horizontal">
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="@dimen/image_large"
                         android:layout_height="@dimen/image_large"
-                        android:src="@drawable/medicine"/>
+                        android:src="@drawable/medicine"
+                        android:contentDescription="@string/acessibility_home_medicines_image" />
+
                     <TextView
+                        android:id="@+id/cardbox_home_medicines"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Medicamentos"
-                        android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:text="@string/cardbox_home_medicines_text"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -215,31 +222,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="1"
-                android:layout_column="1"
-                android:layout_gravity="fill"
                 android:layout_rowWeight="1"
+                android:layout_column="1"
                 android:layout_columnWeight="1"
+                android:layout_gravity="fill"
                 android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
                 android:clickable="true"
-                >
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_gravity="center|center_horizontal"
                     android:gravity="center"
-                    android:layout_gravity="center|center_horizontal">
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="@dimen/image_large"
                         android:layout_height="@dimen/image_large"
-                        android:src="@drawable/doctor_consultation"/>
+                        android:src="@drawable/doctor_consultation"
+                        android:contentDescription="@string/acessibility_home_consultation_image" />
+
                     <TextView
+                        android:id="@+id/cardbox_home_consulting"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Agendamentos"
-                        android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:text="@string/cardbox_home_consulting_text"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -247,31 +258,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="2"
+                android:layout_rowWeight="1"
                 android:layout_column="0"
-                android:layout_gravity="fill"
-                android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
+                android:layout_gravity="fill"
                 android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
                 android:clickable="true"
-                >
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_gravity="center|center_horizontal"
                     android:gravity="center"
-                    android:layout_gravity="center|center_horizontal">
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="@dimen/image_large"
                         android:layout_height="@dimen/image_large"
-                        android:src="@drawable/vaccine"/>
+                        android:src="@drawable/vaccine"
+                        android:contentDescription="@string/acessibility_home_vaccines_image" />
+
                     <TextView
+                        android:id="@+id/cardbox_home_vaccines"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Vacinas"
-                        android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:text="@string/cardbox_home_vaccines_text"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -279,34 +294,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="2"
-                android:layout_column="1"
-                android:layout_gravity="fill"
                 android:layout_rowWeight="1"
+                android:layout_column="1"
                 android:layout_columnWeight="1"
+                android:layout_gravity="fill"
                 android:layout_margin="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
                 android:clickable="true"
-                >
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_gravity="center|center_horizontal"
                     android:gravity="center"
-                    android:layout_gravity="center|center_horizontal">
+                    android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="@dimen/image_large"
                         android:layout_height="@dimen/image_large"
-                        android:src="@drawable/medical_prescription"/>
+                        android:src="@drawable/medical_prescription"
+                        android:contentDescription="@string/acessibility_home_prescription_image" />
+
                     <TextView
+                        android:id="@+id/cardbox_home_prescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Receitas"
-                        android:textStyle="bold"
-                        android:textAlignment="center"/>
+                        android:text="@string/cardbox_home_prescription_text"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
 
 
         </GridLayout>
