@@ -9,7 +9,7 @@ COPY ./ods3Front/package.json .
 RUN npm install
 
 # Copiamos arquivos da aplicação
-COPY ./ods3API/ .
+COPY ./ods3Front/ .
 
 # Start da aplicação na porta 3000
 EXPOSE 3000
