@@ -5,7 +5,7 @@ RUN mkdir -p /opt/app
 WORKDIR /opt/app
 
 # Para evitar que os node_modules sejam copiados, rodamos npm install primeiro e depois copiamos os arquivos da aplicação
-COPY ./ods3API/package.json .
+COPY ./ods3Front/package.json .
 RUN npm install
 
 # Copiamos arquivos da aplicação
