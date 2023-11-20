@@ -1,6 +1,6 @@
-const indicadorDao = require('../dao/indicadorDao');
+const indicadorDao = require("../dao/indicadorDao");
 
-exports.get = async (req, res, next) => {
+exports.getIndicador = async (req, res, next) => {
   try {
     const indicador = await indicadorDao.getIndicador(req.params?.codIndicador);
 
@@ -13,6 +13,16 @@ exports.get = async (req, res, next) => {
     indicador.dados = dados;
 
     res.status(200).send(indicador);
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.getIndicadores = async (req, res, next) => {
+  try {
+    const indicadores = await indicadorDao.getIndicadores();
+
+    res.status(200).send(indicadores);
   } catch (e) {
     next(e);
   }

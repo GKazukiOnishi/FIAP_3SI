@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { MyLayout } from "../../components/layout/MyLayout";
 import {
   Accordion,
@@ -18,16 +18,28 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Search } from "@mui/icons-material";
-import { getObjetivos } from "../../services/objetivos";
+import { getMetas } from "../../services/objetivos";
+import { useNavigate } from "react-router-dom";
+import { PATH_INDICADORES } from "../../router";
+
+const ORIGEM_BRASIL = "Brasil";
+const ORIGEM_NACOES_UNIDAS = "Nações Unidas";
 
 export const Objetivos = (props) => {
+  const [metas, setMetas] = useState([]);
+  const [origem, setOrigem] = useState(ORIGEM_BRASIL);
+
+  const navigate = useNavigate();
+
   useEffect(() => {
-    getObjetivos();
+    getMetas().then((metas) => {
+      setMetas(metas);
+    });
   }, []);
 
   return (
     <MyLayout>
-      <Grid container spacing={2} pt={7} px={7} pb={3}>
+      <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="h3">Objetivos</Typography>
         </Grid>
@@ -35,42 +47,71 @@ export const Objetivos = (props) => {
           item
           xs={12}
           sx={{ display: "flex", flexDirection: "row-reverse" }}
+          my={2}
         >
           <ButtonGroup
             variant="contained"
             aria-label="outlined primary button group"
           >
-            <Button>Brasil</Button>
-            <Button>Mundo</Button>
+            <Button
+              disabled={origem === ORIGEM_BRASIL}
+              onClick={() => {
+                setOrigem(ORIGEM_BRASIL);
+              }}
+            >
+              Brasil
+            </Button>
+            <Button
+              disabled={origem === ORIGEM_NACOES_UNIDAS}
+              onClick={() => {
+                setOrigem(ORIGEM_NACOES_UNIDAS);
+              }}
+            >
+              Mundo
+            </Button>
           </ButtonGroup>
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={4}>
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Stack spacing={1}>
-                  <Typography variant="h6">3.1</Typography>
-                  <Typography variant="body1">
-                    Até 2030, reduzir a taxa de mortalidade materna global para
-                    menos de 70 mortespor 100.000 nascidos vivos.{" "}
-                  </Typography>
-                </Stack>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Paper elevation={4}>
-                  <List>
-                    <ListItem disablePadding>
-                      <ListItemButton>
-                        <ListItemIcon>
-                          <Search />
-                        </ListItemIcon>
-                        <ListItemText primary="3.2.1 - Taxa de mortalidade em menores de 5 anos." />
-                      </ListItemButton>
-                    </ListItem>
-                  </List>
-                </Paper>
-              </AccordionDetails>
-            </Accordion>
+            {metas.map((meta) => (
+              <Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <Stack spacing={1}>
+                    <Typography variant="h6">{meta?.codMeta}</Typography>
+                    <Typography variant="body1">
+                      {
+                        meta?.objetivos?.filter((o) => o.origem === origem)[0]
+                          ?.objetivo
+                      }
+                    </Typography>
+                  </Stack>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Paper elevation={4}>
+                    <List>
+                      {meta?.indicadores?.map((indicador) => (
+                        <ListItem disablePadding>
+                          <ListItemButton
+                            onClick={() => {
+                              navigate(PATH_INDICADORES, {
+                                state: { codIndicador: indicador.codIndicador },
+                              });
+                            }}
+                          >
+                            <ListItemIcon>
+                              <Search />
+                            </ListItemIcon>
+                            <ListItemText
+                              primary={`${indicador.codIndicador} - ${indicador.descricao}`}
+                            />
+                          </ListItemButton>
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Paper>
+                </AccordionDetails>
+              </Accordion>
+            ))}
           </Paper>
         </Grid>
       </Grid>

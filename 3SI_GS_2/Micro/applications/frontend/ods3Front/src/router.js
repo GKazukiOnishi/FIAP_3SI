@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/home";
 import { Objetivos } from "./pages/objetivos";
+import { Indicadores } from "./pages/indicadores";
 
 export const PATH_HOME = "/";
 export const PATH_OBJETIVOS = "/objetivos";
@@ -14,6 +15,10 @@ const routes = [
   {
     path: PATH_OBJETIVOS,
     element: <Objetivos />,
+  },
+  {
+    path: PATH_INDICADORES,
+    element: <Indicadores />,
   },
 ];
 

@@ -15,7 +15,7 @@ const ImagemEstilizada = styled.div`
 
 export const Home = () => {
   return (
-    <MyLayout ignoreBarSpace={false}>
+    <MyLayout ignoreBarSpace={false} applyPadding={false}>
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <Stack>

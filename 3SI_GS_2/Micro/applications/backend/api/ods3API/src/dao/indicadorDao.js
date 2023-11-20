@@ -1,10 +1,17 @@
-const dao = require('./dao');
-const helper = require('./helper');
+const dao = require("./dao");
+const helper = require("./helper");
 
 async function getIndicadoresByMeta(codMeta) {
   const rows = await dao.query(
     `SELECT cod_indicador codIndicador, descricao FROM indicador WHERE cod_meta = ?`,
     [codMeta]
+  );
+  return helper.emptyOrRows(rows);
+}
+
+async function getIndicadores() {
+  const rows = await dao.query(
+    `SELECT cod_indicador codIndicador, descricao FROM indicador`
   );
   return helper.emptyOrRows(rows);
 }
@@ -28,5 +35,6 @@ async function getDadosIndicador(codIndicador) {
 module.exports = {
   getIndicadoresByMeta,
   getIndicador,
-  getDadosIndicador
-}
+  getDadosIndicador,
+  getIndicadores,
+};
