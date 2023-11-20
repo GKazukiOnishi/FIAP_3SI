@@ -2,7 +2,7 @@ const mysql = require("mysql2/promise");
 
 const config = {
   pool: {
-    host: "ods3db",
+    host: "localhost",
     user: "main",
     password: "1234",
     database: "ODS3",
