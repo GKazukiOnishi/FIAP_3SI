@@ -2,7 +2,8 @@ const mysql = require("mysql2/promise");
 
 const config = {
   pool: {
-    host: "localhost",
+    //host: "ods3db", //manter para conexões entre containers
+    host: "localhost", // manter para testes de integração
     user: "main",
     password: "1234",
     database: "ODS3",
