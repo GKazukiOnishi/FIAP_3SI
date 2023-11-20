@@ -74,7 +74,7 @@ export const Objetivos = (props) => {
         <Grid item xs={12}>
           <Paper elevation={4}>
             {metas.map((meta) => (
-              <Accordion>
+              <Accordion key={meta?.codMeta}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                   <Stack spacing={1}>
                     <Typography variant="h6">{meta?.codMeta}</Typography>
@@ -90,7 +90,7 @@ export const Objetivos = (props) => {
                   <Paper elevation={4}>
                     <List>
                       {meta?.indicadores?.map((indicador) => (
-                        <ListItem disablePadding>
+                        <ListItem disablePadding key={indicador.codIndicador}>
                           <ListItemButton
                             onClick={() => {
                               navigate(PATH_INDICADORES, {

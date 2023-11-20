@@ -7,8 +7,15 @@ import {
   Grid,
   InputLabel,
   MenuItem,
+  Paper,
   Select,
   Stack,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
@@ -260,7 +267,6 @@ export const Indicadores = (props) => {
                         const nmCategoria = categorias.find(
                           (c) => c.numCategoria === valor
                         )?.nmCategoria;
-                        console.log(nmCategoria);
                         return <Chip key={valor} label={nmCategoria} />;
                       })}
                     </Box>
@@ -288,7 +294,7 @@ export const Indicadores = (props) => {
         )}
         {dadosDoGrafico.length > 0 ? (
           <Box p={2} pr={6} pt={5}>
-            <ResponsiveContainer minHeight={400} minWidth={100}>
+            <ResponsiveContainer minHeight={400} minWidth={600}>
               <LineChart data={dadosDoGrafico}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="colunaX" />
@@ -297,6 +303,7 @@ export const Indicadores = (props) => {
                 <Legend />
                 {categoriasFiltradas.map((categoria) => (
                   <Line
+                    key={categoria.numCategoria}
                     type="monotone"
                     dataKey={categoria.nmCategoria}
                     stroke={`${categoria.cor}`}
@@ -305,6 +312,41 @@ export const Indicadores = (props) => {
               </LineChart>
             </ResponsiveContainer>
           </Box>
+        ) : null}
+        {dados && dados.length > 0 ? (
+          <TableContainer component={Paper}>
+            <Table
+              sx={{ minWidth: 600 }}
+              size="small"
+              aria-label="Tabela com dados do indicador"
+            >
+              <TableHead>
+                <TableRow>
+                  <TableCell>Categoria</TableCell>
+                  {valoresXFiltrados.map((valorX) => (
+                    <TableCell align="center">{valorX}</TableCell>
+                  ))}
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {categoriasFiltradas.map((categoria) => (
+                  <TableRow
+                    key={categoria.numCategoria}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {categoria.nmCategoria}
+                    </TableCell>
+                    {valoresXFiltrados.map((vlX) => {
+                      const dadosDoVlX = porX.get(vlX);
+                      const dado = dadosDoVlX[categoria.nmCategoria];
+                      return <TableCell align="center">{dado}</TableCell>;
+                    })}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
         ) : null}
         {!dados || dados.length === 0 ? (
           <Box sx={{ display: "flex", justifyContent: "center" }} pt={3}>
