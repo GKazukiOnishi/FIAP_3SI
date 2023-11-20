@@ -5,11 +5,11 @@ RUN mkdir -p /opt/app
 WORKDIR /opt/app
 
 # Para evitar que os node_modules sejam copiados, rodamos npm install primeiro e depois copiamos os arquivos da aplicação
-COPY ./api/ods3API/package.json .
+COPY ./ods3API/package.json .
 RUN npm install
 
 # Copiamos arquivos da aplicação
-COPY ./api/ods3API/ .
+COPY ./ods3Front/ .
 
 # Start da aplicação na porta 3000
 EXPOSE 3000
