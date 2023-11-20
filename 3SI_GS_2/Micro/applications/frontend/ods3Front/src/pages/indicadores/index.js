@@ -33,6 +33,34 @@ const nivelEnum = new Map()
   .set("UF", "Unidade da Federação")
   .set("RE", "Região");
 
+function gerarCoresHexadecimais(listaValores) {
+  const numCores = listaValores.length;
+
+  const coresHex = [];
+
+  const incremento = Math.floor(360 / numCores);
+
+  for (let i = 0; i < numCores; i++) {
+    const corR = Math.floor(
+      Math.sin((i * incremento + 0) * (Math.PI / 180)) * 127 + 128
+    );
+    const corG = Math.floor(
+      Math.sin((i * incremento + 120) * (Math.PI / 180)) * 127 + 128
+    );
+    const corB = Math.floor(
+      Math.sin((i * incremento + 240) * (Math.PI / 180)) * 127 + 128
+    );
+
+    const corHex = `#${((corR << 16) | (corG << 8) | corB)
+      .toString(16)
+      .padStart(6, "0")}`;
+
+    coresHex.push(corHex);
+  }
+
+  return coresHex;
+}
+
 export const Indicadores = (props) => {
   const { state } = useLocation();
 
@@ -41,7 +69,9 @@ export const Indicadores = (props) => {
   const [indicador, setIndicador] = useState();
   const [categorias, setCategorias] = useState([]);
   const [valoresXSelecionados, setValoresXSelecionados] = useState([]);
-  const [categoriasSelecionadas, setCategoriasSelecionadas] = useState([]);
+  const [numCategoriasSelecionadas, setNumCategoriasSelecionadas] = useState(
+    []
+  );
 
   useEffect(() => {
     getIndicadores().then((indicadores) => {
@@ -73,7 +103,7 @@ export const Indicadores = (props) => {
   const onChangeCategoriasSelecionadas = (event) => {
     const valor = event.target.value;
     const novosValores = valor === "string" ? valor.split(",") : valor;
-    setCategorias(novosValores);
+    setNumCategoriasSelecionadas(novosValores);
   };
 
   const colunaX = indicador?.nmColunaX;
@@ -82,6 +112,7 @@ export const Indicadores = (props) => {
   const dados = indicador?.dados ?? [];
   const valoresXDistintos = [];
   let numCategoriasDistintas = [];
+
   dados.forEach((d) => {
     if (!valoresXDistintos.includes(d.vlX)) {
       valoresXDistintos.push(d.vlX);
@@ -90,9 +121,17 @@ export const Indicadores = (props) => {
       numCategoriasDistintas.push(d.numCategoria);
     }
   });
-  const categoriasDistintas = numCategoriasDistintas.map((numCategoria) =>
-    categorias.find((c) => c.numCategoria === numCategoria)
+
+  const getCategoriasFromNumCategorias = (numCategorias) => {
+    return numCategorias.map((numCategoria) =>
+      categorias.find((c) => c.numCategoria === numCategoria)
+    );
+  };
+
+  const categoriasDistintas = getCategoriasFromNumCategorias(
+    numCategoriasDistintas
   );
+
   categoriasDistintas.sort((a, b) =>
     a.nmCategoria.localeCompare(b.nmCategoria)
   );
@@ -133,10 +172,23 @@ export const Indicadores = (props) => {
     });
   });
 
-  const dadosDoGrafico = valoresXDistintos.map((vlX) => ({
+  const valoresXFiltrados =
+    valoresXSelecionados.length > 0 ? valoresXSelecionados : valoresXDistintos;
+
+  const dadosDoGrafico = valoresXFiltrados.map((vlX) => ({
     colunaX: vlX,
     ...porX.get(vlX),
   }));
+
+  const categoriasFiltradas =
+    numCategoriasSelecionadas.length > 0
+      ? getCategoriasFromNumCategorias(numCategoriasSelecionadas)
+      : categoriasDistintas;
+
+  const cores = gerarCoresHexadecimais(categoriasFiltradas);
+  categoriasFiltradas.forEach((categoria, index) => {
+    categoria.cor = cores[index];
+  });
 
   return (
     <MyLayout>
@@ -199,14 +251,18 @@ export const Indicadores = (props) => {
                   id="categoria-select"
                   defaultValue=""
                   multiple
-                  value={categoriasSelecionadas}
+                  value={numCategoriasSelecionadas}
                   label="Categoria"
                   onChange={onChangeCategoriasSelecionadas}
                   renderValue={(selecionados) => (
                     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                      {selecionados.map((valor) => (
-                        <Chip key={valor} label={valor} />
-                      ))}
+                      {selecionados.map((valor) => {
+                        const nmCategoria = categorias.find(
+                          (c) => c.numCategoria === valor
+                        )?.nmCategoria;
+                        console.log(nmCategoria);
+                        return <Chip key={valor} label={nmCategoria} />;
+                      })}
                     </Box>
                   )}
                 >
@@ -216,24 +272,47 @@ export const Indicadores = (props) => {
             </Grid>
             <Grid item xs={6} sx={{ display: "flex", justifyContent: "end" }}>
               <Stack spacing={1} direction="row">
-                <Button variant="outlined" startIcon={<Clear />}>
-                  Limpar
+                <Button
+                  variant="outlined"
+                  startIcon={<Clear />}
+                  onClick={() => {
+                    setValoresXSelecionados([]);
+                    setNumCategoriasSelecionadas([]);
+                  }}
+                >
+                  Limpar Filtros
                 </Button>
-                <Button variant="contained">Filtrar</Button>
               </Stack>
             </Grid>
           </Grid>
         )}
-        <Box p={2}>
-          <LineChart data={dadosDoGrafico} width={800} height={300}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="colunaX" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="Brasil" stroke="#8884d8" />
-          </LineChart>
-        </Box>
+        {dadosDoGrafico.length > 0 ? (
+          <Box p={2} pr={6} pt={5}>
+            <ResponsiveContainer minHeight={400} minWidth={100}>
+              <LineChart data={dadosDoGrafico}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="colunaX" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                {categoriasFiltradas.map((categoria) => (
+                  <Line
+                    type="monotone"
+                    dataKey={categoria.nmCategoria}
+                    stroke={`${categoria.cor}`}
+                  />
+                ))}
+              </LineChart>
+            </ResponsiveContainer>
+          </Box>
+        ) : null}
+        {!dados || dados.length === 0 ? (
+          <Box sx={{ display: "flex", justifyContent: "center" }} pt={3}>
+            <Typography variant="h6">
+              Não existem dados cadastrados para o indicador
+            </Typography>
+          </Box>
+        ) : null}
       </Stack>
     </MyLayout>
   );
