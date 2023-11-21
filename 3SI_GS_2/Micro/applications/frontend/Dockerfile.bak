@@ -17,5 +17,5 @@ RUN npm install -g serve
 # Porta 3001
 EXPOSE 3001
 
-# Build da aplicação
+# Rodando aplicação
 CMD [ "serve", "-s", "build", "-p", "3001"]

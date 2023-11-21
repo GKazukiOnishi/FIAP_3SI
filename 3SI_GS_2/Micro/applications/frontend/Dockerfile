@@ -11,6 +11,9 @@ RUN npm install
 # Copiamos arquivos da aplicação
 COPY ./ods3Front/ .
 
+# Rodando build da aplicação
+RUN npm run build
+
 # Instalando serve
 RUN npm install -g serve
 
