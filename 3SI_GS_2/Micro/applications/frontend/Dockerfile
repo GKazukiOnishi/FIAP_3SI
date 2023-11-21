@@ -11,6 +11,11 @@ RUN npm install
 # Copiamos arquivos da aplicação
 COPY ./ods3Front/ .
 
-# Start da aplicação na porta 3000
-EXPOSE 3000
-CMD [ "npm", "start"]
+# Instalando serve
+RUN npm install -g serve
+
+# Porta 3001
+EXPOSE 3001
+
+# Rodando aplicação
+CMD [ "serve", "-s", "build", "-p", "3001"]

@@ -1,8 +1,10 @@
 #Comandos para criar as imagens necessárias para rodar o docker compose
 cd banco
-docker build . -t ods3-db:vCompose
+docker build . -t ods3-db
 cd backend
-docker build . -t ods3-api:vCompose
+docker build . -t ods3-api
+cd frontend
+docker build . -t ods3-front
 
 #Comando para rodar o docker compose
 docker compose up -d
