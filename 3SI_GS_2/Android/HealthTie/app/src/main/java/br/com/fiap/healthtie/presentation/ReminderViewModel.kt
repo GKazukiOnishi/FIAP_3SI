@@ -35,7 +35,8 @@ class ReminderViewModel(private val application: Application) : AndroidViewModel
                 AppDatabase.getDataBase(application.applicationContext).reminderDAO()
                     .insert(reminderModel)
                 withContext(Dispatchers.Main) {
-                    remindersInserted.value = application.getString(R.string.reminder_form_successful_insert)
+                    remindersInserted.value =
+                        application.getString(R.string.reminder_form_successful_insert)
                 }
             }
         }
@@ -47,10 +48,13 @@ class ReminderViewModel(private val application: Application) : AndroidViewModel
                 AppDatabase.getDataBase(application.applicationContext).reminderDAO()
                     .update(reminderModel)
                 withContext(Dispatchers.Main) {
-                    remindersUpdated.value = application.getString(R.string.reminder_form_successful_update)
+                    remindersUpdated.value =
+                        application.getString(R.string.reminder_form_successful_update)
                 }
             }
         }
+
+
     }
 
     suspend fun deleteReminder(reminderModel: ReminderModel) {
@@ -59,7 +63,8 @@ class ReminderViewModel(private val application: Application) : AndroidViewModel
                 AppDatabase.getDataBase(application.applicationContext).reminderDAO()
                     .delete(reminderModel)
                 withContext(Dispatchers.Main) {
-                    remindersDeleted.value = application.getString(R.string.reminder_form_successful_delete)
+                    remindersDeleted.value =
+                        application.getString(R.string.reminder_form_successful_delete)
                 }
             }
         }
